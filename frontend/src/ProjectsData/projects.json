@@ -1,0 +1,226 @@
+[
+  {
+    "projectId": 1,
+    "thumbnail": "thumbnail_like-a-flight.png",
+    "title": "Like-A-Flight",
+    "text": "This site was created as the final project for a full-stack development course, so my design and my code. Basically, this website shows a list of available vacations. The user can login and mark the flights that he likes (hey, I didn't come up with the brief). As an Admin one can edit/add/delete vacations and view a simple chart that shows likes per vacation data Of course, its fully responsive. Also, both airplane animation and like button animation are mine and were implemented as a Lottie code",
+    "tags": [
+      "UX/UI",
+      "Coding",
+      "Animation",
+      "Branding"
+    ],
+    "images": [
+      {
+        "imageName": "Like-A-Flight_01.png",
+        "imageDescription": "This is the image description"
+      },
+      {
+        "imageName": "Like-A-Flight_02.png",
+        "imageDescription": "This is the image description"
+      },
+      {
+        "imageName": "Like-A-Flight_03.png",
+        "imageDescription": "This is the image description"
+      }
+    ]
+  },
+  {
+    "projectId": 2,
+    "thumbnail": "thumbnail_stw-intro.png",
+    "title": "StuffThatWorks intro",
+    "text": "StuffThatWorks' goal is finding treatments' effectiveness for chronic conditions via crowdsourcing, and that’s what I tried to explain (original illustrations by the talented Maya Shleifer).",
+    "tags": [
+      "Animation",
+      "Storytelling"
+    ],
+    "videos": [
+      {
+        "videoLink": "<iframe src=`https://player.vimeo.com/video/340225487` width=`1280` height=`720` frameborder=`0` allow=`autoplay; fullscreen` allowfullscreen></iframe> ",
+        "videoDescription": ""
+      }
+    ]
+  },
+  {
+    "projectId": 3,
+    "thumbnail": "thumbnail_gifs.png",
+    "title": "StuffThatWorks' Various UI animations ",
+    "text": "A variety of StuffThatWorks animations - were mostly implemented as an integral part of the UI.",
+    "tags": [
+      "Animation",
+      "UX/UI",
+      "Branding"
+    ],
+    "images": [
+      {
+        "imageName": "Like-A-Flight_01.png",
+        "imageDescription": "This is the image description"
+      }
+    ]
+  },
+  {
+    "projectId": 4,
+    "thumbnail": "thumbnail_map-animation.png",
+    "title": "StuffThatWorks' map prototype",
+    "text": "A concept for a feature that shows other condition-community members that are similar to you.",
+    "tags": [
+      "UX/UI",
+      "Animations"
+    ],
+    "images": [
+      {
+        "imageName": "Like-A-Flight_01.png",
+        "imageDescription": "This is the image description"
+      }
+    ]
+  },
+  {
+    "projectId": 5,
+    "thumbnail": "thumbnail_carpool-intro.png",
+    "title": "Waze Carpool",
+    "text": "An intro for Waze’s Carpool app (R.I.P)",
+    "tags": [
+      "Animations",
+      "Storytelling"
+    ],
+    "videos": [
+      {
+        "videoLink": "<iframe src=`https://player.vimeo.com/video/213830148` width=`1280` height=`720` frameborder=`0` webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> ",
+        "videoDescription": ""
+      }
+    ]
+  },
+  {
+    "projectId": 6,
+    "thumbnail": "thumbnail_voice-rec.png",
+    "title": "Waze Voice Recording",
+    "text": "It’s basically an ad for Waze's “Record your own navigation instructions” feature (from 2017 I believe). A personal favorite of mine, I think I like the simplicity and the fit of the concept to the feature itself (but maybe it’s just me).",
+    "tags": [
+      "Animations",
+      "UX/UI"
+    ],
+    "videos": [
+      {
+        "videoLink": "<div style=`padding:56.25% 0 0 0;position:relative;`><iframe src=`https://player.vimeo.com/video/229760639?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479` frameborder=`0` allow=`autoplay; fullscreen; picture-in-picture; clipboard-write` style=`position:absolute;top:0;left:0;width:100%;height:100%;` title=`Waze Voice Recorder`></iframe></div><script src=`https://player.vimeo.com/api/player.js`></script> ",
+        "videoDescription": ""
+      }
+    ]
+  },
+  {
+    "projectId": 7,
+    "thumbnail": "thumbnail_unusual-event.png",
+    "title": "Waze Unusual Traffic Alerts",
+    "text": "Expalining Waze’s Unusuall Traffic Event feature",
+    "tags": [
+      "Animations",
+      "Storytelling"
+    ],
+    "videos": [
+      {
+        "videoLink": "<div style=`padding:56.25% 0 0 0;position:relative;`><iframe src=`https://player.vimeo.com/video/154406869?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479` frameborder=`0` allow=`autoplay; fullscreen; picture-in-picture; clipboard-write` style=`position:absolute;top:0;left:0;width:100%;height:100%;` title=`Waze | Unusual Traffic Alerts`></iframe></div><script src=`https://player.vimeo.com/api/player.js`></script>",
+        "videoDescription": ""
+      }
+    ]
+  },
+  {
+    "projectId": 8,
+    "thumbnail": "thumbnail_waze-playstore.png",
+    "title": "Waze Google Playstore Clip",
+    "text": "A short and fast intro to Waze on Google Playstore",
+    "tags": [
+      "Animations",
+      "Storytelling"
+    ],
+    "videos": [
+      {
+        "videoLink": "<div style=`padding:56.25% 0 0 0;position:relative;`><iframe src=`https://player.vimeo.com/video/249715823?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479` frameborder=`0` allow=`autoplay; fullscreen; picture-in-picture; clipboard-write` style=`position:absolute;top:0;left:0;width:100%;height:100%;` title=`Waze intro 2018`></iframe></div><script src=`https://player.vimeo.com/api/player.js`></script>",
+        "videoDescription": ""
+      }
+    ]
+  },
+  {
+    "projectId": 9,
+    "thumbnail": "thumbnail_waze-intro.png",
+    "title": "Waze V3.0 Intro",
+    "text": "The classic(!) Waze intro as seen first in version 3.0",
+    "tags": [
+      "Animations",
+      "Storytelling"
+    ],
+    "videos": [
+      {
+        "videoLink": "<div style=`padding:56.25% 0 0 0;position:relative;`><iframe src=`https://player.vimeo.com/video/141886180?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479` frameborder=`0` allow=`autoplay; fullscreen; picture-in-picture; clipboard-write` style=`position:absolute;top:0;left:0;width:100%;height:100%;` title=`Waze Guided Tour`></iframe></div><script src=`https://player.vimeo.com/api/player.js`></script>",
+        "videoDescription": ""
+      }
+    ]
+  },
+  {
+    "projectId": 10,
+    "thumbnail": "thumbnail_waze_ads.png",
+    "title": "Waze Ads",
+    "text": "An early introduction for the benefits of Waze-Ads service",
+    "tags": [
+      "Animations",
+      "Storytelling"
+    ],
+    "videos": [
+      {
+        "videoLink": "<div style=`padding:56.25% 0 0 0;position:relative;`><iframe src=`https://player.vimeo.com/video/142882127?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479` frameborder=`0` allow=`autoplay; fullscreen; picture-in-picture; clipboard-write` style=`position:absolute;top:0;left:0;width:100%;height:100%;` title=`Waze Ads`></iframe></div><script src=`https://player.vimeo.com/api/player.js`></script>",
+        "videoDescription": ""
+      }
+    ]
+  },
+  {
+    "projectId": 11,
+    "thumbnail": "thumbnail_waze-logos.png",
+    "title": "Waze Logos Animation",
+    "text": "Every logo needs a nice entrance",
+    "tags": [
+      "Animations",
+      "Branding"
+    ],
+    "videos": [
+      {
+        "videoLink": "<div style=`padding:56.25% 0 0 0;position:relative;`><iframe src=`https://player.vimeo.com/video/155643229?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479` frameborder=`0` allow=`autoplay; fullscreen; picture-in-picture; clipboard-write` style=`position:absolute;top:0;left:0;width:100%;height:100%;` title=`Waze Logo Animation`></iframe></div><script src=`https://player.vimeo.com/api/player.js`></script>",
+        "videoDescription": "Waze Main Logo"
+      },
+      {
+        "videoLink": "<div style=`padding:56.25% 0 0 0;position:relative;`><iframe src=`https://player.vimeo.com/video/221439591?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479` frameborder=`0` allow=`autoplay; fullscreen; picture-in-picture; clipboard-write` style=`position:absolute;top:0;left:0;width:100%;height:100%;` title=`Waze Broadcasters Program Logo`></iframe></div><script src=`https://player.vimeo.com/api/player.js`></script>",
+        "videoDescription": "Waze Broadcasters Program Logo"
+      }
+    ]
+  },
+  {
+    "projectId": 12,
+    "thumbnail": "thumbnail_solar-system.png",
+    "title": "Personal | Yair's Solar System",
+    "text": "A solar system poster with some distances and sizes data. Was made as a gift to my nephew.",
+    "tags": [
+      "Infographics",
+      "Illustration",
+      "Print"
+    ],
+    "images": [
+      {
+        "imageName": "Like-A-Flight_01.png",
+        "imageDescription": ""
+      }
+    ]
+  },
+  {
+    "projectId": 13,
+    "thumbnail": "thumbnail_mom.png",
+    "title": "Personal | Mom",
+    "text": "",
+    "tags": [
+      "Illustration",
+      "Print"
+    ],
+    "images": [
+      {
+        "imageName": "Like-A-Flight_01.png",
+        "imageDescription": ""
+      }
+    ]
+  }
+]

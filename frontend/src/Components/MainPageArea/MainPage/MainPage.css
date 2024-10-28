@@ -1,0 +1,6 @@
+.MainPage a {
+  cursor: pointer;
+}
+.MainPage a:hover {
+  opacity: 0.8;
+}/*# sourceMappingURL=MainPage.css.map */
