@@ -1,0 +1,60 @@
+@import "../../app/variables";
+
+.Drawer {
+    position: absolute;
+    top: 70px;
+
+    background-color: $primary-color;
+    min-height: 100vh;
+    padding-top: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    z-index: 10;
+    box-shadow: $main-shadow;
+    border-radius: 30px 30px 0 0;
+
+    .drag-line {
+        background-color: #000;
+        height: 4px;
+        width: 50px;
+    }
+
+    .nav-icons {
+        display: flex;
+        margin: 10px 0px;
+        justify-content: space-between;
+        width: 90%;
+
+        .change-page {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-icon {
+            display: flex;
+            background-color: rgb(76, 76, 76);
+            height: 40px;
+            width: 40px;
+            justify-content: center;
+            align-content: center;
+            border-radius: 50%;
+            padding: 4px;
+            box-sizing: border-box;
+
+            .previous-icon {
+                transform: scale(-1, 1)
+            } 
+        }
+
+        .blank {
+            opacity: 0;
+        }
+    }
+
+    h2 {
+        color: yellowgreen;
+    }
+
+}

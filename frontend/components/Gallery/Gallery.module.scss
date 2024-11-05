@@ -1,0 +1,71 @@
+@import "../../app/variables";
+
+.Gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.projectThumbnail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+    aspect-ratio: 1 / 1;
+
+    img {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+        max-height: 300px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .thumbnailTitle {
+        // position: absolute;
+        // top: 100px;
+        color: white;
+    }
+
+    // &:hover {
+    //     transform: scale(1.05);
+    // }
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width: 600px) {
+    .Gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1400px) {
+    .Gallery {
+        grid-template-columns: repeat(5, minmax(0, 300px));
+    }
+}
+
+
+
+
+
+// .Gallery {
+//     display: flex;
+//     flex-wrap: wrap;
+
+//     .projectThumbnail {
+//         width: 50%;
+//         aspect-ratio: 1 / 1;
+//         border: 1px solid black;
+//         box-sizing: border-box;
+//         background-color: rgb(85, 85, 85);
+//     }
+
+// }
