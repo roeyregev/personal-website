@@ -1,45 +1,47 @@
 
 
 import styles from "./Gallery.module.scss";
-import projectsData from "../../ProjectsData/projects.json"
+// import projectsData from "../../ProjectsData/projects.json"
 import { useEffect, useState } from "react";
 import ProjectModel from "../../Models/project-model";
 
-interface DrawerProps {
-    open: Function;
+interface GalleryProps {
+    open: (projectId: number) => void;
+    projects: ProjectModel[];
 }
 
-function Gallery(props: DrawerProps): JSX.Element {
+function Gallery(props: GalleryProps): JSX.Element {
 
-    const [projects, setProject] = useState<ProjectModel[]>()
+    // const [projects, setProject] = useState<ProjectModel[]>()
+    const [selectedProjectIndex, setSelectedProjectIndex] = useState<number | null>(null);
 
-    //Get projects list
-    useEffect(() => {
-        setProject(projectsData);
-        console.log(projects);
+    // //Get projects list
+    // useEffect(() => {
+    //     setProject(projectsData);
+    //     // console.log(projects);
+    // }, []);
 
-        // Cleanup function
-        // return () => {
-        //     // Perform any necessary cleanup here
-        //     console.log("Cleaning up...");
-        // }
-    }, []);
+    const handleProjectClick = (projectIndex: number | null) => {
+        setSelectedProjectIndex(projectIndex);
+        projectIndex && props.open(projectIndex); // Open the drawer after setting the selected index       
+        console.log("project index: " + projectIndex);
+        console.log("selected project index: " + selectedProjectIndex);
 
+    };
 
     return (
         <div className={styles.Gallery}>
-            {projects?.map(p =>
+            {props.projects?.map((p) =>
                 <a
-                    className="projectThumbnail"
+                    className={styles.projectThumbnail}
                     key={p.projectId}
-                    onClick={() => props.open()}>
+                    onClick={() => handleProjectClick(p.projectId)}>
                     <img
                         src={`/Images/Thumbnails/${p.thumbnail}`}
                         alt={p.thumbnail} />
-                    <p className="thumbnailTitle">{p.title}</p>
+                    <p className={styles.thumbnailTitle}>{p.title}</p>
                 </a>)}
         </div>
-
     );
 }
 

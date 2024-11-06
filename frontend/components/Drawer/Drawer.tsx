@@ -1,31 +1,40 @@
 import ReactDOM from "react-dom";
-import closeIcon from "../../assets/svgs/close_icon.svg";
-import arrowIcon from "../../assets/svgs/close_icon.svg";
 import styles from "./Drawer.module.scss";
+import IconClose from "../Icons/IconClose";
+import IconArrow from "../Icons/IconArrow";
+import { transform } from "next/dist/build/swc/generated-native";
+import ProjectModel from "@/Models/project-model";
+
 
 interface DrawerProps {
-    close: Function;
+    close: () => void;
+    selectedProjectIndex: number | null;
+    projects: ProjectModel[];
 }
 
-function Drawer(props: DrawerProps): JSX.Element {
+function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Element | null {
+    
+    const portalRoot = document.getElementById("portal");
+    if (!portalRoot) return null; // Don't render if the portal isn't available
 
+    console.log("Drawer prop: " + selectedProjectIndex);
 
     return ReactDOM.createPortal(
         <>
             <div className={styles.Drawer}>
-                <div className="drag-line"></div>
-                <div className="nav-icons">
-                    <div className="blank nav-icon"><p>blank</p></div>
-                    <div className="change-page">
-                        <div className="next nav-icon"><img className="previous-icon" src={arrowIcon} alt="previous-icon" /></div>
-                        <div className="previous nav-icon"><img className="next-icon" src={arrowIcon} alt="next-icon" /></div>
+                <div className={styles.dragLine}></div>
+                <div className={styles.navIcons}>
+                    <div className={styles.blankIcon}><p className={styles.blank}>blank</p></div>
+                    <div className={styles.changePageFlex}>
+                        <div className={styles.previousIcon}><IconArrow /></div>
+                        <div className={styles.navIcon} ><IconArrow /></div>
                     </div>
-                    <div className="close nav-icon" onClick={() => props.close()}><img src={closeIcon} alt="close-icon" /></div>
+                    <div className={styles.navIcon} onClick={close}><IconClose /></div>
                 </div>
 
-                <div className="project-content-container">
-                    <h2>Title</h2>
-                    <div className="tags-container">
+                <div className="projectContentContainer">
+                    <h2>Number: {selectedProjectIndex} </h2>
+                    <div className="tagsContainer">
 
                     </div>
                     <div className="description">
@@ -38,7 +47,7 @@ function Drawer(props: DrawerProps): JSX.Element {
                 </div>
             </div>
         </>,
-        document.getElementById("portal") as HTMLElement
+        portalRoot
     );
 }
 

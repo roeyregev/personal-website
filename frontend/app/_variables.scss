@@ -1,22 +1,58 @@
+
+// Import fonts with @font-face
+// @font-face {
+//     font-family: 'Roboto Condensed';
+//     src: url('../public/fonts/RobotoCondensed-Regular.ttf') format('truetype');
+//     font-weight: 200;
+//     font-style: normal;
+//   }
+  
+//   @font-face {
+//     font-family: 'Roboto Condensed';
+//     src: url('../public/fonts/RobotoCondensed-Medium.ttf') format('truetype');
+//     font-weight: 400;
+//     font-style: normal;
+//   }
+  
+//   @font-face {
+//     font-family: 'Roboto Condensed';
+//     src: url('../public/fonts/RobotoCondensed-Bold.ttf') format('truetype');
+//     font-weight: 600;
+//     font-style: normal;
+//   }
+
+// Colors
 $primary-color: #2E2E2E;
 $text-color: #D5D5D5;
-$icon-color: #fff;
-$pink-gradient: linearGradient(-70deg, #FFCC48, #FC7EFF);
-$green-gradient: linearGradient(-70deg, #98FF48, #7EFFFF);
+$white: #fff;
 
+// Gradients
+$pink-gradient: linear-gradient(-70deg, #FFCC48, #FC7EFF);
+$green-gradient: linear-gradient(-70deg, #98FF48, #7EFFFF);
+
+// Font settings
 $main-font: "Roboto Condensed", sans-serif;
 
+// Shadows
 $main-shadow: 0px -8px 24px 0px rgba(0, 0, 0, 0.44);
 
-$font-weights: (
-    "regular": 200,
-    "medium":400,
-    "bold": 600
-);
+// Font weights map
+// $font-weights: (
+//     thin: 100,
+//     extra-light: 200,
+//     light: 300,
+//     regular: 400,
+//     medium: 500,
+//     semi-bold: 600,
+//     bold: 700,
+//     extra-bold: 800,
+//     black: 900
+// );
 
-$media: (
-    "small": 480px,
-    "medium": 768px,
-    "large": 1024px,
-    "x-large": 1200px
-);
+// // Media query breakpoints map
+// $media: (
+//     small: 480px,
+//     medium: 768px,
+//     large: 1024px,
+//     x-large: 1200px
+// );

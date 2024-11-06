@@ -4,3 +4,7 @@ frontend/npm-debug.log*
 frontend/package-lock.json
 
 database/
+
+# MacOS files
+.DS_Store
+frontend/.DS_Store
