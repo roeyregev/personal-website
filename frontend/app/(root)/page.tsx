@@ -14,12 +14,6 @@ export default function Home() {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState<number | null>(null);
   // const [projects, setProject] = useState<ProjectModel[]>()
 
-   //Get projects list
-//    useEffect(() => {
-//     setProject(projectsData);
-//     console.log(projects);
-// }, []);
-
   const openDrawer = (projectId: number) => {
     setSelectedProjectIndex(projectId);
     setShowDrawer(true);
@@ -28,14 +22,6 @@ export default function Home() {
   const closeDrawer = () => {
     setShowDrawer(false);
   };
-
-  // function openDrawer() {
-  //   setShowDrawer(true);
-  // }
-
-  // function closeDrawer() {
-  //   setShowDrawer(false);
-  // }
 
   // Effect to create the portal div if it doesn't exist
   useEffect(() => {
@@ -57,12 +43,12 @@ export default function Home() {
         <p>UI/UX | Motion | Code | Storytelling</p>
       </div>
 
-      <Gallery open={openDrawer} projects={projectsData} />
+      <Gallery callback={openDrawer} projects={projectsData} />
 
-      {/* {showDrawer && <Drawer
+      {showDrawer && <Drawer
         close={closeDrawer}
         selectedProjectIndex={selectedProjectIndex}
-        projects={projects} />} */}
+        projects={projectsData} />}
     </div>
   );
 }

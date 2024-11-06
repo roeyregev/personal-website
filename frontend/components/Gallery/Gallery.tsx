@@ -1,12 +1,11 @@
 
 
 import styles from "./Gallery.module.scss";
-// import projectsData from "../../ProjectsData/projects.json"
-import { useEffect, useState } from "react";
+import {useState } from "react";
 import ProjectModel from "../../Models/project-model";
 
 interface GalleryProps {
-    open: (projectId: number) => void;
+    callback: (projectId: number) => void;
     projects: ProjectModel[];
 }
 
@@ -23,7 +22,7 @@ function Gallery(props: GalleryProps): JSX.Element {
 
     const handleProjectClick = (projectIndex: number | null) => {
         setSelectedProjectIndex(projectIndex);
-        projectIndex && props.open(projectIndex); // Open the drawer after setting the selected index       
+        projectIndex && props.callback(projectIndex); // Open the drawer after setting the selected index       
         console.log("project index: " + projectIndex);
         console.log("selected project index: " + selectedProjectIndex);
 
