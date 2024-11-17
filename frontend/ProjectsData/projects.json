@@ -34,6 +34,7 @@
       "Animation",
       "Storytelling"
     ],
+    "images": [],
     "videos": [
       {
         "videoLink": "<iframe src=`https://player.vimeo.com/video/340225487` width=`1280` height=`720` frameborder=`0` allow=`autoplay; fullscreen` allowfullscreen></iframe> ",
@@ -83,6 +84,7 @@
       "Animations",
       "Storytelling"
     ],
+    "images": [],
     "videos": [
       {
         "videoLink": "<iframe src=`https://player.vimeo.com/video/213830148` width=`1280` height=`720` frameborder=`0` webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> ",

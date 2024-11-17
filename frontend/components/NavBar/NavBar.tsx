@@ -5,10 +5,10 @@ import Link from "next/link";
 function NavBar() {
     return (
         <div className={styles.navbar}>
-            <Link href="/">
+            <Link className={styles.tab} href="/">
                 <div>My Work</div>
             </Link>
-            <Link href="/about">
+            <Link className={styles.tab} href="/about">
                 <div>About</div>
             </Link>
         </div>

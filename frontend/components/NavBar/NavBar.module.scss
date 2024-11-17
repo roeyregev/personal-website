@@ -1,4 +1,4 @@
-
+@import "../../app/variables";
 
 .navbar {
     display: flex;
@@ -9,9 +9,27 @@
     height: 70px;
     /* border-bottom: 1px solid wheat; */
     background-color: #2E2E2E;
-}
 
-.navbar div {
-    color: aliceblue;
-    font-size: 1.2rem;
+    .tab {
+        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: 300;
+        font-size: 1.5rem;
+        line-height: 100%;
+        color: $text-color;
+        text-decoration: none;
+        min-width: 100px;
+    }
+
+    .tab:hover {
+        color: $white;
+    }
+
+    .tab:active,
+    .tab:focus {
+        color: transparent;
+        font-weight: 700;
+        background-image: $green-gradient;
+        background-clip: text;
+    }
+
 }

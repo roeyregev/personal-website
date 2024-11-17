@@ -14,18 +14,9 @@ function Gallery(props: GalleryProps): JSX.Element {
     // const [projects, setProject] = useState<ProjectModel[]>()
     const [selectedProjectIndex, setSelectedProjectIndex] = useState<number | null>(null);
 
-    // //Get projects list
-    // useEffect(() => {
-    //     setProject(projectsData);
-    //     // console.log(projects);
-    // }, []);
-
     const handleProjectClick = (projectIndex: number | null) => {
         setSelectedProjectIndex(projectIndex);
         projectIndex && props.callback(projectIndex); // Open the drawer after setting the selected index       
-        console.log("project index: " + projectIndex);
-        console.log("selected project index: " + selectedProjectIndex);
-
     };
 
     return (

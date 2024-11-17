@@ -2,9 +2,7 @@ import ReactDOM from "react-dom";
 import styles from "./Drawer.module.scss";
 import IconClose from "../Icons/IconClose";
 import IconArrow from "../Icons/IconArrow";
-import { transform } from "next/dist/build/swc/generated-native";
 import ProjectModel from "@/Models/project-model";
-
 
 interface DrawerProps {
     close: () => void;
@@ -13,11 +11,13 @@ interface DrawerProps {
 }
 
 function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Element | null {
-    
+
     const portalRoot = document.getElementById("portal");
     if (!portalRoot) return null; // Don't render if the portal isn't available
 
-    console.log("Drawer prop: " + selectedProjectIndex);
+    //find the relevant project by its id
+    const selectedProject = projects.find(project => project.projectId === selectedProjectIndex);
+    console.log(selectedProject);
 
     return ReactDOM.createPortal(
         <>
@@ -32,15 +32,26 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                     <div className={styles.navIcon} onClick={close}><IconClose /></div>
                 </div>
 
-                <div className="projectContentContainer">
-                    <h2>Number: {selectedProjectIndex} </h2>
-                    <div className="tagsContainer">
+                <div className={styles.projectContentContainer}>
+                    <h2 className={styles.title}>{selectedProject?.title} </h2>
 
+                    <div className={styles.tagsContainer}>
+                        {selectedProject?.tags?.map((t) => <span className={styles.tag} key={selectedProject.projectId + "." + selectedProject.tags?.indexOf(t)}>{t}</span>)}
                     </div>
-                    <div className="description">
+                    <div className={styles.description}>
+                        {selectedProject?.text}
+                    </div>
 
-                    </div>
-                    <div className="content">
+                    {selectedProject?.images && selectedProject?.images.length > 0 && (
+                        <div className={styles.imagesContainer}>
+                            {selectedProject?.images?.map((item) =>
+                            <div className={styles.box} key={selectedProject.projectId + "." + selectedProject.images?.indexOf(item)}>
+                             IMAGES 
+                            </div>)}
+                        </div>
+                    )}
+
+                    <div className={styles.content}>
 
                     </div>
 

@@ -1,11 +1,13 @@
 "use client"
 
+import styles from './page.module.scss';
 import Gallery from "@/components/Gallery/Gallery";
-import "../globals.scss";
+// import "../globals.scss";
 import Drawer from "@/components/Drawer/Drawer";
 import { useEffect, useState } from "react";
 import ProjectModel from "@/Models/project-model";
 import projectsData from "../../ProjectsData/projects.json"
+import { title } from 'process';
 
 
 export default function Home() {
@@ -39,8 +41,8 @@ export default function Home() {
   return (
     <div className="MainPage">
       <div className="heroText">
-        <h1>I’m Roey and this is my work</h1>
-        <p>UI/UX | Motion | Code | Storytelling</p>
+        <h1 className={styles.title}>I’m Roey. <br/> This is my work.</h1>
+        <p className={styles.secondaryTitle} >UI/UX | Motion | Code | Storytelling</p>
       </div>
 
       <Gallery callback={openDrawer} projects={projectsData} />

@@ -1,0 +1,22 @@
+@import "../../app/variables";
+
+html,
+body,
+#root {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: $primary-color;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.title {
+    @include title-style
+}
+
+.secondaryTitle{
+    @include secondary-title
+}

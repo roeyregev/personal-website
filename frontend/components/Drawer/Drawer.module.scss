@@ -1,4 +1,6 @@
+// @import "../../app/globals.scss";
 @import "../../app/variables";
+
 
 .Drawer {
     position: absolute;
@@ -53,9 +55,39 @@
             opacity: 0;
         }
     }
+}
 
-    h2 {
-        color: yellowgreen;
+
+.projectContentContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 1000px;
+
+    .title {
+        @include title-style
     }
 
+    .tagsContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: row;
+        gap:8px;
+        margin: 10px auto
+
+    }
+
+    .tag{
+        @include tag;
+    }
+
+    .description {
+        @include paragraph;
+    }
+
+    .box {
+        border: 1px solid white;
+        color: white;
+    }
 }
