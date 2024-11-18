@@ -37,8 +37,8 @@
     "images": [],
     "videos": [
       {
-        "videoLink": "<iframe src=`https://player.vimeo.com/video/340225487` width=`1280` height=`720` frameborder=`0` allow=`autoplay; fullscreen` allowfullscreen></iframe> ",
-        "videoDescription": ""
+        "videoLink": "https://player.vimeo.com/video/340225487",
+        "videoDescription": "Few words about this video"
       }
     ]
   },
@@ -87,8 +87,8 @@
     "images": [],
     "videos": [
       {
-        "videoLink": "<iframe src=`https://player.vimeo.com/video/213830148` width=`1280` height=`720` frameborder=`0` webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> ",
-        "videoDescription": ""
+        "videoLink": "https://player.vimeo.com/video/213830148",
+        "videoDescription": "Few words about this video"
       }
     ]
   },
@@ -103,7 +103,7 @@
     ],
     "videos": [
       {
-        "videoLink": "<div style=`padding:56.25% 0 0 0;position:relative;`><iframe src=`https://player.vimeo.com/video/229760639?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479` frameborder=`0` allow=`autoplay; fullscreen; picture-in-picture; clipboard-write` style=`position:absolute;top:0;left:0;width:100%;height:100%;` title=`Waze Voice Recorder`></iframe></div><script src=`https://player.vimeo.com/api/player.js`></script> ",
+        "videoLink": "https://player.vimeo.com/video/229760639?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "videoDescription": ""
       }
     ]
@@ -119,7 +119,7 @@
     ],
     "videos": [
       {
-        "videoLink": "<div style=`padding:56.25% 0 0 0;position:relative;`><iframe src=`https://player.vimeo.com/video/154406869?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479` frameborder=`0` allow=`autoplay; fullscreen; picture-in-picture; clipboard-write` style=`position:absolute;top:0;left:0;width:100%;height:100%;` title=`Waze | Unusual Traffic Alerts`></iframe></div><script src=`https://player.vimeo.com/api/player.js`></script>",
+        "videoLink": "https://player.vimeo.com/video/154406869?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479` frameborder=`0` allow=`autoplay; fullscreen; picture-in-picture; clipboard-write` style=`position:absolute;top:0;left:0;width:100%;height:100%;` title=`Waze | Unusual Traffic Alerts`></iframe></div><script src=`https://player.vimeo.com/api/player.js`></script>",
         "videoDescription": ""
       }
     ]
@@ -135,7 +135,7 @@
     ],
     "videos": [
       {
-        "videoLink": "<div style=`padding:56.25% 0 0 0;position:relative;`><iframe src=`https://player.vimeo.com/video/249715823?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479` frameborder=`0` allow=`autoplay; fullscreen; picture-in-picture; clipboard-write` style=`position:absolute;top:0;left:0;width:100%;height:100%;` title=`Waze intro 2018`></iframe></div><script src=`https://player.vimeo.com/api/player.js`></script>",
+        "videoLink": "https://player.vimeo.com/video/249715823?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "videoDescription": ""
       }
     ]
@@ -151,7 +151,7 @@
     ],
     "videos": [
       {
-        "videoLink": "<div style=`padding:56.25% 0 0 0;position:relative;`><iframe src=`https://player.vimeo.com/video/141886180?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479` frameborder=`0` allow=`autoplay; fullscreen; picture-in-picture; clipboard-write` style=`position:absolute;top:0;left:0;width:100%;height:100%;` title=`Waze Guided Tour`></iframe></div><script src=`https://player.vimeo.com/api/player.js`></script>",
+        "videoLink": "https://player.vimeo.com/video/141886180?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "videoDescription": ""
       }
     ]
@@ -167,7 +167,7 @@
     ],
     "videos": [
       {
-        "videoLink": "<div style=`padding:56.25% 0 0 0;position:relative;`><iframe src=`https://player.vimeo.com/video/142882127?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479` frameborder=`0` allow=`autoplay; fullscreen; picture-in-picture; clipboard-write` style=`position:absolute;top:0;left:0;width:100%;height:100%;` title=`Waze Ads`></iframe></div><script src=`https://player.vimeo.com/api/player.js`></script>",
+        "videoLink": "https://player.vimeo.com/video/142882127?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "videoDescription": ""
       }
     ]
@@ -183,11 +183,11 @@
     ],
     "videos": [
       {
-        "videoLink": "<div style=`padding:56.25% 0 0 0;position:relative;`><iframe src=`https://player.vimeo.com/video/155643229?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479` frameborder=`0` allow=`autoplay; fullscreen; picture-in-picture; clipboard-write` style=`position:absolute;top:0;left:0;width:100%;height:100%;` title=`Waze Logo Animation`></iframe></div><script src=`https://player.vimeo.com/api/player.js`></script>",
+        "videoLink": "https://player.vimeo.com/video/155643229?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "videoDescription": "Waze Main Logo"
       },
       {
-        "videoLink": "<div style=`padding:56.25% 0 0 0;position:relative;`><iframe src=`https://player.vimeo.com/video/221439591?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479` frameborder=`0` allow=`autoplay; fullscreen; picture-in-picture; clipboard-write` style=`position:absolute;top:0;left:0;width:100%;height:100%;` title=`Waze Broadcasters Program Logo`></iframe></div><script src=`https://player.vimeo.com/api/player.js`></script>",
+        "videoLink": "https://player.vimeo.com/video/221439591?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "videoDescription": "Waze Broadcasters Program Logo"
       }
     ]
@@ -222,6 +222,23 @@
       {
         "imageName": "Like-A-Flight_01.png",
         "imageDescription": ""
+      }
+    ]
+  },
+  {
+    "projectId": 14,
+    "thumbnail": "thumbnail_wme-intro.png",
+    "title": "Welcome to Waze Map Editor",
+    "text": "The legendary recruitment video calling for new map editors around the globe",
+    "tags": [
+      "Animations",
+      "Storytelling"
+    ],
+    "images": [],
+    "videos": [
+      {
+        "videoLink": "https://player.vimeo.com/video/213830148",
+        "videoDescription": "Few words about this video"
       }
     ]
   }

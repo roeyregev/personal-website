@@ -67,6 +67,7 @@ $media: (
     background-image: $pink-gradient;
     background-clip: text;
     margin: 20px;
+    display: inline-block;
 }
 
 @mixin secondary-title {

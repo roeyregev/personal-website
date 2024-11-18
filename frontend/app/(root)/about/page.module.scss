@@ -1,9 +1,48 @@
-// @import "../../variables";
+@import "../../variables";
 
 .about {
+    display: flex;
+    flex-direction: column;
+    max-width: 960px;
+    margin: 50px auto;
+    padding: 0 30px;
+    gap: 50px;
 
-    p {
-        color: white;
+    .aboutSection {
+        display: flex;
+        flex-direction: column;
+        align-items: start
+    }
+
+    .aboutTitle {
+        @include title-style;
+        text-align: left;
+        margin: 0;
+    }
+
+    .paragraph {
+        @include paragraph;
+        margin: 10px 0
+    }
+
+    .email {
+        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: 700;
+        font-size: 1.7rem;
+        line-height: 140%;
+        color: transparent;
+        background-image: $green-gradient;
+        background-clip: text;
+        display: inline-block;
+        text-decoration: underline;
+    }
+
+    .button {
+        @include paragraph;
+        border: none;
+        border-radius: 10px;
+        width: 300px;
+        margin: 20px;
     }
 
 }
