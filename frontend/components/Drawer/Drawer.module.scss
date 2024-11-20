@@ -1,13 +1,10 @@
-// @import "../../app/globals.scss";
 @import "../../app/variables";
-
-
 
 .Drawer {
     position: fixed;
     top: 70px;
     background-color: $primary-color;
-    max-height: 100vh;
+    height: 100vh;
     padding-top: 0px;
     display: flex;
     flex-direction: column;
@@ -43,13 +40,6 @@
             @include title-style;
             margin-bottom: 10px;
             transform-origin: top;
-
-            // &.scrolled {
-            //     font-size: 1.6rem;
-            //     transition: 0.2s;
-            //     transform-origin: top;
-            //     margin-bottom: 10px;
-            // }
         }
     }
 
@@ -97,7 +87,6 @@
     }
 }
 
-
 .projectContentContainer {
     position: relative;
     display: flex;
@@ -107,7 +96,7 @@
     margin: 100px 40px;
     align-items: center;
     overflow-y: auto;
-
+    width: 100%;
 
     .tagsContainer {
         display: flex;
@@ -117,7 +106,7 @@
         gap: 8px;
         margin: -10px auto;
         margin-bottom: 10px;
-
+        width: 100%;
     }
 
     .tag {
@@ -126,6 +115,8 @@
 
     .description {
         @include paragraph;
+        width: 100%;
+        padding: 10px 0px 10px 30px ;
     }
 
     .imagesContainer {
@@ -135,9 +126,20 @@
         margin: 20px auto
     }
 
+    .videosListContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        // max-width: 1200px;
+    }
+
     .box {
         display: flex;
         flex-direction: column;
+        align-items: left;
+        width: 100%;
+        margin: 0 auto;
+        gap: 0px;
     }
 
     .projectImage {
@@ -152,23 +154,29 @@
     .videoDescription {
         @include paragraph;
         line-height: 60%;
+        background-color: #000;
+        padding: 20px 10px;
+        margin: 0;
+        font-size: 1.3rem;
+        
     }
 
     .iframeContainer {
         position: relative;
         width: 100%;
-        padding-bottom: 56.25%;
-        /* 16:9 Aspect Ratio */
+        margin: 0 auto;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
         height: 0;
         overflow: hidden;
 
         .projectVideo {
             all: unset;
-            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: auto;
+            height: 100%;
+            border: none;
         }
-
     }
-
 }

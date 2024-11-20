@@ -131,7 +131,7 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
 
                 {/* videos: */}
                 {selectedProject?.videos && selectedProject?.videos.length > 0 && (
-                    <div className={styles.videoContainer}>
+                    <div className={styles.videosListContainer}>
                         {selectedProject?.videos?.map((item) =>
                             <div className={styles.box} key={selectedProject.projectId + "." + selectedProject.videos?.indexOf(item)}>
                                 <div className={styles.iframeContainer}>
@@ -139,14 +139,10 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                                         className={styles.projectVideo}
                                         src={item.videoLink}
                                         title={item.videoDescription}
-                                        // frameBorder="0"
-                                        // width={1920}
-                                        // height={1080}
-                                        // allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowFullScreen
                                     ></iframe>
                                 </div>
-                                <p className={styles.videoDescription}>{item.videoDescription}</p>
+                                {item.videoDescription && <p className={styles.videoDescription}>{item.videoDescription}</p>}
                             </div>)}
                     </div>
                 )}

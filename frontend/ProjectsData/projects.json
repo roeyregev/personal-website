@@ -12,16 +12,24 @@
     ],
     "images": [
       {
+        "imageName": "Like-A-Flight_04.gif",
+        "imageDescription": "Hero animation - originally implemented using Lottie"
+      },
+      {
         "imageName": "Like-A-Flight_01.png",
         "imageDescription": "This is the image description"
       },
       {
         "imageName": "Like-A-Flight_02.png",
-        "imageDescription": "This is the image description"
+        "imageDescription": "Flights page"
+      },
+      {
+        "imageName": "Like-A-Flight_05.gif",
+        "imageDescription": "Like | Unlike button - originally implemented using Lottie"
       },
       {
         "imageName": "Like-A-Flight_03.png",
-        "imageDescription": "This is the image description"
+        "imageDescription": "Mobile design"
       }
     ]
   },
@@ -87,8 +95,8 @@
     "images": [],
     "videos": [
       {
-        "videoLink": "https://player.vimeo.com/video/213830148",
-        "videoDescription": "Few words about this video"
+        "videoLink": "https://player.vimeo.com/video/163981561",
+        "videoDescription": ""
       }
     ]
   },
@@ -103,7 +111,7 @@
     ],
     "videos": [
       {
-        "videoLink": "https://player.vimeo.com/video/229760639?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "videoLink": "https://player.vimeo.com/video/249721437",
         "videoDescription": ""
       }
     ]
@@ -119,7 +127,7 @@
     ],
     "videos": [
       {
-        "videoLink": "https://player.vimeo.com/video/154406869?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479` frameborder=`0` allow=`autoplay; fullscreen; picture-in-picture; clipboard-write` style=`position:absolute;top:0;left:0;width:100%;height:100%;` title=`Waze | Unusual Traffic Alerts`></iframe></div><script src=`https://player.vimeo.com/api/player.js`></script>",
+        "videoLink": "https://player.vimeo.com/video/154406869",
         "videoDescription": ""
       }
     ]
@@ -181,13 +189,15 @@
       "Animations",
       "Branding"
     ],
+    "images": [
+      {
+        "imageName": "Waze_Logos_Animation_01.gif",
+        "imageDescription": "Waze Main Logo"
+      }
+    ],
     "videos": [
       {
-        "videoLink": "https://player.vimeo.com/video/155643229?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "videoDescription": "Waze Main Logo"
-      },
-      {
-        "videoLink": "https://player.vimeo.com/video/221439591?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "videoLink": "https://player.vimeo.com/video/221439591",
         "videoDescription": "Waze Broadcasters Program Logo"
       }
     ]
