@@ -3,7 +3,7 @@ import styles from "./Drawer.module.scss";
 import IconClose from "../Icons/IconClose";
 import IconArrow from "../Icons/IconArrow";
 import ProjectModel from "@/Models/project-model";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface DrawerProps {
     close: () => void;
@@ -13,6 +13,51 @@ interface DrawerProps {
 
 function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Element | null {
 
+    // const [isScrolled, setIsScrolled] = useState(false);
+    const [fontSize, setFontSize] = useState(2.6); // Starting font size in rem
+    const contentRef = useRef<HTMLDivElement>(null);
+
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         if (contentRef.current && contentRef.current.scrollTop > 0) {
+    //             setIsScrolled(true);
+    //         } else {
+    //             setIsScrolled(false);
+    //         }
+    //     };
+
+    //     const contentElement = contentRef.current;
+    //     contentElement?.addEventListener("scroll", handleScroll);
+
+    //     return () => {
+    //         contentElement?.removeEventListener("scroll", handleScroll);
+    //     };
+    // }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (contentRef.current) {
+                const maxFontSize = 2.6; // Maximum font size in rem
+                const minFontSize = 1.6; // Minimum font size in rem
+                const scrollTop = contentRef.current.scrollTop;
+
+                // Adjust font size based on scroll position (example formula)
+                const newFontSize = Math.max(
+                    minFontSize,
+                    maxFontSize - scrollTop * 0.03 // Adjust the multiplier to control sensitivity
+                );
+                setFontSize(newFontSize);
+            }
+        };
+
+        const contentElement = contentRef.current;
+        contentElement?.addEventListener("scroll", handleScroll);
+
+        return () => {
+            contentElement?.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     //find the relevant project by its id
     const [selectedProject, setSelectedProject] = useState<ProjectModel | null>(projects.find(project => project.projectId === selectedProjectIndex) || null);
     console.log("initial project:");
@@ -20,7 +65,6 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
 
     const portalRoot = document.getElementById("portal");
     if (!portalRoot) return null; // Don't render if the portal isn't available
-
 
     const nextProject = () => {
         if (selectedProject?.projectId) {
@@ -39,15 +83,12 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
             setSelectedProject(previousProject || null);
         }
     };
-    
-
-
-
-
 
     return ReactDOM.createPortal(
-        <>
-            <div className={styles.Drawer}>
+        <div className={styles.Drawer}>
+
+            {/* Drawer navigation panel */}
+            <div className={styles.drawerTop}>
                 <div className={styles.dragLine}></div>
                 <div className={styles.navIcons}>
                     <div className={styles.blankIcon}><p className={styles.blank}>blank</p></div>
@@ -57,57 +98,60 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                     </div>
                     <div className={styles.navIcon} onClick={close}><IconClose /></div>
                 </div>
-
-                <div className={styles.projectContentContainer}>
-                    <h2 className={styles.title}>{selectedProject?.title} </h2>
-
-                    <div className={styles.tagsContainer}>
-                        {selectedProject?.tags?.map((t) => <span className={styles.tag} key={selectedProject.projectId + "." + selectedProject.tags?.indexOf(t)}>{t}</span>)}
-                    </div>
-                    <div className={styles.description}>
-                        {selectedProject?.text}
-                    </div>
-
-                    {/* images: */}
-                    {selectedProject?.images && selectedProject?.images.length > 0 && (
-                        <div className={styles.imagesContainer}>
-                            {selectedProject?.images?.map((item) =>
-                                <div className={styles.box} key={selectedProject.projectId + "." + selectedProject.images?.indexOf(item)}>
-                                    <img className={styles.projectImage} src={"/images/" + item.imageName} alt={item.imageName} />
-                                    <p className={styles.imageDescription}>{item.imageDescription}</p>
-                                </div>)}
-                        </div>
-                    )}
-
-                    {/* videos: */}
-                    {selectedProject?.videos && selectedProject?.videos.length > 0 && (
-                        <div className={styles.videoContainer}>
-                            {selectedProject?.videos?.map((item) =>
-                                <div className={styles.box} key={selectedProject.projectId + "." + selectedProject.videos?.indexOf(item)}>
-                                    <div className={styles.iframeContainer}>
-                                        <iframe
-                                            className={styles.projectVideo}
-                                            src={item.videoLink}
-                                            title={item.videoDescription}
-                                            // frameBorder="0"
-                                            // width={1920}
-                                            // height={1080}
-                                            // allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowFullScreen
-                                        ></iframe>
-                                    </div>
-                                    <p className={styles.videoDescription}>{item.videoDescription}</p>
-                                </div>)}
-                        </div>
-                    )}
-
-                    <div className={styles.content}>
-
-                    </div>
-
-                </div>
             </div>
-        </>,
+
+            {/* Drawer content */}
+
+            <div className={styles.projectContentContainer} ref={contentRef}>
+
+                <div className= {styles.titleContainer} >
+                    <h2 className= {styles.title} style={{ fontSize: `${fontSize}rem`}}>
+                        {selectedProject?.title}
+                    </h2>
+                </div>
+
+                <div className={styles.tagsContainer}>
+                    {selectedProject?.tags?.map((t) => <span className={styles.tag} key={selectedProject.projectId + "." + selectedProject.tags?.indexOf(t)}>{t}</span>)}
+                </div>
+
+                <div className={styles.description}>
+                    {selectedProject?.text}
+                </div>
+
+                {/* images: */}
+                {selectedProject?.images && selectedProject?.images.length > 0 && (
+                    <div className={styles.imagesContainer}>
+                        {selectedProject?.images?.map((item) =>
+                            <div className={styles.box} key={selectedProject.projectId + "." + selectedProject.images?.indexOf(item)}>
+                                <img className={styles.projectImage} src={"/images/" + item.imageName} alt={item.imageName} />
+                                <p className={styles.imageDescription}>{item.imageDescription}</p>
+                            </div>)}
+                    </div>
+                )}
+
+                {/* videos: */}
+                {selectedProject?.videos && selectedProject?.videos.length > 0 && (
+                    <div className={styles.videoContainer}>
+                        {selectedProject?.videos?.map((item) =>
+                            <div className={styles.box} key={selectedProject.projectId + "." + selectedProject.videos?.indexOf(item)}>
+                                <div className={styles.iframeContainer}>
+                                    <iframe
+                                        className={styles.projectVideo}
+                                        src={item.videoLink}
+                                        title={item.videoDescription}
+                                        // frameBorder="0"
+                                        // width={1920}
+                                        // height={1080}
+                                        // allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowFullScreen
+                                    ></iframe>
+                                </div>
+                                <p className={styles.videoDescription}>{item.videoDescription}</p>
+                            </div>)}
+                    </div>
+                )}
+            </div>
+        </div>,
         portalRoot
     );
 }

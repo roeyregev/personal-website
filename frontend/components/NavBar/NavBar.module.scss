@@ -1,14 +1,16 @@
 @import "../../app/variables";
 
 .navbar {
+    position: fixed;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 50px;
     height: 70px;
-    /* border-bottom: 1px solid wheat; */
-    background-color: #2E2E2E;
+    width: 100%;
+    background-color: $primary-color;
+    z-index: 4;
 
     .tab {
         font-family: 'Roboto Condensed', sans-serif;
@@ -26,6 +28,13 @@
 
     .tab:active,
     .tab:focus {
+        color: transparent;
+        font-weight: 700;
+        background-image: $green-gradient;
+        background-clip: text;
+    }
+
+    .active {
         color: transparent;
         font-weight: 700;
         background-image: $green-gradient;

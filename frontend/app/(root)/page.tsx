@@ -41,11 +41,11 @@ export default function Home() {
   return (
     <div className="MainPage">
       <div className="heroText">
-        <h1 className={styles.title}>I’m Roey. <br/> This is my work.</h1>
+        <h1 className={styles.title}>I’m Roey. <br /> This is my work.</h1>
         <p className={styles.secondaryTitle} >UI/UX | Motion | Code | Storytelling</p>
       </div>
 
-      <Gallery callback={openDrawer} projects={projectsData} />
+      {!showDrawer && <Gallery callback={openDrawer} projects={projectsData} />}
 
       {showDrawer && <Drawer
         close={closeDrawer}

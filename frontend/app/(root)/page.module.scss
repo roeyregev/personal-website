@@ -7,16 +7,20 @@ body,
     padding: 0;
     text-align: center;
     background-color: $primary-color;
-    min-height: 100vh;
+    max-height: 100vh;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    overflow: auto;
 }
 
 .title {
-    @include title-style
+    @include title-style;
+    margin-top: 90px;
 }
 
 .secondaryTitle{
-    @include secondary-title
+    @include secondary-title;
+    margin-top: -4px;
 }
+
