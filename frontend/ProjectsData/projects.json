@@ -52,9 +52,9 @@
   },
   {
     "projectId": 3,
-    "thumbnail": "thumbnail_gifs.png",
-    "title": "StuffThatWorks' Various UI animations ",
-    "text": "A variety of StuffThatWorks animations - were mostly implemented as an integral part of the UI.",
+    "thumbnail": "thumbnail_gifs.gif",
+    "title": "Animating StuffThatWorks",
+    "text": "Animating STW illustrations adds another layer of personality to the brand and enriches the user experience.",
     "tags": [
       "Animation",
       "UX/UI",
@@ -62,24 +62,44 @@
     ],
     "images": [
       {
-        "imageName": "Like-A-Flight_01.png",
-        "imageDescription": "This is the image description"
+        "imageName": "stw_gifs_01.gif",
+        "imageDescription": "Welcome to your new community"
+      },
+      {
+        "imageName": "stw_gifs_02.gif",
+        "imageDescription": "Various moods"
+      },
+      {
+        "imageName": "stw_gifs_03.gif",
+        "imageDescription": "Fly like the wind!"
+      },
+      {
+        "imageName": "stw_gifs_04.gif",
+        "imageDescription": "STW reactions (opening & idle)"
       }
     ]
   },
   {
     "projectId": 4,
-    "thumbnail": "thumbnail_map-animation.png",
-    "title": "StuffThatWorks' map prototype",
-    "text": "A concept for a feature that shows other condition-community members that are similar to you.",
+    "thumbnail": "thumbnail_ux_motion.gif",
+    "title": "Adding motion to the UX",
+    "text": "Few examples (some weren't implemented yet) of adding motion to STW for improved user experience and orientation around the product. A concept for a feature that shows other condition-community members that are similar to you.",
     "tags": [
       "UX/UI",
       "Animations"
     ],
     "images": [
       {
-        "imageName": "Like-A-Flight_01.png",
-        "imageDescription": "This is the image description"
+        "imageName": "stw_ux_motion_01.gif",
+        "imageDescription": "Folding the daily update panel upon scrolling"
+      },
+      {
+        "imageName": "stw_ux_motion_02.gif",
+        "imageDescription": "Rating content bar animation"
+      },
+      {
+        "imageName": "stw_ux_motion_03.gif",
+        "imageDescription": "Daily update transition"
       }
     ]
   },
@@ -249,6 +269,33 @@
       {
         "videoLink": "https://player.vimeo.com/video/213830148",
         "videoDescription": "Few words about this video"
+      }
+    ]
+  },
+  {
+    "projectId": 15,
+    "thumbnail": "thumbnail_this-site.png",
+    "title": "This site",
+    "text": "Seemed logical to practice some coding with building my own site",
+    "tags": [
+      "Coding",
+      "UX/UI"
+    ]
+  },
+  {
+    "projectId": 16,
+    "thumbnail": "thumbnail_map.png",
+    "title": "STW Conditions Map",
+    "text": "The conditions map visualizes the distribution of StuffThatWorks members across chronic conditions and the interrelationships between those conditions. By reducing each member's condition report (including all details) to a coordinate, we can plot all members on a single plane, using color to distinguish between conditions. These are detailed concept mockups of this partially implemented feature",
+    "tags": [
+      "UX/UI",
+      "Storytelling",
+      "Data visualization"
+    ],
+    "images": [
+      {
+        "imageName": "map_01.png",
+        "imageDescription": "Overview - highest zoom level"
       }
     ]
   }
