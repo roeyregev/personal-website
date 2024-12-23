@@ -226,7 +226,7 @@
     "projectId": 12,
     "thumbnail": "thumbnail_solar-system.png",
     "title": "Personal | Yair's Solar System",
-    "text": "A solar system poster with some distances and sizes data. Was made as a gift to my nephew.",
+    "text": "A solar system poster with some data about distances and sizes that Was made as a gift to my nephew",
     "tags": [
       "Infographics",
       "Illustration",
@@ -234,8 +234,20 @@
     ],
     "images": [
       {
-        "imageName": "Like-A-Flight_01.png",
-        "imageDescription": ""
+        "imageName": "solar_01.png",
+        "imageDescription": "Full poster"
+      },
+      {
+        "imageName": "solar_02.png",
+        "imageDescription": "Details"
+      },  
+      {
+        "imageName": "solar_03.png",
+        "imageDescription": "Details"
+      },
+      {
+        "imageName": "solar_04.png",
+        "imageDescription": "Details"
       }
     ]
   },
@@ -276,10 +288,16 @@
     "projectId": 15,
     "thumbnail": "thumbnail_this-site.png",
     "title": "This site",
-    "text": "Seemed logical to practice some coding with building my own site",
+    "text": "Well, you're already in it. So, you know... nothing more to show here. Seemed logical to practice some coding with building my own site, so here it is",
     "tags": [
       "Coding",
       "UX/UI"
+    ],
+    "images": [
+      {
+        "imageName": "my_site_01.png",
+        "imageDescription": ""
+      }
     ]
   },
   {
@@ -296,6 +314,55 @@
       {
         "imageName": "map_01.png",
         "imageDescription": "Overview - highest zoom level"
+      },
+      {
+        "imageName": "map_06.png",
+        "imageDescription": "Mid zoom level"
+      },
+      {
+        "imageName": "map_05.png",
+        "imageDescription": "Max zoom level with user details"
+      },
+      {
+        "imageName": "map_04.png",
+        "imageDescription": "Overlap use case between 2 conditions "
+      },
+      {
+        "imageName": "map_03.png",
+        "imageDescription": "Polygons design principals - borders, layers & overlaps"
+      },
+      {
+        "imageName": "map_02.png",
+        "imageDescription": "Coloring & layers basic concept"
+      },
+      {
+        "imageName": "map_07.png",
+        "imageDescription": "Coloring & labels"
+      }
+    ]
+  },
+  {
+    "projectId": 17,
+    "thumbnail": "thumbnail_pain-map.png",
+    "title": "STW Pain Map",
+    "text": "A concept for a feature that collects data, in a visual way, about pain areas in chronic conditions (or skin diseases areas, itches, burns etc.). After enough data is collected, it can be displayed as infographics.",
+    "tags": [
+      "UX/UI",
+      "Storytelling",
+      "Data visualization"
+    ],
+    "images": [
+      {
+        "imageName": "pain_map_01.gif",
+        "imageDescription": "Basic concept - marking areas in a structured way that can be translated to data"
+      },
+      {
+        "imageName": "pain_map_02.png",
+        "imageDescription": "Integrated UI in StuffThatWorks survey"
+      },
+      {
+        "imageName": "pain_map_03.png",
+        "imageDescription": "Infographics / insight of the aggregated results"
       }
     ]
   }
