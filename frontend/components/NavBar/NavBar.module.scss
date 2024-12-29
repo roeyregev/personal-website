@@ -6,8 +6,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 50px;
-    height: 70px;
+    gap: 0px;
+    height: 56px;
     width: 100%;
     background-color: $primary-color;
     z-index: 4;
@@ -15,7 +15,7 @@
     .tab {
         font-family: 'Roboto Condensed', sans-serif;
         font-weight: 300;
-        font-size: 1.5rem;
+        font-size: clamp(1.2rem, 5vw, 1.5rem);
         line-height: 100%;
         color: $text-color;
         text-decoration: none;
@@ -40,5 +40,11 @@
         background-image: $green-gradient;
         background-clip: text;
     }
+}
 
+@media (min-width: 600px) {
+    .navbar {
+        height: 66px;
+        gap: 20px;
+    }
 }

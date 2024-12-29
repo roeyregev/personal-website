@@ -1,7 +1,22 @@
 import React from "react";
 import styles from './page.module.scss';
+import IconCopyLink from '../../../components/Icons/IconCopyLink'
+import CopyEmailButton from "@/components/CopyEmailButton/CopyEmailButton";
 
 function AboutPage() {
+
+    const email = "roeyregev@gmail.com";
+
+    const handleCopy = () => {
+        navigator.clipboard.writeText(email)
+            .then(() => {
+                alert("Email copied to clipboard!");
+            })
+            .catch((err) => {
+                console.error("Failed to copy email: ", err);
+            });
+    }
+
     return (
         <div className={styles.about}>
             <div className={styles.aboutSection}>
@@ -25,8 +40,16 @@ function AboutPage() {
 
             <div className={styles.aboutSection}>
                 <h2 className={styles.aboutTitle}>The mail</h2>
-                <p className={styles.paragraph}>Feel free to drop me a line  at <a className={styles.email} href="#" >roeyregev@gmail.com</a> <br/> If I’m not hungry I’m usually very nice.</p>
-                <p className={styles.paragraph}>You can also</p><button className={styles.button}>Download my CV</button>
+                <div className={styles.emailSection}>
+                    <p className={styles.paragraph}>Contact me at &nbsp;</p>
+                    <div className={styles.emailFlex}>
+                        {/* <span className={styles.email}>&nbsp;roeyregev@gmail.com</span> */}
+                        {/* <div className={styles.copyBtn}><IconCopyLink /></div> */}
+                        <CopyEmailButton/>
+                    </div>
+                </div>
+                {/* <p className={styles.paragraph}> If I’m not hungry I’m usually very nice. </p> */}
+                <p className={styles.paragraph}>You can also <a className={styles.link} href="/roey_regev_cv.pdf" download="roey_regev_cv.pdf"> Download my CV</a></p>
             </div>
         </div>
     );

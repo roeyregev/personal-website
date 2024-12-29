@@ -1,0 +1,28 @@
+@import "../../app/variables";
+
+.copyEmailComponent {
+
+    display: flex;
+    gap: 6px;
+
+    .copyBtn {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        background-color: #575757;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    
+    .email {
+        display: inline-block;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: 600;
+        font-size: clamp(1rem, 6vw, 1.5rem);
+        line-height: 140%;
+        color: $white;
+        background-clip: text;
+        display: inline-block;
+    }
+
+}

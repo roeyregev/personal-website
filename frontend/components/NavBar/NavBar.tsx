@@ -4,6 +4,7 @@ import React from "react";
 import { usePathname } from "next/navigation";
 import styles from "./NavBar.module.scss";
 import Link from "next/link";
+import Toggle from "../Toggle/Toggle";
 
 
 function NavBar() {
@@ -12,6 +13,7 @@ function NavBar() {
 
     return (
         <div className={styles.navbar}>
+           
             <Link
                 href="/"
                 className={`${styles.tab} ${pathname === "/" ? styles.active : ""}`}
@@ -24,6 +26,7 @@ function NavBar() {
             >
                 <div>About</div>
             </Link>
+            <Toggle />
         </div>
     );
 }

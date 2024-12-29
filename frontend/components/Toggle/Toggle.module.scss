@@ -1,0 +1,23 @@
+@import "../../app/variables";
+
+.toggle {
+    background-color: rgb(173, 173, 139);
+    width: 50px;
+    height: 30px;
+    position: absolute;
+    right: 5%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    visibility: hidden;
+
+    .switch {
+        position: absolute;
+        left: 5px;
+        border-radius: 8px;
+        background-color: orangered;
+        height: 24px;
+        width: 24px;
+    }
+}
