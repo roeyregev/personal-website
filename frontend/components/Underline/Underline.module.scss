@@ -1,0 +1,10 @@
+@import "../../app/variables";
+
+.underline {
+    position: absolute;
+    bottom: -8px;
+    height: 4px;
+    background-image: $green-gradient;
+    // transition: all 0.3s ease;
+    pointer-events: none;
+}

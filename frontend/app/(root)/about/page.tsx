@@ -2,20 +2,21 @@ import React from "react";
 import styles from './page.module.scss';
 import IconCopyLink from '../../../components/Icons/IconCopyLink'
 import CopyEmailButton from "@/components/CopyEmailButton/CopyEmailButton";
+import DownloadCvButton from "@/components/DownloadCvButton/DownloadCvButton";
 
 function AboutPage() {
 
-    const email = "roeyregev@gmail.com";
+    // const email = "roeyregev@gmail.com";
 
-    const handleCopy = () => {
-        navigator.clipboard.writeText(email)
-            .then(() => {
-                alert("Email copied to clipboard!");
-            })
-            .catch((err) => {
-                console.error("Failed to copy email: ", err);
-            });
-    }
+    // const handleCopy = () => {
+    //     navigator.clipboard.writeText(email)
+    //         .then(() => {
+    //             alert("Email copied to clipboard!");
+    //         })
+    //         .catch((err) => {
+    //             console.error("Failed to copy email: ", err);
+    //         });
+    // }
 
     return (
         <div className={styles.about}>
@@ -32,9 +33,9 @@ function AboutPage() {
             <div className={styles.aboutSection}>
                 <h2 className={styles.aboutTitle}>The name</h2>
                 <ul className={styles.paragraph}>
-                    <li>It’s pronounced Ro-EE (unless you’re American, then it’s probably Raw-EE)</li>
-                    <li>It means “My shepherd” in hebrew. It’s not me, it's the bible</li>
-                    <li>It’s not special - #5 on the top most common names in Israel of all times</li>
+                    <li>It’s pronounced Ro-EE (unless you’re American, then it’s probably Raw-EE).</li>
+                    <li>It means “My shepherd” in hebrew. It’s not me, it's the bible.</li>
+                    {/* <li>It’s not special - #5 on the top most common names in Israel of all times</li> */}
                 </ul>
             </div>
 
@@ -43,13 +44,16 @@ function AboutPage() {
                 <div className={styles.emailSection}>
                     <p className={styles.paragraph}>Contact me at &nbsp;</p>
                     <div className={styles.emailFlex}>
-                        {/* <span className={styles.email}>&nbsp;roeyregev@gmail.com</span> */}
-                        {/* <div className={styles.copyBtn}><IconCopyLink /></div> */}
-                        <CopyEmailButton/>
+                        <CopyEmailButton />
                     </div>
                 </div>
-                {/* <p className={styles.paragraph}> If I’m not hungry I’m usually very nice. </p> */}
-                <p className={styles.paragraph}>You can also <a className={styles.link} href="/roey_regev_cv.pdf" download="roey_regev_cv.pdf"> Download my CV</a></p>
+
+                <div className={styles.emailSection}>
+                    <p className={styles.paragraph}>You can also &nbsp;</p>
+                    <div className={styles.emailFlex}>
+                        <DownloadCvButton />
+                    </div>
+                </div>
             </div>
         </div>
     );

@@ -1,7 +1,7 @@
 [
   {
     "projectId": 1,
-    "thumbnail": "thumbnail_like-a-flight.png",
+    "thumbnail": "thumbnail_like-a-flight.gif",
     "title": "Like-A-Flight",
     "text": "This site was created as the final project for a full-stack development course, so my design and my code. Basically, this website shows a list of available vacations. The user can login and mark the flights that he likes (hey, I didn't come up with the brief). As an Admin one can edit/add/delete vacations and view a simple chart that shows likes per vacation data Of course, its fully responsive. Also, both airplane animation and like button animation are mine and were implemented as a Lottie code",
     "tags": [

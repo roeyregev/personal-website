@@ -1,11 +1,11 @@
 @import "../../app/variables";
 
-.copyEmailComponent {
+.downloadCvButton {
 
     display: flex;
     gap: 10px;
 
-    .copyBtn {
+    .downloadBtn {
         display: inline-block;
         width: 32px;
         height: 32px;
@@ -14,7 +14,7 @@
         cursor: pointer;
     }
     
-    .email {
+    .regularText {
         display: inline-block;
         font-family: 'Roboto Condensed', sans-serif;
         font-weight: 500;
