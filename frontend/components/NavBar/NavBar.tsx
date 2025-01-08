@@ -5,83 +5,89 @@ import { usePathname } from "next/navigation";
 import styles from "./NavBar.module.scss";
 import Link from "next/link";
 import Underline from "../Underline/Underline";
+import { motion } from "framer-motion";
 
 const NavBar: React.FC = () => {
-  const pathname = usePathname();
-  const tabsRef = useRef<(HTMLAnchorElement | null)[]>([]);
-  const tabsContainerRef = useRef<HTMLDivElement | null>(null);
-  const [underlineProps, setUnderlineProps] = useState({ left: 0, width: 0, targetLeft: 0, targetWidth: 0 });
+    const pathname = usePathname();
+    const tabsRef = useRef<(HTMLAnchorElement | null)[]>([]);
+    const tabsContainerRef = useRef<HTMLDivElement | null>(null);
+    const [underlineProps, setUnderlineProps] = useState({ left: 0, width: 0, targetLeft: 0, targetWidth: 0 });
 
-  useEffect(() => {
-    const updateUnderline = () => {
-      if (tabsContainerRef.current) {
-        const containerRect = tabsContainerRef.current.getBoundingClientRect();
-        const activeTab = tabsRef.current.find((tab) => tab?.dataset.path === pathname);
+    useEffect(() => {
+        const updateUnderline = () => {
+            if (tabsContainerRef.current) {
+                const containerRect = tabsContainerRef.current.getBoundingClientRect();
+                const activeTab = tabsRef.current.find((tab) => tab?.dataset.path === pathname);
 
-        if (activeTab) {
-          const tabRect = activeTab.getBoundingClientRect();
-          const left = tabRect.left - containerRect.left;
-          const width = tabRect.width;
+                if (activeTab) {
+                    const tabRect = activeTab.getBoundingClientRect();
+                    const left = tabRect.left - containerRect.left;
+                    const width = tabRect.width;
 
-          setUnderlineProps(prevProps => ({
-            ...prevProps,
-            targetLeft: left,
-            targetWidth: width,
-          }));
+                    // Update both target and current properties
+                    setUnderlineProps({
+                        left, // current position
+                        width, // current width
+                        targetLeft: left, // target position
+                        targetWidth: width, // target width
+                    });
+
+                    //   setUnderlineProps(prevProps => ({
+                    //     ...prevProps,
+                    //     targetLeft: left,
+                    //     targetWidth: width,
+                    //   }));
+                }
+            }
+        };
+
+        updateUnderline(); // Initial update
+        window.addEventListener('resize', updateUnderline); // Update on resize
+
+        return () => window.removeEventListener('resize', updateUnderline); // Clean up event listener
+    }, [pathname]);
+
+
+    useEffect(() => {
+        if (tabsContainerRef.current) {
+            const containerRect = tabsContainerRef.current.getBoundingClientRect();
+            const firstTab = tabsRef.current[0];
+            if (firstTab) {
+                const firstTabRect = firstTab.getBoundingClientRect();
+                setUnderlineProps({
+                    left: firstTabRect.left - containerRect.left,
+                    width: firstTabRect.width,
+                    targetLeft: firstTabRect.left - containerRect.left, // Set initial target to the first tab
+                    targetWidth: firstTabRect.width,
+                });
+            }
         }
-      }
-    };
+    }, []);
 
-    updateUnderline(); // Initial update
+    return (
+        <div className={styles.navbar}>
+            <div className={styles.tabs} ref={tabsContainerRef}>
+                <Link
+                    href="/"
+                    className={styles.tab}
+                    data-path="/"
+                    ref={(el) => { if (el) tabsRef.current[0] = el; }}
+                >
+                    My Work
+                </Link>
+                <Link
+                    href="/about"
+                    className={styles.tab}
+                    data-path="/about"
+                    ref={(el) => { if (el) tabsRef.current[1] = el; }}
+                >
+                    About
+                </Link>
 
-    window.addEventListener('resize', updateUnderline); // Update on resize
-
-    return () => window.removeEventListener('resize', updateUnderline); // Clean up event listener
-  }, [pathname]);
-
-  useEffect(() => {
-      if(tabsContainerRef.current){
-        const containerRect = tabsContainerRef.current.getBoundingClientRect();
-        const firstTab = tabsRef.current[0];
-        if(firstTab){
-            const firstTabRect = firstTab.getBoundingClientRect();
-            setUnderlineProps(prevProps => ({
-                ...prevProps,
-                left: firstTabRect.left - containerRect.left,
-                width: firstTabRect.width
-            }))
-        }
-      }
-  }, [])
-
-  return (
-    <div className={styles.navbar}>
-      <div className={styles.tabs} ref={tabsContainerRef}>
-        <Link
-          href="/"
-          className={styles.tab}
-          data-path="/"
-          ref={(el) => {
-            if (el) tabsRef.current[0] = el;
-          }}
-        >
-          My Work
-        </Link>
-        <Link
-          href="/about"
-          className={styles.tab}
-          data-path="/about"
-          ref={(el) => {
-            if (el) tabsRef.current[1] = el;
-          }}
-        >
-          About
-        </Link>
-
-        <Underline {...underlineProps} />
-      </div>
-    </div>
-  );
+                <Underline {...underlineProps} />
+            </div>
+        </div>
+    );
 };
 
 export default NavBar;

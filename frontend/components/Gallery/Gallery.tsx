@@ -1,5 +1,3 @@
-
-
 import styles from "./Gallery.module.scss";
 import {useState } from "react";
 import ProjectModel from "../../Models/project-model";

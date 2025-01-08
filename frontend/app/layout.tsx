@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import NavBar from "@/components/NavBar/NavBar";
+import NewNavBar from "@/components/NewNavBar/NewNavBar";
+import NavbarYariv from "@/components/NavbarYariv/NavbarYariv";
+
 
 
 export const metadata: Metadata = {
@@ -15,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-         <NavBar/>
+         {/* <NavBar/> */}
+         <NewNavBar/>
+         {/* <NavbarYariv/> */}
         {children}
       </body>
     </html>

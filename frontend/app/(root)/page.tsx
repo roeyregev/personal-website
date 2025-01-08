@@ -42,7 +42,7 @@ export default function Home() {
     <div className="MainPage">
       <div className="heroText">
         <h1 className={styles.title}>I’m Roey. <br /> This is my work.</h1>
-        <p className={styles.secondaryTitle} >UI/UX | Motion | Code | Storytelling</p>
+        <p className={styles.secondaryTitle} >UI/UX | Motion | Storytelling | (Code)</p>
       </div>
 
       {!showDrawer && <Gallery callback={openDrawer} projects={projectsData} />}
@@ -51,6 +51,8 @@ export default function Home() {
         close={closeDrawer}
         selectedProjectIndex={selectedProjectIndex}
         projects={projectsData} />}
+
+        <footer className={styles.footer}> &copy; 2025 | All rights reserved to me!</footer>
     </div>
   );
 }

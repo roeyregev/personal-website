@@ -3,7 +3,11 @@
     "projectId": 1,
     "thumbnail": "thumbnail_like-a-flight.gif",
     "title": "Like-A-Flight",
-    "text": "This site was created as the final project for a full-stack development course, so my design and my code. Basically, this website shows a list of available vacations. The user can login and mark the flights that he likes (hey, I didn't come up with the brief). As an Admin one can edit/add/delete vacations and view a simple chart that shows likes per vacation data Of course, its fully responsive. Also, both airplane animation and like button animation are mine and were implemented as a Lottie code",
+    "text": [
+      "This site was created as the final project for a full-stack development course, so my design and my code. Basically, this website shows a list of available vacations. The user can login and mark the flights that he likes (hey, I didn't come up with the brief).",
+      "As an Admin one can edit/add/delete vacations and view a simple chart that shows likes per vacation data Of course, its fully responsive.",
+      "BTW, both airplane animation and like button animation are mine and were implemented as a Lottie code"
+    ],
     "tags": [
       "UX/UI",
       "Coding",
@@ -37,7 +41,9 @@
     "projectId": 2,
     "thumbnail": "thumbnail_stw-intro.png",
     "title": "StuffThatWorks intro",
-    "text": "StuffThatWorks' goal is finding treatments' effectiveness for chronic conditions via crowdsourcing, and that’s what I tried to explain (original illustrations by the talented Maya Shleifer).",
+    "text": [
+      "StuffThatWorks' goal is finding treatments' effectiveness for chronic conditions via crowdsourcing, and that’s what I tried to explain (original illustrations by the talented Maya Shleifer)."
+    ],
     "tags": [
       "Animation",
       "Storytelling"
@@ -46,7 +52,7 @@
     "videos": [
       {
         "videoLink": "https://player.vimeo.com/video/340225487",
-        "videoDescription": "Few words about this video"
+        "videoDescription": ""
       }
     ]
   },
@@ -54,7 +60,7 @@
     "projectId": 3,
     "thumbnail": "thumbnail_gifs.gif",
     "title": "Animating StuffThatWorks",
-    "text": "Animating STW illustrations adds another layer of personality to the brand and enriches the user experience.",
+    "text": ["Animating STW illustrations adds another layer of personality to the brand and enriches the user experience."],
     "tags": [
       "Animation",
       "UX/UI",
@@ -83,7 +89,9 @@
     "projectId": 4,
     "thumbnail": "thumbnail_ux_motion.gif",
     "title": "Motion & UX",
-    "text": "Few examples (some weren't implemented yet) of adding motion to STW for improved user experience and orientation around the product. A concept for a feature that shows other condition-community members that are similar to you.",
+    "text": [
+      "Few examples (some weren't implemented yet) of adding motion to STW for improved user experience and orientation around the product. A concept for a feature that shows other condition-community members that are similar to you."
+    ],
     "tags": [
       "UX/UI",
       "Animations"
@@ -107,7 +115,9 @@
     "projectId": 5,
     "thumbnail": "thumbnail_carpool-intro.png",
     "title": "Waze Carpool",
-    "text": "An intro for Waze’s Carpool app (R.I.P)",
+    "text": [
+      "An intro for Waze’s Carpool app (R.I.P)"
+    ],
     "tags": [
       "Animations",
       "Storytelling"
@@ -124,7 +134,7 @@
     "projectId": 6,
     "thumbnail": "thumbnail_voice-rec.png",
     "title": "Waze Voice Recording",
-    "text": "It’s basically an ad for Waze's “Record your own navigation instructions” feature (from 2017 I believe). A personal favorite of mine, I think I like the simplicity and the fit of the concept to the feature itself (but maybe it’s just me).",
+    "text": ["It’s basically an ad for Waze's “Record your own navigation instructions” feature (from 2017 I believe). A personal favorite of mine, I think I like the simplicity and the fit of the concept to the feature itself (but maybe it’s just me)."],
     "tags": [
       "Animations",
       "UX/UI"
@@ -140,7 +150,9 @@
     "projectId": 7,
     "thumbnail": "thumbnail_unusual-event.png",
     "title": "Waze Unusual Traffic Alerts",
-    "text": "Expalining Waze’s Unusuall Traffic Event feature",
+    "text": [
+      "Expalining Waze’s Unusuall Traffic Event feature"
+    ],
     "tags": [
       "Animations",
       "Storytelling"
@@ -156,7 +168,9 @@
     "projectId": 8,
     "thumbnail": "thumbnail_waze-playstore.png",
     "title": "Waze Google Playstore Clip",
-    "text": "A short and fast intro to Waze on Google Playstore",
+    "text": [
+      "A short and fast intro to Waze on Google Playstore"
+    ],
     "tags": [
       "Animations",
       "Storytelling"
@@ -172,7 +186,9 @@
     "projectId": 9,
     "thumbnail": "thumbnail_waze-intro.png",
     "title": "Waze V3.0 Intro",
-    "text": "The classic(!) Waze intro as seen first in version 3.0",
+    "text": [
+      "The classic(!) Waze intro as seen first in version 3.0"
+    ],
     "tags": [
       "Animations",
       "Storytelling"
@@ -188,7 +204,9 @@
     "projectId": 10,
     "thumbnail": "thumbnail_waze_ads.png",
     "title": "Waze Ads",
-    "text": "An early introduction for the benefits of Waze-Ads service",
+    "text": [
+      "An early introduction for the benefits of Waze-Ads service"
+    ],
     "tags": [
       "Animations",
       "Storytelling"
@@ -204,7 +222,9 @@
     "projectId": 11,
     "thumbnail": "thumbnail_waze-logos.png",
     "title": "Waze Logos Animation",
-    "text": "Every logo needs a nice entrance",
+    "text": [
+      "Every logo needs a nice entrance"
+    ],
     "tags": [
       "Animations",
       "Branding"
@@ -226,7 +246,9 @@
     "projectId": 12,
     "thumbnail": "thumbnail_solar-system.png",
     "title": "Personal | Yair's Solar System",
-    "text": "A solar system poster with some data about distances and sizes that Was made as a gift to my nephew",
+    "text": [
+      "A solar system poster with some data about distances and sizes that Was made as a gift to my nephew"
+    ],
     "tags": [
       "Infographics",
       "Illustration",
@@ -240,7 +262,7 @@
       {
         "imageName": "solar_02.png",
         "imageDescription": "Details"
-      },  
+      },
       {
         "imageName": "solar_03.png",
         "imageDescription": "Details"
@@ -255,7 +277,9 @@
     "projectId": 13,
     "thumbnail": "thumbnail_mom.png",
     "title": "Personal | Mom",
-    "text": "",
+    "text": [
+      ""
+    ],
     "tags": [
       "Illustration",
       "Print"
@@ -271,7 +295,9 @@
     "projectId": 14,
     "thumbnail": "thumbnail_wme-intro.png",
     "title": "Welcome to Waze Map Editor",
-    "text": "The legendary recruitment video calling for new map editors around the globe",
+    "text": [
+      "The legendary recruitment video calling for new map editors around the globe"
+    ],
     "tags": [
       "Animations",
       "Storytelling"
@@ -288,7 +314,9 @@
     "projectId": 15,
     "thumbnail": "thumbnail_this-site.png",
     "title": "This site",
-    "text": "Well, you're already in it. So, you know... nothing more to show here. Seemed logical to practice some coding with building my own site, so here it is",
+    "text": [
+      "Well, you're already in it. So, you know... nothing more to show here. Seemed logical to practice some coding with building my own site, so here it is"
+    ],
     "tags": [
       "Coding",
       "UX/UI"
@@ -304,7 +332,11 @@
     "projectId": 16,
     "thumbnail": "thumbnail_map.png",
     "title": "STW Conditions Map",
-    "text": "The conditions map visualizes the distribution of StuffThatWorks members across chronic conditions and the interrelationships between those conditions. By reducing each member's condition report (including all details) to a coordinate, we can plot all members on a single plane, using color to distinguish between conditions. These are detailed concept mockups of this partially implemented feature",
+    "text": [
+      "The conditions map visualizes the distribution of StuffThatWorks members across chronic conditions and the interrelationships between those conditions.",
+      "By reducing each member's condition report (including all details) to a coordinate, we can plot all members on a single plane, using color to distinguish between conditions.",
+      "These are detailed concept mockups of this partially implemented feature"
+    ],
     "tags": [
       "UX/UI",
       "Storytelling",
@@ -345,7 +377,10 @@
     "projectId": 17,
     "thumbnail": "thumbnail_pain-map.png",
     "title": "STW Pain Map",
-    "text": "A concept for a feature that collects data, in a visual way, about pain areas in chronic conditions (or skin diseases areas, itches, burns etc.). After enough data is collected, it can be displayed as infographics.",
+    "text": [
+      "A concept for a feature that collects data, in a visual way, about pain areas in chronic conditions (or skin diseases areas, itches, burns etc.).",
+      "After enough data is collected, it can be displayed as infographics."
+    ],
     "tags": [
       "UX/UI",
       "Storytelling",

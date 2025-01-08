@@ -35,6 +35,8 @@
 
 // Colors
 $primary-color: #2E2E2E;
+$primary-dark: #292929;
+$primary-transparent: rgba(46, 46, 46, 0.95);
 $tag-color: #262626;
 $text-color: #D5D5D5;
 $white: #ffffff;
@@ -100,10 +102,12 @@ $breakpoints: (
     border-radius: 4px;
 }
 
-// @mixin respond-to($breakpoint) {
-//     @if map-has-key($breakpoints, $breakpoint) {
-//       @media (min-width: map-get($breakpoints, $breakpoint)) {
-//         @content;
-//       }
-//     }
-//   }
+@mixin description {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
+    line-height: 110%;
+    color: $text-color;
+    text-align: left;
+    // display: inline-block;
+}

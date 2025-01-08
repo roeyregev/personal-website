@@ -15,26 +15,26 @@ const Underline: React.FC<UnderlineProps> = ({ left, width, targetLeft, targetWi
         animate: {
             left: targetLeft,
             width: targetWidth,
-            scaleY: [1, 1.4, 1], // Bounce Y
-            scaleX: [1, 0.8, 1], // Bounce X 
+            // scaleY: [1, 1.8, 1],  // Bounce effect in Y direction
+            // scaleX: [1, 2, 1],  // Bounce effect in X direction
             transition: {
                 type: "spring",
-                // duration: 0.4,
-                visualDuration: 0.3,
-                // ease: "easeInOut",
-                bounce: 0.5,
-                // damping: 20
-            }
+                duration: 0.6,     // Adjust duration as needed
+                bounce: 0.4,
+                stiffness: 100,    // Tighter bounce
+            },
         },
     };
 
     return (
         <motion.div
             className={styles.underline}
-            style={{ left, width, originY: "center", originX: "right" }} // Set origin for scale
-            // style={{ left, width }} // Set initial position and width
+            style={{ position: 'absolute', left, width }}
+            // style={{ left, width }} // Set origin for scale
             animate="animate"
             variants={underlineVariants}
+            // initial={false}
+            
         />
     );
 };

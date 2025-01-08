@@ -104,8 +104,8 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
 
             <div className={styles.projectContentContainer} ref={contentRef}>
 
-                <div className= {styles.titleContainer} >
-                    <h2 className= {styles.title} style={{ fontSize: `${fontSize}rem`}}>
+                <div className={styles.titleContainer} >
+                    <h2 className={styles.title} style={{ fontSize: `${fontSize}rem` }}>
                         {selectedProject?.title}
                     </h2>
                 </div>
@@ -115,7 +115,11 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                 </div>
 
                 <div className={styles.description}>
-                    {selectedProject?.text}
+                    {/* {selectedProject?.text} */}
+                    {selectedProject?.text?.map((par) =>
+                        <div className={styles.text} key={selectedProject.projectId + "." + selectedProject.text?.indexOf(par)}>
+                            <p>{par}</p>
+                        </div>)}
                 </div>
 
                 {/* images: */}
