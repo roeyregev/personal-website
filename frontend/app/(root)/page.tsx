@@ -2,12 +2,10 @@
 
 import styles from './page.module.scss';
 import Gallery from "@/components/Gallery/Gallery";
-// import "../globals.scss";
 import Drawer from "@/components/Drawer/Drawer";
 import { useEffect, useState } from "react";
-import ProjectModel from "@/Models/project-model";
 import projectsData from "../../ProjectsData/projects.json"
-import { title } from 'process';
+import Footer from '@/components/Footer/Footer';
 
 
 export default function Home() {
@@ -52,7 +50,8 @@ export default function Home() {
         selectedProjectIndex={selectedProjectIndex}
         projects={projectsData} />}
 
-        <footer className={styles.footer}> &copy; 2025 | All rights reserved to me!</footer>
+        {/* <footer className={styles.footer}> &copy; 2025 | All rights reserved to me!</footer> */}
+    <Footer/>
     </div>
   );
 }

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import NavBar from "@/components/NavBar/NavBar";
 import NewNavBar from "@/components/NewNavBar/NewNavBar";
 import NavbarYariv from "@/components/NavbarYariv/NavbarYariv";
-
-
+import Providers from "./providers";
+import styles from './(root)/page.module.scss';
 
 export const metadata: Metadata = {
   title: "Roey's work",
@@ -18,10 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-         {/* <NavBar/> */}
-         <NewNavBar/>
-         {/* <NavbarYariv/> */}
+        {/* <Providers> */}
+        {/* <NavBar/> */}
+        {/* <NewNavBar /> */}
+        <NavbarYariv/>
         {children}
+        {/* </Providers> */}
       </body>
     </html>
   );

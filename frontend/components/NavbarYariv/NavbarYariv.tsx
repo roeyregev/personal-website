@@ -4,14 +4,17 @@ import Link from "next/link";
 import styles from "./NavbarYariv.module.scss";
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-
-
+import Toggle from "../Toggle/Toggle";
+import { usePathname } from 'next/navigation'
 
 
 const NavbarYariv = () => {
 
+    const initialPath = usePathname();
+    const initialActiveTab = () => initialPath === "/" ? "myWork" : "about";
+
     const ref = useRef<HTMLDivElement>(null);
-    const [activeById, setActiveById] = useState<string>("myWork");
+    const [activeById, setActiveById] = useState<string>(initialActiveTab);
 
     const tabs = [
         { id: "myWork", name: "My work", href: "/" },
@@ -48,7 +51,7 @@ const NavbarYariv = () => {
                     <Link
                         href={tab.href}
                         key={tab.id}
-                        className={styles.tab + " " + tab.id}
+                        className={`${styles.tab + " " + tab.id} ${activeById === tab.id ? styles.activeTab : ''}`}
                         onClick={() =>
                             setActiveById(tab.id)}
                     >
@@ -58,18 +61,18 @@ const NavbarYariv = () => {
                 ))}
                 <motion.div
                     className={styles.underline}
-                    variants={{
-                        initial: {
-                            width: 116,
-                            left: 0,
-                            height:4
-                        },
-                        slideRight:{
-                            width: 116,
-                            left: 0,
-                            height:4
-                        }
-                    }}
+                    // variants={{
+                    //     initial: {
+                    //         width: 116,
+                    //         left: 0,
+                    //         height: 4
+                    //     },
+                    //     slideRight: {
+                    //         width: 116,
+                    //         left: 0,
+                    //         height: 4
+                    //     }
+                    // }}
                     // initial={underlineProperties}
                     animate={underlineProperties}
                     transition={{
@@ -80,6 +83,7 @@ const NavbarYariv = () => {
 
                 />
             </div>
+            <Toggle />
         </div>
     );
 };

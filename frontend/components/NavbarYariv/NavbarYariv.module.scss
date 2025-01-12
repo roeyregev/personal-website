@@ -3,24 +3,22 @@
 
 .NavbarYariv {
     position: fixed;
-    top: 60px;
+    top: 0px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     height: 56px;
     width: 100%;
-    // background-color: $primary-color;
-    background-color: rgb(87, 60, 113);
+    background-color: $primary-color;
     z-index: 4;
 
     .tabsFlex {
         position: relative;
-        // border: 1px solid yellowgreen;
         padding: 10px;
         display: flex;
         flex-direction: row;
-        gap: 3vw ;
+        gap: 3vw;
         background-color: $primary-color;
 
         .tab {
@@ -34,10 +32,16 @@
             text-decoration: none;
             min-width: 100px;
             padding: 2px 8px; // (up-down left-right)
-            mix-blend-mode: difference;
-            // border: 1px solid rgb(255, 101, 101);
-
+            // mix-blend-mode: difference;
         }
+
+        .activeTab {
+            font-weight: 700;
+            background-image: $green-gradient;
+            background-clip: text;
+            color: transparent;
+        }
+
 
         .underline {
             position: absolute;
@@ -47,22 +51,5 @@
             bottom: 4px;
             border-radius: 2px;
         }
-
-        // .tab:active, .tab:focus {
-        //     font-weight: 500;
-        // }
-        // .tab:hover {
-        //     color: $white;
-        // }
-
-        // .cursor {
-        //     position: absolute;
-        //     z-index: 6;
-        //     background-image: $green-gradient;
-        //     height: 66%;
-        //     align-self: center;
-        //     border-radius: 40px;
-
-        // }
     }
 }

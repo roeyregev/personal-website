@@ -1,15 +1,15 @@
 @import "./_variables.scss";
 
-// html,
-// body,
-// #root {
-//     margin: 0;
-//     padding: 0;
-//     text-align: center;
-//     background-color: $primary-color;
-//     min-height: 100vh;
-//     display: flex;
-//     flex-direction: column;
-//     box-sizing: border-box;
-// }
-
+html,
+body,
+#root {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: $primary-color;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow: auto;
+}
