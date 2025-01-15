@@ -5,11 +5,11 @@ import styles from "./NavbarYariv.module.scss";
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import Toggle from "../Toggle/Toggle";
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 
 
 const NavbarYariv = () => {
-
+    const router = useRouter(); // Initialize router
     const initialPath = usePathname();
     const initialActiveTab = () => initialPath === "/" ? "myWork" : "about";
 
@@ -44,6 +44,24 @@ const NavbarYariv = () => {
 
 
 
+    //------------------------------------------------------------
+
+    // New handler for navigation
+    const handleNavigation = (tab: { id: string; href: string }, e: React.MouseEvent) => {
+        e.preventDefault(); // Prevent default Link behavior
+        setActiveById(tab.id);
+        
+        // If navigating from about page to home, add the 'from' parameter
+        if (initialPath === '/about' && tab.href === '/') {
+            router.push('/?from=about');
+        } else {
+            router.push(tab.href);
+        }
+    };
+
+    //------------------------------------------------------------
+
+
     return (
         <div className={styles.NavbarYariv}>
             <div className={styles.tabsFlex} ref={ref} >
@@ -52,8 +70,10 @@ const NavbarYariv = () => {
                         href={tab.href}
                         key={tab.id}
                         className={`${styles.tab + " " + tab.id} ${activeById === tab.id ? styles.activeTab : ''}`}
-                        onClick={() =>
-                            setActiveById(tab.id)}
+                        // onClick={() =>
+                        //     setActiveById(tab.id)}
+
+                        onClick={(e) => handleNavigation(tab, e)}
                     >
                         <motion.span className={styles.tabSpan}>{tab.name}</motion.span>
                     </Link>
@@ -61,19 +81,6 @@ const NavbarYariv = () => {
                 ))}
                 <motion.div
                     className={styles.underline}
-                    // variants={{
-                    //     initial: {
-                    //         width: 116,
-                    //         left: 0,
-                    //         height: 4
-                    //     },
-                    //     slideRight: {
-                    //         width: 116,
-                    //         left: 0,
-                    //         height: 4
-                    //     }
-                    // }}
-                    // initial={underlineProperties}
                     animate={underlineProperties}
                     transition={{
                         type: "spring",

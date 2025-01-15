@@ -33,6 +33,7 @@
     font-style: normal;
 }
 
+
 // Colors
 $primary-color: #2E2E2E;
 $primary-dark: #292929;
@@ -76,7 +77,6 @@ $breakpoints: (
 @mixin secondary-title {
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 300;
-    // font-size: 1.7rem;
     font-size: clamp(1rem, 6vw, 1.5rem);
     line-height: 100%;
     color: $text-color;
@@ -85,7 +85,7 @@ $breakpoints: (
 @mixin paragraph {
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 300;
-    font-size: clamp(1rem, 5.5vw, 1.5rem);
+    font-size: clamp(1.1rem, 5.8vw, 1.6rem);
     line-height: 130%;
     color: $text-color;
     text-align: left;
@@ -104,10 +104,10 @@ $breakpoints: (
 
 @mixin description {
     font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 300;
-    font-size: clamp(1.2rem, 5vw, 1.8rem);
-    line-height: 110%;
-    color: $text-color;
+    font-weight: 200;
+    font-size: clamp(0.9rem, 4vw, 1.4rem);
+    line-height: 100%;
+    color: $white;
     text-align: left;
     // display: inline-block;
 }

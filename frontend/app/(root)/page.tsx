@@ -6,13 +6,19 @@ import Drawer from "@/components/Drawer/Drawer";
 import { useEffect, useState } from "react";
 import projectsData from "../../ProjectsData/projects.json"
 import Footer from '@/components/Footer/Footer';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useSearchParams } from 'next/navigation';
 
 
 export default function Home() {
 
   const [showDrawer, setShowDrawer] = useState<boolean>(false);
   const [selectedProjectIndex, setSelectedProjectIndex] = useState<number | null>(null);
-  // const [projects, setProject] = useState<ProjectModel[]>()
+  const searchParams = useSearchParams();
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
+
+  // Check if coming from about page
+  const fromAbout = searchParams.get('from') === 'about';
 
   const openDrawer = (projectId: number) => {
     setSelectedProjectIndex(projectId);
@@ -22,6 +28,18 @@ export default function Home() {
   const closeDrawer = () => {
     setShowDrawer(false);
   };
+
+  // Effect to handle first load detection
+  useEffect(() => {
+    // Use sessionStorage to detect first load
+    const hasVisited = sessionStorage.getItem('hasVisitedHome');
+    if (!hasVisited) {
+      setIsFirstLoad(true);
+      sessionStorage.setItem('hasVisitedHome', 'true');
+    } else {
+      setIsFirstLoad(false);
+    }
+  }, []);
 
   // Effect to create the portal div if it doesn't exist
   useEffect(() => {
@@ -36,22 +54,88 @@ export default function Home() {
     };
   }, []);
 
+
+  // Animation variants
+  const pageVariants = {
+    initial: {
+      opacity: 0,
+      y: isFirstLoad ? 20 : 0,
+      x: fromAbout ? 0 : 0,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      x: 0,
+      transition: {
+        duration: 0.4,
+        ease: "easeOut",
+        staggerChildren: 0.2
+      }
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        duration: 0.4
+      }
+    }
+  };
+
+  const contentVariants = {
+    initial: {
+      opacity: 0,
+      y: isFirstLoad ? 20 : 0,
+      x: fromAbout ? 0 : 0,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      x: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
+
   return (
-    <div className="MainPage">
-      <div className="heroText">
+    <motion.div
+      className="MainPage"
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      variants={pageVariants}
+    >
+      <motion.div 
+      className="heroText"
+      initial="initial"
+      animate="animate"
+      variants={contentVariants}
+      >
         <h1 className={styles.title}>I’m Roey. <br /> This is my work.</h1>
         <p className={styles.secondaryTitle} >UI/UX | Motion | Storytelling | (Code)</p>
-      </div>
+      </motion.div>
 
-      {!showDrawer && <Gallery callback={openDrawer} projects={projectsData} />}
+      <motion.div
+        variants={contentVariants}
+      >
+        {!showDrawer && <Gallery callback={openDrawer} projects={projectsData} />}
+      </motion.div>
 
-      {showDrawer && <Drawer
-        close={closeDrawer}
-        selectedProjectIndex={selectedProjectIndex}
-        projects={projectsData} />}
+      {/* AnimatePresence handles the exit animation */}
+      <AnimatePresence mode="wait">
+        {showDrawer && <Drawer
+          close={closeDrawer}
+          selectedProjectIndex={selectedProjectIndex}
+          projects={projectsData} />}
+      </AnimatePresence>
 
-        {/* <footer className={styles.footer}> &copy; 2025 | All rights reserved to me!</footer> */}
-    <Footer/>
-    </div>
+      <motion.div 
+      variants={contentVariants}
+      >
+        {!showDrawer && <Footer />}
+      </motion.div>
+    </motion.div>
+
   );
 }

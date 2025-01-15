@@ -1,16 +1,76 @@
+"use client"
+
 import React from "react";
 import styles from './page.module.scss';
 import IconCopyLink from '../../../components/Icons/IconCopyLink'
 import CopyEmailButton from "@/components/CopyEmailButton/CopyEmailButton";
 import DownloadCvButton from "@/components/DownloadCvButton/DownloadCvButton";
 import Footer from "@/components/Footer/Footer";
+import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
+
 
 function AboutPage() {
 
+    const router = useRouter();
+
+    // Animation variants
+    const pageVariants = {
+        initial: {
+            opacity: 0,
+            y: 20,
+            x: 0,
+        },
+        animate: {
+            opacity: 1,
+            y: 0,
+            x: 0,
+            transition: {
+                duration: 0.4,
+                ease: "easeOut",
+                staggerChildren: 0.2
+            }
+        },
+        exit: {
+            opacity: 0,
+            transition: {
+                duration: 0.4
+            }
+        }
+    };
+
+    const contentVariants = {
+        initial: {
+            opacity: 0,
+            y: 20,
+            x: 0,
+        },
+        animate: {
+            opacity: 1,
+            y: 0,
+            x: 0,
+            transition: {
+                duration: 0.5,
+                ease: "easeOut"         
+            }
+        }
+    };
+
     return (
-        <div className={styles.about}>
+        <motion.div
+            className={styles.about}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={pageVariants}
+        >
             <div className={styles.aboutFlex}>
-                <div className={styles.aboutSection}>
+                <motion.div 
+                className={styles.aboutSection}
+                initial="initial"
+                animate="animate"
+                variants={contentVariants}
+                >
                     <h2 className={styles.aboutTitle}>The man</h2>
                     <p className={styles.paragraph}>I’m Roey and… I design as you’ve probably already guessed. Professionally I grew up in startups (going on 15 years now holy s#%t)
                         making whatever is needed, but mainly animation and motion design. In the past 2 years the focus has shifted to UI/UX but I love it all,
@@ -18,18 +78,28 @@ function AboutPage() {
                     </p>
                     <p className={styles.paragraph}>Lately I’ve also graduated from a full-stack development course. Don’t know…
                         just wanted to add an extra little something to my creation range. So I also dabble with that lately.</p>
-                </div>
+                </motion.div>
 
-                <div className={styles.aboutSection}>
+                <motion.div 
+                className={styles.aboutSection}
+                initial="initial"
+                animate="animate"
+                variants={contentVariants}
+                >
                     <h2 className={styles.aboutTitle}>The name</h2>
                     <ul className={styles.paragraph}>
                         <li>It’s pronounced Ro-EE (unless you’re American, then it’s probably Raw-EE).</li>
                         <li>It means “My shepherd” in hebrew. It’s not me, it's the bible.</li>
                         {/* <li>It’s not special - #5 on the top most common names in Israel of all times</li> */}
                     </ul>
-                </div>
+                </motion.div>
 
-                <div className={styles.aboutSection}>
+                <motion.div 
+                className={styles.aboutSection}
+                initial="initial"
+                animate="animate"
+                variants={contentVariants}
+                >
                     <h2 className={styles.aboutTitle}>The mail</h2>
                     <div className={styles.emailSection}>
                         <p className={styles.paragraph}>Contact me at &nbsp;</p>
@@ -44,11 +114,11 @@ function AboutPage() {
                             <DownloadCvButton />
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
             </div>
             <Footer />
-        </div>
+        </motion.div>
     );
 }
 

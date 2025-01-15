@@ -1,19 +1,12 @@
 @import "../../app/variables";
 @import "../globals.scss";
 
-// html,
-// body,
-// #root {
-//     margin: 0;
-//     padding: 0;
-//     text-align: center;
-//     background-color: $primary-color;
-//     max-height: 100vh;
-//     display: flex;
-//     flex-direction: column;
-//     box-sizing: border-box;
-//     overflow: auto;
-// }
+
+.MainPage {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
 
 .heroText {
     display: flex;
@@ -33,10 +26,6 @@
     @include secondary-title;
     margin-top: 0px;
     color: rgb(232, 230, 230);
-    // color: transparent;
-    // background-image: $green-gradient;
-    // background-clip: text;
-    // line-height: 120%;
     box-shadow: white;
 }
 

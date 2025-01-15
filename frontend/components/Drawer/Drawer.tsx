@@ -4,6 +4,7 @@ import IconClose from "../Icons/IconClose";
 import IconArrow from "../Icons/IconArrow";
 import ProjectModel from "@/Models/project-model";
 import { useEffect, useRef, useState } from "react";
+import { animate, AnimatePresence, easeIn, motion } from "framer-motion";
 
 interface DrawerProps {
     close: () => void;
@@ -13,27 +14,12 @@ interface DrawerProps {
 
 function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Element | null {
 
-    // const [isScrolled, setIsScrolled] = useState(false);
+    const [isClosing, setIsClosing] = useState(false);
     const [fontSize, setFontSize] = useState(2.6); // Starting font size in rem
     const contentRef = useRef<HTMLDivElement>(null);
 
-    // useEffect(() => {
-    //     const handleScroll = () => {
-    //         if (contentRef.current && contentRef.current.scrollTop > 0) {
-    //             setIsScrolled(true);
-    //         } else {
-    //             setIsScrolled(false);
-    //         }
-    //     };
 
-    //     const contentElement = contentRef.current;
-    //     contentElement?.addEventListener("scroll", handleScroll);
-
-    //     return () => {
-    //         contentElement?.removeEventListener("scroll", handleScroll);
-    //     };
-    // }, []);
-
+    //Sticky title font size change on scroll
     useEffect(() => {
         const handleScroll = () => {
             if (contentRef.current) {
@@ -41,7 +27,7 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                 const minFontSize = 1.6; // Minimum font size in rem
                 const scrollTop = contentRef.current.scrollTop;
 
-                // Adjust font size based on scroll position (example formula)
+                // Adjust font size based on scroll position
                 const newFontSize = Math.max(
                     minFontSize,
                     maxFontSize - scrollTop * 0.03 // Adjust the multiplier to control sensitivity
@@ -60,8 +46,6 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
 
     //find the relevant project by its id
     const [selectedProject, setSelectedProject] = useState<ProjectModel | null>(projects.find(project => project.projectId === selectedProjectIndex) || null);
-    console.log("initial project:");
-    console.log(selectedProject);
 
     const portalRoot = document.getElementById("portal");
     if (!portalRoot) return null; // Don't render if the portal isn't available
@@ -84,8 +68,157 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
         }
     };
 
+    // Framer Motion Variants for Animation
+    const drawerVariants = {
+        hidden: {
+            y: "20%", // Start off-screen at the bottom
+            opacity: 0, // Fully transparent
+            left: 0
+        },
+        visible: {
+            y: 0,       // Slide to its final position
+            opacity: 1, // Fully visible
+            transition: { duration: 0.25, ease: "easeOut" }, // Smooth animation
+            left: 0
+        },
+        exit: {
+            y: "20%", // Slide back down
+            opacity: 0, // Fade out
+            transition: { duration: 0.2, ease: "easeOut" }, // Faster exit
+            left: 0
+        },
+    };
+
+    const handleClose = () => {
+        setIsClosing(true);
+        setTimeout(close, 1);
+    };
+
+    const closeIconVariants = {
+        initial: {
+            rotate: -45,
+            scale: 0.5
+        },
+        animate: {
+            rotate: 0,
+            scale: 1,
+
+            transition: {
+                duration: 0.4,
+                ease: "easeOut"
+            }
+        },
+        exit: {
+            rotate: 45,
+            scale: 0,
+
+            transition: {
+                duration: 0.3,
+                ease: "easeIn"
+            }
+        },
+        hover: {
+            scale: 0.9,
+            rotate: 90,
+
+            transition: {
+                duration: 0.3,
+                ease: "easeInOut"
+            }
+
+        },
+        tap: {
+            scale: 1.1,
+            rotate: 180,
+            transition: {
+                // times: [0,0.3,0.5,1],
+                duration: 0.1,
+                ease: "easeInOut"
+            }
+        }
+    };
+
+    const nextButtonVariants = {
+        initial: {
+            x: -20,
+            opacity: 0
+        },
+        animate: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                duration: 0.5,
+                ease: "easeOut"
+            }
+        },
+        hover: {
+            scale: 1,
+            x: 2,
+            transition: {
+                type: "spring",
+                stiffness: 400,
+                damping: 25
+            }
+        },
+        tap: {
+            x: 5,
+            transition: {
+                type: "spring",
+                stiffness: 400,
+                damping: 10
+            }
+        }
+    };
+    const prevButtonVariants = {
+        initial: {
+            x: 20,
+            opacity: 0,
+            rotate: 180
+
+        },
+        animate: {
+            x: 0,
+            opacity: 1,
+            rotate: 180,
+            transition: {
+                duration: 0.5,
+                ease: "easeOut"
+            }
+        },
+        hover: {
+            scale: 1,
+            x: -2,
+            transition: {
+                type: "spring",
+                stiffness: 400,
+                damping: 25
+            }
+        },
+        tap: {
+            x: -5,
+            rotate: 180,
+            transition: {
+                type: "spring",
+                stiffness: 400,
+                damping: 10
+            }
+        }
+    };
+
     return ReactDOM.createPortal(
-        <div className={styles.Drawer}>
+        <motion.div
+            className={styles.Drawer}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={drawerVariants}
+
+            onAnimationComplete={(definition) => {
+                if (definition === "exit") {
+                    close(); // Call the close function after the exit animation completes
+                }
+            }}
+        >
 
             {/* Drawer navigation panel */}
             <div className={styles.drawerTop}>
@@ -93,10 +226,44 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                 <div className={styles.navIcons}>
                     <div className={styles.blankIcon}><p className={styles.blank}>blank</p></div>
                     <div className={styles.changePageFlex}>
-                        <div className={styles.previousIcon} onClick={previousProject}><IconArrow /></div>
-                        <div className={styles.navIcon} onClick={nextProject}><IconArrow /></div>
+                        <motion.div
+                            className={styles.previousIcon}
+                            onClick={previousProject}
+                            variants={prevButtonVariants}
+                            initial="initial"
+                            animate="animate"
+                            whileTap="tap"
+                            whileHover="hover"
+                        >
+                            <IconArrow />
+                        </motion.div>
+                        <motion.div
+                            className={styles.navIcon}
+                            onClick={nextProject}
+                            variants={nextButtonVariants}
+                            initial="initial"
+                            animate="animate"
+                            whileTap="tap"
+                            whileHover="hover"
+                        >
+                            <IconArrow />
+                        </motion.div>
                     </div>
-                    <div className={styles.navIcon} onClick={close}><IconClose /></div>
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key="closeIcon"
+                            className={styles.navIcon}
+                            onClick={handleClose}
+                            variants={closeIconVariants}
+                            initial="initial"
+                            animate="animate"
+                            exit="exit"
+                            whileHover="hover"
+                            whileTap="tap"
+                        >
+                            <IconClose />
+                        </motion.div>
+                    </AnimatePresence>
                 </div>
             </div>
 
@@ -115,11 +282,15 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                 </div>
 
                 <div className={styles.description}>
-                    {/* {selectedProject?.text} */}
                     {selectedProject?.text?.map((par) =>
-                        <div className={styles.text} key={selectedProject.projectId + "." + selectedProject.text?.indexOf(par)}>
-                            <p>{par}</p>
+                        <div className={styles.mainText} key={selectedProject.projectId + "." + selectedProject.text?.indexOf(par)}>
+                            <p className={styles.paragraph}>{par}</p>
                         </div>)}
+                    <div className={styles.threeDots}>
+                        <div className={styles.dot}></div>
+                        <div className={styles.bigDot}></div>
+                        <div className={styles.dot}></div>
+                    </div>
                 </div>
 
                 {/* images: */}
@@ -151,7 +322,7 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                     </div>
                 )}
             </div>
-        </div>,
+        </motion.div>,
         portalRoot
     );
 }
