@@ -6,29 +6,22 @@ import IconCopyLink from '../../../components/Icons/IconCopyLink'
 import CopyEmailButton from "@/components/CopyEmailButton/CopyEmailButton";
 import DownloadCvButton from "@/components/DownloadCvButton/DownloadCvButton";
 import Footer from "@/components/Footer/Footer";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 
 
 function AboutPage() {
 
-    const router = useRouter();
-
     // Animation variants
-    const pageVariants = {
+    const containerVariants = {
         initial: {
-            opacity: 0,
-            y: 20,
-            x: 0,
+            opacity: 0
         },
         animate: {
             opacity: 1,
-            y: 0,
-            x: 0,
             transition: {
-                duration: 0.4,
-                ease: "easeOut",
-                staggerChildren: 0.2
+                staggerChildren: 0.15,
+                delayChildren: 0.1
             }
         },
         exit: {
@@ -39,19 +32,17 @@ function AboutPage() {
         }
     };
 
-    const contentVariants = {
+    const childVariants = {
         initial: {
             opacity: 0,
-            y: 20,
-            x: 0,
+            y: 20
         },
         animate: {
             opacity: 1,
             y: 0,
-            x: 0,
             transition: {
                 duration: 0.5,
-                ease: "easeOut"         
+                ease: "easeOut"
             }
         }
     };
@@ -62,14 +53,12 @@ function AboutPage() {
             initial="initial"
             animate="animate"
             exit="exit"
-            variants={pageVariants}
+            variants={containerVariants}
         >
             <div className={styles.aboutFlex}>
                 <motion.div 
                 className={styles.aboutSection}
-                initial="initial"
-                animate="animate"
-                variants={contentVariants}
+                variants={childVariants}
                 >
                     <h2 className={styles.aboutTitle}>The man</h2>
                     <p className={styles.paragraph}>I’m Roey and… I design as you’ve probably already guessed. Professionally I grew up in startups (going on 15 years now holy s#%t)
@@ -82,9 +71,8 @@ function AboutPage() {
 
                 <motion.div 
                 className={styles.aboutSection}
-                initial="initial"
-                animate="animate"
-                variants={contentVariants}
+             
+                variants={childVariants}
                 >
                     <h2 className={styles.aboutTitle}>The name</h2>
                     <ul className={styles.paragraph}>
@@ -96,9 +84,8 @@ function AboutPage() {
 
                 <motion.div 
                 className={styles.aboutSection}
-                initial="initial"
-                animate="animate"
-                variants={contentVariants}
+               
+                variants={childVariants}
                 >
                     <h2 className={styles.aboutTitle}>The mail</h2>
                     <div className={styles.emailSection}>

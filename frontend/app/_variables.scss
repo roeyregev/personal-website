@@ -33,6 +33,26 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Roboto Condensed italic';
+    src: url('../public/fonts/RobotoCondensed-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roboto Condensed italic';
+    src: url('../public/fonts/RobotoCondensed-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roboto Condensed italic';
+    src: url('../public/fonts/RobotoCondensed-ExtraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
 
 // Colors
 $primary-color: #2E2E2E;
@@ -66,12 +86,13 @@ $breakpoints: (
     font-weight: 700;
     // font-size: 2.6rem;
     font-size: clamp(1.5rem, 8vw, 2.5rem);
-    line-height: 110%;
+    line-height: 120%;
     color: transparent;
     background-image: $pink-gradient;
     background-clip: text;
     margin: clamp(10px, 2vw, 18px);
     display: inline-block;
+    letter-spacing: .02rem;
 }
 
 @mixin secondary-title {
@@ -86,9 +107,10 @@ $breakpoints: (
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 300;
     font-size: clamp(1.1rem, 5.8vw, 1.6rem);
-    line-height: 130%;
+    line-height: 140%;
     color: $text-color;
     text-align: left;
+    letter-spacing: .03rem;
 }
 
 @mixin tag {
@@ -103,11 +125,11 @@ $breakpoints: (
 }
 
 @mixin description {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Roboto Condensed italic', sans-serif;
     font-weight: 200;
     font-size: clamp(0.9rem, 4vw, 1.4rem);
     line-height: 100%;
-    color: $white;
+    color: $text-color;
     text-align: left;
-    // display: inline-block;
+    letter-spacing: .06rem;
 }

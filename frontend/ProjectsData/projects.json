@@ -21,7 +21,7 @@
       },
       {
         "imageName": "Like-A-Flight_01.png",
-        "imageDescription": "This is the image description"
+        "imageDescription": "Homepage"
       },
       {
         "imageName": "Like-A-Flight_02.png",
@@ -87,212 +87,6 @@
   },
   {
     "projectId": 4,
-    "thumbnail": "thumbnail_ux_motion.gif",
-    "title": "Motion & UX",
-    "text": [
-      "Few examples (some weren't implemented yet) of adding motion to STW for improved user experience and orientation around the product. A concept for a feature that shows other condition-community members that are similar to you."
-    ],
-    "tags": [
-      "UX/UI",
-      "Animations"
-    ],
-    "images": [
-      {
-        "imageName": "stw_ux_motion_01.gif",
-        "imageDescription": "Folding the daily update panel upon scrolling"
-      },
-      {
-        "imageName": "stw_ux_motion_02.gif",
-        "imageDescription": "Rating content bar animation"
-      },
-      {
-        "imageName": "stw_ux_motion_03.gif",
-        "imageDescription": "Daily update transition"
-      }
-    ]
-  },
-  {
-    "projectId": 5,
-    "thumbnail": "thumbnail_carpool-intro.png",
-    "title": "Waze Carpool",
-    "text": [
-      "An intro for Waze’s Carpool app (R.I.P)"
-    ],
-    "tags": [
-      "Animations",
-      "Storytelling"
-    ],
-    "images": [],
-    "videos": [
-      {
-        "videoLink": "https://player.vimeo.com/video/163981561",
-        "videoDescription": ""
-      }
-    ]
-  },
-  {
-    "projectId": 6,
-    "thumbnail": "thumbnail_voice-rec.png",
-    "title": "Waze Voice Recording",
-    "text": ["It’s basically an ad for Waze's “Record your own navigation instructions” feature (from 2017 I believe). A personal favorite of mine, I think I like the simplicity and the fit of the concept to the feature itself (but maybe it’s just me)."],
-    "tags": [
-      "Animations",
-      "UX/UI"
-    ],
-    "videos": [
-      {
-        "videoLink": "https://player.vimeo.com/video/249721437",
-        "videoDescription": ""
-      }
-    ]
-  },
-  {
-    "projectId": 7,
-    "thumbnail": "thumbnail_unusual-event.png",
-    "title": "Waze Unusual Traffic Alerts",
-    "text": [
-      "Expalining Waze’s Unusuall Traffic Event feature"
-    ],
-    "tags": [
-      "Animations",
-      "Storytelling"
-    ],
-    "videos": [
-      {
-        "videoLink": "https://player.vimeo.com/video/154406869",
-        "videoDescription": ""
-      }
-    ]
-  },
-  {
-    "projectId": 8,
-    "thumbnail": "thumbnail_waze-playstore.png",
-    "title": "Waze Google Playstore Clip",
-    "text": [
-      "A short and fast intro to Waze on Google Playstore"
-    ],
-    "tags": [
-      "Animations",
-      "Storytelling"
-    ],
-    "videos": [
-      {
-        "videoLink": "https://player.vimeo.com/video/249715823?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "videoDescription": ""
-      }
-    ]
-  },
-  {
-    "projectId": 9,
-    "thumbnail": "thumbnail_waze-intro.png",
-    "title": "Waze V3.0 Intro",
-    "text": [
-      "The classic(!) Waze intro as seen first in version 3.0"
-    ],
-    "tags": [
-      "Animations",
-      "Storytelling"
-    ],
-    "videos": [
-      {
-        "videoLink": "https://player.vimeo.com/video/141886180?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "videoDescription": ""
-      }
-    ]
-  },
-  {
-    "projectId": 10,
-    "thumbnail": "thumbnail_waze_ads.png",
-    "title": "Waze Ads",
-    "text": [
-      "An early introduction for the benefits of Waze-Ads service"
-    ],
-    "tags": [
-      "Animations",
-      "Storytelling"
-    ],
-    "videos": [
-      {
-        "videoLink": "https://player.vimeo.com/video/142882127?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "videoDescription": ""
-      }
-    ]
-  },
-  {
-    "projectId": 11,
-    "thumbnail": "thumbnail_waze-logos.png",
-    "title": "Waze Logos Animation",
-    "text": [
-      "Every logo needs a nice entrance"
-    ],
-    "tags": [
-      "Animations",
-      "Branding"
-    ],
-    "images": [
-      {
-        "imageName": "Waze_Logos_Animation_01.gif",
-        "imageDescription": "Waze Main Logo"
-      }
-    ],
-    "videos": [
-      {
-        "videoLink": "https://player.vimeo.com/video/221439591",
-        "videoDescription": "Waze Broadcasters Program Logo"
-      }
-    ]
-  },
-  {
-    "projectId": 12,
-    "thumbnail": "thumbnail_solar-system.png",
-    "title": "Personal | Yair's Solar System",
-    "text": [
-      "A solar system poster with some data about distances and sizes that Was made as a gift to my nephew"
-    ],
-    "tags": [
-      "Infographics",
-      "Illustration",
-      "Print"
-    ],
-    "images": [
-      {
-        "imageName": "solar_01.png",
-        "imageDescription": "Full poster"
-      },
-      {
-        "imageName": "solar_02.png",
-        "imageDescription": "Details"
-      },
-      {
-        "imageName": "solar_03.png",
-        "imageDescription": "Details"
-      },
-      {
-        "imageName": "solar_04.png",
-        "imageDescription": "Details"
-      }
-    ]
-  },
-  {
-    "projectId": 13,
-    "thumbnail": "thumbnail_mom.png",
-    "title": "Personal | Mom",
-    "text": [
-      ""
-    ],
-    "tags": [
-      "Illustration",
-      "Print"
-    ],
-    "images": [
-      {
-        "imageName": "Like-A-Flight_01.png",
-        "imageDescription": ""
-      }
-    ]
-  },
-  {
-    "projectId": 14,
     "thumbnail": "thumbnail_wme-intro.png",
     "title": "Welcome to Waze Map Editor",
     "text": [
@@ -311,7 +105,7 @@
     ]
   },
   {
-    "projectId": 15,
+    "projectId": 5,
     "thumbnail": "thumbnail_this-site.png",
     "title": "This site",
     "text": [
@@ -329,7 +123,7 @@
     ]
   },
   {
-    "projectId": 16,
+    "projectId": 6,
     "thumbnail": "thumbnail_map.png",
     "title": "STW Conditions Map",
     "text": [
@@ -373,8 +167,72 @@
       }
     ]
   },
+
   {
-    "projectId": 17,
+    "projectId": 7,
+    "thumbnail": "thumbnail_carpool-intro.png",
+    "title": "Waze Carpool",
+    "text": [
+      "An intro for Waze’s Carpool app (R.I.P)"
+    ],
+    "tags": [
+      "Animations",
+      "Storytelling"
+    ],
+    "images": [],
+    "videos": [
+      {
+        "videoLink": "https://player.vimeo.com/video/163981561",
+        "videoDescription": ""
+      }
+    ]
+  },
+  {
+    "projectId": 8,
+    "thumbnail": "thumbnail_ux_motion.gif",
+    "title": "Motion & UX",
+    "text": [
+      "Few examples (some weren't implemented yet) of adding motion to STW for improved user experience and orientation around the product. A concept for a feature that shows other condition-community members that are similar to you."
+    ],
+    "tags": [
+      "UX/UI",
+      "Animations"
+    ],
+    "images": [
+      {
+        "imageName": "stw_ux_motion_01.gif",
+        "imageDescription": "Folding the daily update panel upon scrolling"
+      },
+      {
+        "imageName": "stw_ux_motion_02.gif",
+        "imageDescription": "Rating content bar animation"
+      },
+      {
+        "imageName": "stw_ux_motion_03.gif",
+        "imageDescription": "Daily update transition"
+      }
+    ]
+  },
+  {
+    "projectId": 9,
+    "thumbnail": "thumbnail_unusual-event.png",
+    "title": "Waze Unusual Traffic Alerts",
+    "text": [
+      "Expalining Waze’s Unusuall Traffic Event feature"
+    ],
+    "tags": [
+      "Animations",
+      "Storytelling"
+    ],
+    "videos": [
+      {
+        "videoLink": "https://player.vimeo.com/video/154406869",
+        "videoDescription": ""
+      }
+    ]
+  },
+  {
+    "projectId": 10,
     "thumbnail": "thumbnail_pain-map.png",
     "title": "STW Pain Map",
     "text": [
@@ -398,6 +256,149 @@
       {
         "imageName": "pain_map_03.png",
         "imageDescription": "Infographics / insight of the aggregated results"
+      }
+    ]
+  },
+  {
+    "projectId": 11,
+    "thumbnail": "thumbnail_waze-playstore.png",
+    "title": "Waze Google Playstore Clip",
+    "text": [
+      "A short and fast intro to Waze on Google Playstore (2018)"
+    ],
+    "tags": [
+      "Animations",
+      "Storytelling"
+    ],
+    "videos": [
+      {
+        "videoLink": "https://player.vimeo.com/video/249715823?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "videoDescription": ""
+      }
+    ]
+  },
+  {
+    "projectId": 12,
+    "thumbnail": "thumbnail_waze-intro.png",
+    "title": "Waze V3.0 Intro",
+    "text": [
+      "The classic(!) Waze intro as seen first in version 3.0"
+    ],
+    "tags": [
+      "Animations",
+      "Storytelling"
+    ],
+    "videos": [
+      {
+        "videoLink": "https://player.vimeo.com/video/141886180?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "videoDescription": ""
+      }
+    ]
+  },
+  {
+    "projectId": 13,
+    "thumbnail": "thumbnail_waze_ads.png",
+    "title": "Waze Ads",
+    "text": [
+      "An early introduction for the benefits of Waze-Ads service"
+    ],
+    "tags": [
+      "Animations",
+      "Storytelling"
+    ],
+    "videos": [
+      {
+        "videoLink": "https://player.vimeo.com/video/142882127?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "videoDescription": ""
+      }
+    ]
+  },
+  {
+    "projectId": 14,
+    "thumbnail": "thumbnail_voice-rec.png",
+    "title": "Waze Voice Recording",
+    "text": ["It’s basically an ad for Waze's “Record your own navigation instructions” feature (from 2017 I believe). A personal favorite of mine, I think I like the simplicity and the fit of the concept to the feature itself (but maybe it’s just me)."],
+    "tags": [
+      "Animations",
+      "UX/UI"
+    ],
+    "videos": [
+      {
+        "videoLink": "https://player.vimeo.com/video/249721437",
+        "videoDescription": ""
+      }
+    ]
+  },
+  {
+    "projectId": 15,
+    "thumbnail": "thumbnail_waze-logos.png",
+    "title": "Waze Logos Animation",
+    "text": [
+      "Every logo needs a nice entrance"
+    ],
+    "tags": [
+      "Animations",
+      "Branding"
+    ],
+    "images": [
+      {
+        "imageName": "Waze_Logos_Animation_01.gif",
+        "imageDescription": "Waze Main Logo"
+      }
+    ],
+    "videos": [
+      {
+        "videoLink": "https://player.vimeo.com/video/221439591",
+        "videoDescription": "Waze Broadcasters Program Logo"
+      }
+    ]
+  },
+  {
+    "projectId": 16,
+    "thumbnail": "thumbnail_solar-system.png",
+    "title": "Personal | Yair's Solar System",
+    "text": [
+      "A solar system poster with some data about distances and sizes that Was made as a gift to my nephew"
+    ],
+    "tags": [
+      "Infographics",
+      "Illustration",
+      "Print"
+    ],
+    "images": [
+      {
+        "imageName": "solar_01.png",
+        "imageDescription": "Full poster"
+      },
+      {
+        "imageName": "solar_02.png",
+        "imageDescription": "Details"
+      },
+      {
+        "imageName": "solar_03.png",
+        "imageDescription": "Details"
+      },
+      {
+        "imageName": "solar_04.png",
+        "imageDescription": "Details"
+      }
+    ]
+  },
+  {
+    "projectId": 17,
+    "thumbnail": "thumbnail_mom.png",
+    "title": "Personal | Mom",
+    "text": [
+      ""
+    ],
+    "tags": [
+      "Illustration",
+      "Print"
+    ],
+    "images": [
+      {
+        "imageName": "mom.png",
+        "imageDescription": "My interpretation for a personal portrait that she painted a long time ago "
       }
     ]
   }

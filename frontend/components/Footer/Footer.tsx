@@ -1,11 +1,17 @@
 import styles from './Footer.module.scss';
-
+import IconRights from '../Icons/IconRights'
 
 const Footer = () => {
 
     return (
         <div className={styles.footer}>
-            &copy; 2025 | All rights reserved to me!
+            <div className={styles.iconRight}>
+                <IconRights />
+            </div>
+            <div className={styles.footerText}>All rights reserved to me! | 2025</div>
+            {/* <div className={styles.footerText}>|</div>
+            <div className={styles.footerText}>2025</div> */}
+
         </div>
     )
 }

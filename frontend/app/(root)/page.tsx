@@ -14,11 +14,11 @@ export default function Home() {
 
   const [showDrawer, setShowDrawer] = useState<boolean>(false);
   const [selectedProjectIndex, setSelectedProjectIndex] = useState<number | null>(null);
-  const searchParams = useSearchParams();
-  const [isFirstLoad, setIsFirstLoad] = useState(true);
+  // const searchParams = useSearchParams();
+  // const [isFirstLoad, setIsFirstLoad] = useState(true);
 
   // Check if coming from about page
-  const fromAbout = searchParams.get('from') === 'about';
+  // const fromAbout = searchParams.get('from') === 'about';
 
   const openDrawer = (projectId: number) => {
     setSelectedProjectIndex(projectId);
@@ -30,16 +30,16 @@ export default function Home() {
   };
 
   // Effect to handle first load detection
-  useEffect(() => {
-    // Use sessionStorage to detect first load
-    const hasVisited = sessionStorage.getItem('hasVisitedHome');
-    if (!hasVisited) {
-      setIsFirstLoad(true);
-      sessionStorage.setItem('hasVisitedHome', 'true');
-    } else {
-      setIsFirstLoad(false);
-    }
-  }, []);
+  // useEffect(() => {
+  //   // Use sessionStorage to detect first load
+  //   const hasVisited = sessionStorage.getItem('hasVisitedHome');
+  //   if (!hasVisited) {
+  //     setIsFirstLoad(true);
+  //     sessionStorage.setItem('hasVisitedHome', 'true');
+  //   } else {
+  //     setIsFirstLoad(false);
+  //   }
+  // }, []);
 
   // Effect to create the portal div if it doesn't exist
   useEffect(() => {
@@ -59,8 +59,8 @@ export default function Home() {
   const pageVariants = {
     initial: {
       opacity: 0,
-      y: isFirstLoad ? 20 : 0,
-      x: fromAbout ? 0 : 0,
+      y: 20,
+      x: 0,
     },
     animate: {
       opacity: 1,
@@ -69,7 +69,8 @@ export default function Home() {
       transition: {
         duration: 0.4,
         ease: "easeOut",
-        staggerChildren: 0.2
+        staggerChildren: 0.15,
+        delayChildren: 0.1
       }
     },
     exit: {
@@ -83,16 +84,16 @@ export default function Home() {
   const contentVariants = {
     initial: {
       opacity: 0,
-      y: isFirstLoad ? 20 : 0,
-      x: fromAbout ? 0 : 0,
+      y: 20
     },
     animate: {
       opacity: 1,
       y: 0,
-      x: 0,
       transition: {
         duration: 0.5,
-        ease: "easeOut"
+        ease: "easeOut",
+        staggerChildren: 0.1,
+        delayChildren: 0.01
       }
     }
   };
@@ -100,20 +101,18 @@ export default function Home() {
 
   return (
     <motion.div
-      className="MainPage"
+      className={styles.mainPage}
       initial="initial"
       animate="animate"
       exit="exit"
       variants={pageVariants}
     >
-      <motion.div 
-      className="heroText"
-      initial="initial"
-      animate="animate"
-      variants={contentVariants}
+      <motion.div
+        className={styles.heroText}
+        variants={contentVariants}
       >
-        <h1 className={styles.title}>I’m Roey. <br /> This is my work.</h1>
-        <p className={styles.secondaryTitle} >UI/UX | Motion | Storytelling | (Code)</p>
+        <motion.h1 className={styles.title} variants={contentVariants}>I’m Roey. <br /> This is my work.</motion.h1>
+        <motion.p className={styles.secondaryTitle} variants={contentVariants}>UI/UX | Motion | Storytelling | (Code)</motion.p>
       </motion.div>
 
       <motion.div
@@ -130,8 +129,8 @@ export default function Home() {
           projects={projectsData} />}
       </AnimatePresence>
 
-      <motion.div 
-      variants={contentVariants}
+      <motion.div
+        variants={contentVariants}
       >
         {!showDrawer && <Footer />}
       </motion.div>
