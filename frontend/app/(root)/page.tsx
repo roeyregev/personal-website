@@ -14,11 +14,6 @@ export default function Home() {
 
   const [showDrawer, setShowDrawer] = useState<boolean>(false);
   const [selectedProjectIndex, setSelectedProjectIndex] = useState<number | null>(null);
-  // const searchParams = useSearchParams();
-  // const [isFirstLoad, setIsFirstLoad] = useState(true);
-
-  // Check if coming from about page
-  // const fromAbout = searchParams.get('from') === 'about';
 
   const openDrawer = (projectId: number) => {
     setSelectedProjectIndex(projectId);
@@ -28,18 +23,6 @@ export default function Home() {
   const closeDrawer = () => {
     setShowDrawer(false);
   };
-
-  // Effect to handle first load detection
-  // useEffect(() => {
-  //   // Use sessionStorage to detect first load
-  //   const hasVisited = sessionStorage.getItem('hasVisitedHome');
-  //   if (!hasVisited) {
-  //     setIsFirstLoad(true);
-  //     sessionStorage.setItem('hasVisitedHome', 'true');
-  //   } else {
-  //     setIsFirstLoad(false);
-  //   }
-  // }, []);
 
   // Effect to create the portal div if it doesn't exist
   useEffect(() => {
@@ -138,3 +121,24 @@ export default function Home() {
 
   );
 }
+
+
+
+
+  // Effect to handle first load detection
+  // useEffect(() => {
+  //   // Use sessionStorage to detect first load
+  //   const hasVisited = sessionStorage.getItem('hasVisitedHome');
+  //   if (!hasVisited) {
+  //     setIsFirstLoad(true);
+  //     sessionStorage.setItem('hasVisitedHome', 'true');
+  //   } else {
+  //     setIsFirstLoad(false);
+  //   }
+  // }, []);
+
+    // const searchParams = useSearchParams();
+  // const [isFirstLoad, setIsFirstLoad] = useState(true);
+
+  // Check if coming from about page
+  // const fromAbout = searchParams.get('from') === 'about';

@@ -4,6 +4,7 @@
     position: absolute;
     bottom: -8px;
     height: 4px;
-    background-image: $green-gradient;
+    background-image: var(--green-gradient);
+    // background-image: $green-gradient;
     pointer-events: none;
 }

@@ -109,7 +109,8 @@
     "thumbnail": "thumbnail_this-site.png",
     "title": "This site",
     "text": [
-      "Well, you're already in it. So, you know... nothing more to show here. Seemed logical to practice some coding with building my own site, so here it is"
+      "Well, you're already in it. So, you know... nothing more to show here. Seemed logical to practice some coding with building my own site, so here it is",
+      "This site was built with NextJS and TypeScript. "
     ],
     "tags": [
       "Coding",

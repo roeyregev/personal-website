@@ -4,6 +4,9 @@ import NewNavBar from "@/components/NewNavBar/NewNavBar";
 import NavbarYariv from "@/components/NavbarYariv/NavbarYariv";
 import Providers from "./providers";
 import styles from './(root)/page.module.scss';
+import { ThemeProvider } from "./ThemeContext";
+
+
 
 export const metadata: Metadata = {
   title: "Roey's work",
@@ -12,19 +15,33 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body>
-        {/* <Providers> */}
-        {/* <NavBar/> */}
-        {/* <NewNavBar /> */}
-        <NavbarYariv/>
-        {children}
-        {/* </Providers> */}
+        <ThemeProvider>
+          <NavbarYariv />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
 }
+
+
+// export default function RootLayout({
+//   children,
+// }: Readonly<{
+//   children: React.ReactNode;
+// }>) {
+//   return (
+//     <html lang="en">
+//       <body>
+//         <NavbarYariv />
+//         {children}
+//       </body>
+//     </html>
+//   );
+// }

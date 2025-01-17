@@ -11,7 +11,7 @@
     gap: 0px;
     height: 56px;
     width: 100%;
-    background-color: $primary-color;
+    background-color: var(--primary-color);
     z-index: 4;
 
     .tabsContainer {
@@ -21,7 +21,7 @@
         border-radius: 40px;
         display: flex;
         flex-direction: row;
-        background-color: $primary-color;
+        background-color: var(--primary-color);
 
         .tab {
             position: relative;
@@ -30,7 +30,7 @@
             font-weight: 300;
             font-size: clamp(1.2rem, 3vw, 1.4rem);
             line-height: 100%;
-            color: $text-color;
+            color: var(--text-color);
             text-decoration: none;
             min-width: 100px;
             padding: 2px 8px; // (up-down left-right)
@@ -42,13 +42,13 @@
             font-weight: 500;
         }
         .tab:hover {
-            color: $white;
+            color: var(--white);
         }
 
         .cursor {
             position: absolute;
             z-index: 6;
-            background-image: $green-gradient;
+            background-image: var(--green-gradient);
             height: 66%;
             align-self: center;
             border-radius: 40px;

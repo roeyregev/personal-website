@@ -9,7 +9,8 @@
     gap: 0px;
     height: 56px;
     width: 100%;
-    background-color: $primary-color;
+    background-color: var(--primary-color);
+    // background-color: $primary-color;
     z-index: 4;
 
     .tabs {
@@ -23,28 +24,32 @@
         font-weight: 300;
         font-size: clamp(1.2rem, 5vw, 1.5rem);
         line-height: 100%;
-        color: $text-color;
+        color: var(--text-color);
+        // color: $text-color;
         text-decoration: none;
         min-width: 100px;
         position: relative;
     }
 
     .tab:hover {
-        color: $white;
+        color: var(--white);
+        // color: $white;
     }
 
     .tab:active,
     .tab:focus {
         color: transparent;
         font-weight: 700;
-        background-image: $green-gradient;
+        background-image: var(--green-gradient);
+        // background-image: $green-gradient;
         background-clip: text;
     }
 
     .active {
         color: transparent;
         font-weight: 700;
-        background-image: $green-gradient;
+        background-image: var(--green-gradient);
+        // background-image: $green-gradient;
         background-clip: text;
     }
 }

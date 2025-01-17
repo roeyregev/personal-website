@@ -20,7 +20,8 @@
         font-weight: 500;
         font-size: clamp(1rem, 6vw, 1.5rem);
         line-height: 140%;
-        color: $white;
+        color: var(--white);
+        // color: $white;
         background-clip: text;
         display: inline-block;
     }

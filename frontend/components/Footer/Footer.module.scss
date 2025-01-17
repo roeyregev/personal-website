@@ -2,7 +2,8 @@
 
 
 .footer {
-    background-image: $pink-gradient;
+    background-image: var(--pink-gradient);
+    // background-image: $pink-gradient;
     padding: 1.5rem 1rem;
     box-sizing: border-box;
     margin-top: 50px;
@@ -20,13 +21,13 @@
         font-size: clamp(1.4rem, 6vw, 2.2rem);
         line-height: 120%;
         text-align: left;
-        opacity: 0.8;
+        opacity: 0.3;
     }
 
     .iconRight {
         display: flex;
         justify-content: center;
         align-items: center;
-        opacity: 0.8;
+        opacity: 0.3;
     }
 }

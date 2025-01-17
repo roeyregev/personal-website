@@ -6,6 +6,10 @@ const nextConfig: NextConfig = {
       test: /\.svg$/,
       issuer: /\.[jt]sx?$/,
       use: ['@svgr/webpack'],
+      
+      sassOptions: {
+        includePaths: ['./src'],
+      }
     });
     return config;
   },

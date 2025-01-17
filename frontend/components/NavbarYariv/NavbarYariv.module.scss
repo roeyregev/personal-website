@@ -10,8 +10,10 @@
     align-items: center;
     height: 56px;
     width: 100%;
-    background-color: $primary-color;
+    background-color: var(--primary-color);
+    // background-color: $primary-color;
     z-index: 4;
+    transition: background-color 0.2s ease, color 0.2s ease;
 
     .tabsFlex {
         position: relative;
@@ -19,7 +21,9 @@
         display: flex;
         flex-direction: row;
         gap: 3vw;
-        background-color: $primary-color;
+        // background-color: var(--primary-color);
+        // background-color: $primary-color;
+        // transition: background-color 0.2s ease, color 0.2s ease;
 
         .tab {
             position: relative;
@@ -28,7 +32,8 @@
             font-weight: 300;
             font-size: clamp(1.2rem, 3vw, 1.4rem);
             line-height: 100%;
-            color: $text-color;
+            color: var(--text-color);
+            // color: $text-color;
             text-decoration: none;
             min-width: 100px;
             padding: 2px 8px; // (up-down left-right)
@@ -37,7 +42,8 @@
 
         .activeTab {
             font-weight: 700;
-            background-image: $green-gradient;
+            background-image: var(--green-gradient);
+            // background-image: $green-gradient;
             background-clip: text;
             color: transparent;
         }
@@ -47,9 +53,30 @@
             position: absolute;
             width: 120px;
             height: 4px;
-            background-image: $green-gradient;
+            background-image: var(--green-gradient);
+            // background-image: $green-gradient;
             bottom: 4px;
             border-radius: 2px;
         }
     }
+
+//     // NavbarYariv.module.scss
+// .NavbarYariv {
+//     background-color: var(--primary-color);
+//     color: var(--text-color);
+//   }
+  
+//   // page.module.scss
+//   .mainPage {
+//     background-color: var(--primary-color);
+//     color: var(--text-color);
+//   }
+  
+//   .title {
+//     color: var(--text-color);
+//   }
+  
+//   .secondaryTitle {
+//     color: var(--text-color);
+//   }
 }
