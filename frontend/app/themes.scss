@@ -1,0 +1,29 @@
+// //themes
+// :root[data-theme="light"] {
+//     --primary-color: #262626;
+//     --primary-dark: #292929;
+//     --primary-transparent: rgba(46, 46, 46, 0.95);
+//     --tag-color: #D5D5D5;
+//     --text-color: #2E2E2E;
+//     --white: #292929;
+// }
+
+// :root[data-theme="dark"] {
+//     --primary-color: #2E2E2E;
+//     --primary-dark: #292929;
+//     --primary-transparent: rgba(46, 46, 46, 0.95);
+//     --tag-color: #262626;
+//     --text-color: #D5D5D5;
+//     --white: #ffffff;
+// }
+
+// body {
+//     background-color: var(--primary-color);
+//     color: var(--text-color);
+//     transition: background-color 0.3s ease, color 0.3s ease;
+//   }
+
+// Apply transitions for smooth theme switching
+// * {
+//     transition: background-color 0.3s ease, color 0.3s ease;
+// }

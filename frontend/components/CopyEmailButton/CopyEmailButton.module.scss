@@ -1,4 +1,6 @@
 @import "../../app/variables";
+@import "../../app/globals.scss";
+
 
 .copyEmailComponent {
 
@@ -21,9 +23,7 @@
         font-size: clamp(1rem, 6vw, 1.5rem);
         line-height: 140%;
         color: var(--white);
-        // color: $white;
         background-clip: text;
         display: inline-block;
     }
-
 }

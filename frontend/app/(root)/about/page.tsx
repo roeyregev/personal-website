@@ -2,11 +2,9 @@
 
 import React from "react";
 import styles from './page.module.scss';
-import IconCopyLink from '../../../components/Icons/IconCopyLink'
 import CopyEmailButton from "@/components/CopyEmailButton/CopyEmailButton";
 import DownloadCvButton from "@/components/DownloadCvButton/DownloadCvButton";
 import Footer from "@/components/Footer/Footer";
-// import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 
 
