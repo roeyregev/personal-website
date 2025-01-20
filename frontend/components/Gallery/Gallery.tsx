@@ -25,7 +25,7 @@ function Gallery(props: GalleryProps): JSX.Element {
                     key={p.projectId}
                     onClick={() => handleProjectClick(p.projectId)}>
                     <img
-                        src={`/Images/Thumbnails/${p.thumbnail}`}
+                        src={`/images/Thumbnails/${p.thumbnail}`}
                         alt={p.thumbnail} />
                     <p className={styles.thumbnailTitle}>{p.title}</p>
                 </a>)}
