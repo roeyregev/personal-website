@@ -33,10 +33,11 @@ const [underlineProperties, setUnderlineProperties] = useState<UnderlineProperti
 const getTabProperties = (tabId: TabId): UnderlineProperties => {
     const element = document.getElementsByClassName(tabId)[0] as HTMLDivElement;
     return {
-        width: element?.offsetWidth || 0,
+        // width: (element?.offsetWidth)*0.8 || 0,
+        width: (element?.offsetWidth) || 0,
         left: element?.offsetLeft || 0,
         height: 4,
-        opacity: 0
+        opacity: 0,
     };
 };
 

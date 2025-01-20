@@ -1,24 +1,14 @@
 @import "../../app/variables";
 
 .toggle {
-    width: 48px;
-    height: 36px;
+    width: 46px;
+    height: 32px;
     position: absolute;
     right: 20px;
-    border-radius: 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    // visibility: hidden;
-
-    .switch {
-        position: absolute;
-        left: 5px;
-        border-radius: 8px;
-        height: 24px;
-        width: 24px;
-
-    }
+    justify-content: center;
 
     .player{
         width: 100%;

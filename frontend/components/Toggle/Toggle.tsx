@@ -43,19 +43,3 @@ function Toggle() {
 }
 
 export default Toggle;
-
-
-
-
-    // const [isDark, setIsDark] = useState<boolean>(true);
-
-    // const handleToggle = () => {
-    //     setIsDark(!isDark);
-    //     console.log("state: " + isDark)
-
-    //     if (isDark) {
-    //         lottieRef.current.playSegments([1, 14], true); // Play frames 1-14
-    //     } else {
-    //         lottieRef.current.playSegments([15, 28], true); // Play frames 15-28
-    //     }
-    // }
