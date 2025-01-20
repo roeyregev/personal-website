@@ -1,5 +1,5 @@
-@import "./_variables.scss";
-@import 'notyf/notyf.min.css'; 
+@import "./_variables.scss"; 
+@import './notyf';
 
 html,
 body,
@@ -8,7 +8,6 @@ body,
     padding: 0;
     text-align: center;
     background-color: var(--primary-color);
-    // background-color: $primary-color;
     max-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -17,19 +16,4 @@ body,
     scrollbar-width: none;
     scrollbar-color: #3e3e3e #3e3e3e;
     transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-body{
-    .notyf__toast.custom-success .notyf__message {
-        font-family: 'Roboto Condensed', sans-serif !important; /* Apply custom font */
-        color: #2E2E2E !important; /* Override the text color */
-        font-size: 16px; /* Adjust font size if needed */
-      }
-      
-      .notyf__toast.custom-error .notyf__message {
-        font-family: 'Roboto Condensed', sans-serif !important;
-        color: #000000 !important;
-        font-size: 16px;
-      }
-      
 }

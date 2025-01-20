@@ -1,12 +1,8 @@
 import type { Metadata } from "next";
-import NavBar from "@/components/NavBar/NavBar";
-import NewNavBar from "@/components/NewNavBar/NewNavBar";
 import NavbarYariv from "@/components/NavbarYariv/NavbarYariv";
-import Providers from "./providers";
-import styles from './(root)/page.module.scss';
 import { ThemeProvider } from "./ThemeContext";
-
-
+import 'notyf/notyf.min.css';
+import './globals.scss'; 
 
 export const metadata: Metadata = {
   title: "Roey's work",
@@ -29,19 +25,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-
-// export default function RootLayout({
-//   children,
-// }: Readonly<{
-//   children: React.ReactNode;
-// }>) {
-//   return (
-//     <html lang="en">
-//       <body>
-//         <NavbarYariv />
-//         {children}
-//       </body>
-//     </html>
-//   );
-// }

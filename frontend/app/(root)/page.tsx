@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import projectsData from "../../ProjectsData/projects.json"
 import Footer from '@/components/Footer/Footer';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useSearchParams } from 'next/navigation';
 
 
 export default function Home() {

@@ -1,0 +1,97 @@
+@import './variables';
+
+.notyf {
+    padding-top: 20px;
+
+    &__toast {
+        border-radius: 8px;
+        max-width: 380px;
+
+        &.custom-notification {
+            padding: 12px 20px !important;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 3rem;
+            font-weight: 300;
+            border-radius: 8px !important;
+            background-color: pink;
+
+            // Success notification specific styles
+            &.notyf__toast.notyf__toast--success {
+                background-color: yellow !important;
+
+                .notyf__message {
+                    color: black;
+                }
+            }
+
+            // Error notification specific styles
+            &.--error {
+                background-color: yellow !important;
+
+                .notyf__message {
+                    color: black;
+                }
+            }
+        }
+    }
+
+    // Customize the wrapper that contains all notifications
+    &__wrapper {
+        padding: 0 20px;
+    }
+
+    // Style the message text
+    &__message {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+}
+
+
+// .custom-notification {
+
+//     // Target the notification container
+//     .notyf__toast.notyf__toast--success,
+//     .notyf__toast.notyf__toast--error {
+//         // Override any existing styles with !important
+//         padding: 12px 20px !important;
+//         border-radius: 8px !important;
+//         max-width: 380px !important;
+//     }
+
+//     // Success notification specific styles
+//     .notyf__toast.notyf__toast--success {
+//         background-color: #88C8BC !important;
+
+//         .notyf__message {
+//             color: #fff !important;
+//             font-weight: 500 !important;
+//         }
+//     }
+
+//     // Error notification specific styles
+//     .notyf__toast.notyf__toast--error {
+//         background-color: #FD676A !important;
+
+//         .notyf__message {
+//             color: #fff !important;
+//             font-weight: 500 !important;
+//         }
+//     }
+
+
+//     // Position adjustments
+//     .notyf {
+//         padding-top: 20px !important;
+//     }
+
+//     // Remove ripple effect if you don't want it
+//     .notyf__ripple {
+//         display: none !important;
+//     }
+
+//     // Adjust the wrapper positioning if needed
+//     .notyf__wrapper {
+//         padding: 0 20px !important;
+//     }
+// }
