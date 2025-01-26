@@ -3,24 +3,28 @@
 import styles from './page.module.scss';
 import Gallery from "@/components/Gallery/Gallery";
 import Drawer from "@/components/Drawer/Drawer";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import projectsData from "../../ProjectsData/projects.json"
 import Footer from '@/components/Footer/Footer';
 import { AnimatePresence, motion } from 'framer-motion';
-
+import { useDrawerContext } from '@/app/DrawerContext';
 
 export default function Home() {
 
-  const [showDrawer, setShowDrawer] = useState<boolean>(false);
+  const { showDrawerNew, setShowDrawerNew } = useDrawerContext();
+
+  // const [showDrawer, setShowDrawer] = useState<boolean>(false);
   const [selectedProjectIndex, setSelectedProjectIndex] = useState<number | null>(null);
 
   const openDrawer = (projectId: number) => {
     setSelectedProjectIndex(projectId);
-    setShowDrawer(true);
+    // setShowDrawer(true);
+    setShowDrawerNew(true);
   };
 
   const closeDrawer = () => {
-    setShowDrawer(false);
+    // setShowDrawer(false);
+    setShowDrawerNew(false);
   };
 
   // Effect to create the portal div if it doesn't exist
@@ -100,12 +104,14 @@ export default function Home() {
       <motion.div
         variants={contentVariants}
       >
-        {!showDrawer && <Gallery callback={openDrawer} projects={projectsData} />}
+        {/* {!showDrawer && <Gallery callback={openDrawer} projects={projectsData} />} */}
+        {!showDrawerNew && <Gallery callback={openDrawer} projects={projectsData} />}
       </motion.div>
 
       {/* AnimatePresence handles the exit animation */}
       <AnimatePresence mode="wait">
-        {showDrawer && <Drawer
+        {/* {showDrawer && <Drawer */}
+        {showDrawerNew && <Drawer
           close={closeDrawer}
           selectedProjectIndex={selectedProjectIndex}
           projects={projectsData} />}
@@ -114,30 +120,10 @@ export default function Home() {
       <motion.div
         variants={contentVariants}
       >
-        {!showDrawer && <Footer />}
+        {!showDrawerNew && <Footer />}
+        {/* {!showDrawer && <Footer />} */}
       </motion.div>
     </motion.div>
 
   );
 }
-
-
-
-
-  // Effect to handle first load detection
-  // useEffect(() => {
-  //   // Use sessionStorage to detect first load
-  //   const hasVisited = sessionStorage.getItem('hasVisitedHome');
-  //   if (!hasVisited) {
-  //     setIsFirstLoad(true);
-  //     sessionStorage.setItem('hasVisitedHome', 'true');
-  //   } else {
-  //     setIsFirstLoad(false);
-  //   }
-  // }, []);
-
-    // const searchParams = useSearchParams();
-  // const [isFirstLoad, setIsFirstLoad] = useState(true);
-
-  // Check if coming from about page
-  // const fromAbout = searchParams.get('from') === 'about';

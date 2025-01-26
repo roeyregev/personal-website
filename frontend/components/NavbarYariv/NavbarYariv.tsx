@@ -7,6 +7,7 @@ import { animate, motion } from "framer-motion";
 import Toggle from "../Toggle/Toggle";
 import { usePathname } from 'next/navigation'
 
+import { useDrawerContext } from '@/app/DrawerContext';
 
 type TabId = "myWork" | "about";
 
@@ -18,6 +19,10 @@ interface UnderlineProperties {
 }
 
 const NavbarYariv = () => {
+
+//test:
+const { closeDrawerNew } = useDrawerContext();
+
     const initialPath = usePathname();
     const getInitialActiveTab = (): TabId => initialPath === "/" ? "myWork" : "about";
     const ref = useRef<HTMLDivElement>(null);
@@ -66,6 +71,7 @@ useEffect(() => {
                         className={`${styles.tab + " " + tab.id} ${activeById === tab.id ? styles.activeTab : ''}`}
                         onClick={() => {
                             setActiveById(tab.id);
+                            closeDrawerNew()
                             // setUnderlineProperties(getTabProperties(tab.id));
                         }}
                     >
