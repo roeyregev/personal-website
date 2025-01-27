@@ -152,7 +152,7 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
             }
         },
         hover: {
-            scale: 1,
+            scale: 1.05,
             x: 2,
             transition: {
                 type: "spring",
@@ -161,11 +161,12 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
             }
         },
         tap: {
-            x: 5,
+            scale: 1.05,
+            x: 20,
             transition: {
                 type: "spring",
                 stiffness: 400,
-                damping: 10
+                damping: 10,
             }
         }
     };
@@ -186,7 +187,7 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
             }
         },
         hover: {
-            scale: 1,
+            scale: 1.05,
             x: -2,
             transition: {
                 type: "spring",
@@ -195,7 +196,8 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
             }
         },
         tap: {
-            x: -5,
+            scale: 1.05,
+            x: -20,
             rotate: 180,
             transition: {
                 type: "spring",
