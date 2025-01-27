@@ -212,14 +212,12 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
             animate="visible"
             exit="exit"
             variants={drawerVariants}
-
             onAnimationComplete={(definition) => {
                 if (definition === "exit") {
                     close(); // Call the close function after the exit animation completes
                 }
             }}
         >
-
             {/* Drawer navigation panel */}
             <div className={styles.drawerTop}>
                 <div className={styles.dragLine}></div>

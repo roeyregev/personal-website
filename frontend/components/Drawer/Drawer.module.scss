@@ -3,7 +3,6 @@
 .Drawer {
     position: fixed;
     top: 70px;
-    // background-color: pink;
     background-color: var(--primary-dark);
     min-height: 100vh;
     padding-top: 0px;
@@ -107,13 +106,15 @@
     gap: 14px;
     max-width: 960px;
     margin: 100px 40px;
-    padding-bottom: 400px;
+    padding-bottom: 120px;
     align-items: center;
     overflow-y: auto;
     width: 100%;
     box-sizing: border-box;
     scrollbar-width: thin;
     scrollbar-color: #3e3e3e #3e3e3e;
+    max-height: calc(100vh - 200px);
+   
 
     .tagsContainer {
         display: flex;

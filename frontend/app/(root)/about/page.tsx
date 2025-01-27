@@ -82,7 +82,6 @@ function AboutPage() {
 
                 <motion.div 
                 className={styles.aboutSection}
-               
                 variants={childVariants}
                 >
                     <h2 className={styles.aboutTitle}>The mail</h2>

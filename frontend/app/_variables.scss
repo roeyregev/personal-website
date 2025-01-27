@@ -64,9 +64,11 @@
     --always-white: #ffffff;
     --white: #ffffff;
     --btn-bg: #383838;
+    --about-btn:#575757;
     --pink-gradient: linear-gradient(-70deg, #FFCC48, #FC7EFF);
     --green-gradient: linear-gradient(-70deg, #98FF48, #7EFFFF);
     --main-shadow: 0px -8px 24px 0px rgba(0, 0, 0, 0.44);
+    --navbar-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
 :root[data-theme="light"] {
@@ -78,9 +80,11 @@
     --always-white: #ffffff;
     --white: #2E2E2E;
     --btn-bg: #e3e3e3;
+    --about-btn:#e1e1e1;
     --pink-gradient: linear-gradient(-70deg, #ffc42e, #fc5cff);
     --green-gradient: linear-gradient(-70deg, #62d30b, #3fe2e2);
     --main-shadow: 0px -8px 24px 0px rgba(0, 0, 0, 0.07);
+    --navbar-shadow: 0px 4px 4px rgba(49, 159, 159, 0.1);
 }
 
 // Keep your breakpoints
@@ -145,7 +149,7 @@ $breakpoints: (
 }
 
 //notyf styles
-// $notyf-success-color: #b23cfb;
-// $notyf-error-color: #ff1b1f;
-// $notyf-border-radius: 8px;
-// $notyf-padding: 12px 20px;
+$notyf-success-color: #b23cfb;
+$notyf-error-color: #ff1b1f;
+$notyf-border-radius: 8px;
+$notyf-padding: 12px 20px;

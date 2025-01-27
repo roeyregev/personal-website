@@ -3,7 +3,7 @@
 import styles from './page.module.scss';
 import Gallery from "@/components/Gallery/Gallery";
 import Drawer from "@/components/Drawer/Drawer";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import projectsData from "../../ProjectsData/projects.json"
 import Footer from '@/components/Footer/Footer';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -12,18 +12,14 @@ import { useDrawerContext } from '@/app/DrawerContext';
 export default function Home() {
 
   const { showDrawerNew, setShowDrawerNew } = useDrawerContext();
-
-  // const [showDrawer, setShowDrawer] = useState<boolean>(false);
   const [selectedProjectIndex, setSelectedProjectIndex] = useState<number | null>(null);
 
   const openDrawer = (projectId: number) => {
     setSelectedProjectIndex(projectId);
-    // setShowDrawer(true);
     setShowDrawerNew(true);
   };
 
   const closeDrawer = () => {
-    // setShowDrawer(false);
     setShowDrawerNew(false);
   };
 
@@ -39,7 +35,6 @@ export default function Home() {
       document.body.removeChild(portalDiv);
     };
   }, []);
-
 
   // Animation variants
   const pageVariants = {
@@ -104,13 +99,11 @@ export default function Home() {
       <motion.div
         variants={contentVariants}
       >
-        {/* {!showDrawer && <Gallery callback={openDrawer} projects={projectsData} />} */}
         {!showDrawerNew && <Gallery callback={openDrawer} projects={projectsData} />}
       </motion.div>
 
       {/* AnimatePresence handles the exit animation */}
       <AnimatePresence mode="wait">
-        {/* {showDrawer && <Drawer */}
         {showDrawerNew && <Drawer
           close={closeDrawer}
           selectedProjectIndex={selectedProjectIndex}
@@ -121,9 +114,7 @@ export default function Home() {
         variants={contentVariants}
       >
         {!showDrawerNew && <Footer />}
-        {/* {!showDrawer && <Footer />} */}
       </motion.div>
     </motion.div>
-
   );
 }

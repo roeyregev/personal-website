@@ -9,7 +9,6 @@ interface GalleryProps {
 
 function Gallery(props: GalleryProps): JSX.Element {
 
-    // const [projects, setProject] = useState<ProjectModel[]>()
     const [selectedProjectIndex, setSelectedProjectIndex] = useState<number | null>(null);
 
     const handleProjectClick = (projectIndex: number | null) => {

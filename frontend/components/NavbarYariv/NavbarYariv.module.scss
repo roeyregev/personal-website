@@ -12,6 +12,11 @@
     background-color: var(--primary-color);
     z-index: 4;
     transition: background-color 0.2s ease, color 0.2s ease;
+    transition: box-shadow 0.3s ease;
+    
+    &.shadow {
+        box-shadow: var(--navbar-shadow);
+    }
 
     .tabsFlex {
         position: relative;
