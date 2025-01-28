@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react";
+import React, { useEffect } from "react";
 import styles from './page.module.scss';
 import CopyEmailButton from "@/components/CopyEmailButton/CopyEmailButton";
 import DownloadCvButton from "@/components/DownloadCvButton/DownloadCvButton";
@@ -9,6 +9,12 @@ import { motion } from "framer-motion";
 
 
 function AboutPage() {
+
+    useEffect(() => {
+        // Scroll to top on component mount
+        window.scrollTo(0, 0);
+      }, []);
+      
     // Animation variants
     const containerVariants = {
         initial: {

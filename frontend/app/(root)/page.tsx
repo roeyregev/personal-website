@@ -25,6 +25,9 @@ export default function Home() {
 
   // Effect to create the portal div if it doesn't exist
   useEffect(() => {
+    // Scroll to top on component mount
+    window.scrollTo(0, 0);
+
     // Create the portal div if it doesn't exist
     const portalDiv = document.createElement('div');
     portalDiv.setAttribute('id', 'portal');

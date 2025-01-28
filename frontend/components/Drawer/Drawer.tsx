@@ -15,7 +15,7 @@ interface DrawerProps {
 function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Element | null {
 
     const [isClosing, setIsClosing] = useState(false);
-    const [fontSize, setFontSize] = useState(2.6); // Starting font size in rem
+    const [fontSize, setFontSize] = useState(2.2); // Starting font size in rem
     const contentRef = useRef<HTMLDivElement>(null);
 
 
@@ -23,7 +23,7 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
     useEffect(() => {
         const handleScroll = () => {
             if (contentRef.current) {
-                const maxFontSize = 2.6; // Maximum font size in rem
+                const maxFontSize = 2.2; // Maximum font size in rem
                 const minFontSize = 1.6; // Minimum font size in rem
                 const scrollTop = contentRef.current.scrollTop;
 
@@ -56,6 +56,7 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                 projects.find((project) => project.projectId === selectedProject.projectId + 1) ||
                 projects.find((project) => project.projectId === 1);
             setSelectedProject(nextProject || null);
+            window.scrollTo(0, 0);
         }
     };
 
@@ -65,6 +66,7 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                 projects.find((project) => project.projectId === selectedProject.projectId - 1) ||
                 projects.find((project) => project.projectId === Math.max(...projects.map(p => p.projectId)));
             setSelectedProject(previousProject || null);
+            window.scrollTo(0, 0);
         }
     };
 
@@ -272,7 +274,7 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
             <div className={styles.projectContentContainer} ref={contentRef}>
 
                 <div className={styles.titleContainer} >
-                    <h2 className={styles.title} style={{ fontSize: `${fontSize}rem` }}>
+                    <h2 className={styles.projectTitle} style={{ fontSize: `${fontSize}rem` }}>
                         {selectedProject?.title}
                     </h2>
                 </div>

@@ -39,8 +39,8 @@
         background-color: var(--primary-dark);
         box-sizing: border-box;
 
-        .title {
-            @include title-style;
+        .projectTitle {
+            @include project-title-style;
             margin-bottom: 10px;
             transform-origin: top;
         }

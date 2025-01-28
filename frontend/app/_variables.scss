@@ -109,6 +109,19 @@ $breakpoints: (
     letter-spacing: .02rem;
 }
 
+@mixin project-title-style {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    font-size: clamp(0.5rem, 4vw, 1.5rem);
+    line-height: 120%;
+    color: transparent;
+    background-image: var(--pink-gradient);
+    background-clip: text;
+    margin: clamp(10px, 2vw, 18px);
+    display: inline-block;
+    letter-spacing: .02rem;
+}
+
 @mixin secondary-title {
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 300;
@@ -141,7 +154,7 @@ $breakpoints: (
 @mixin description {
     font-family: 'Roboto Condensed italic', sans-serif;
     font-weight: 200;
-    font-size: clamp(0.9rem, 4vw, 1.4rem);
+    font-size: clamp(1.6rem, 6vw, 2.4rem);
     line-height: 100%;
     color: var(--text-color);
     text-align: left;
