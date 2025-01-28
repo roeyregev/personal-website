@@ -8,6 +8,7 @@
     justify-content: space-between;
     min-height: 100vh;
     margin-bottom: 0;
+    margin-top: 14px;
     padding: 0;
 }
 
@@ -20,6 +21,12 @@
     gap: clamp(20px, 2.5vw, 40px);
     min-height: 70vh;
 
+    .aboutTitleFlex{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
     .aboutSection {
         display: flex;
         flex-direction: column;
@@ -37,17 +44,23 @@
         margin: 10px 0
     }
 
-    .email {
-        display: inline-block;
-        font-family: 'Roboto Condensed', sans-serif;
-        font-weight: 700;
-        font-size: clamp(1rem, 6vw, 1.5rem);
-        line-height: 140%;
-        color: var(--text-color);
-        // color: $text-color;
-        background-clip: text;
-        display: inline-block;
+    .emailFlex {
+
+        display: flex;
+        flex-direction: column;
+
+        .email {
+            // display: inline-block;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1rem, 6vw, 1.5rem);
+            line-height: 140%;
+            color: var(--text-color);
+            background-clip: text;
+            display: inline-block;
+        }
     }
+    
 
     .link {
         @include paragraph;
@@ -69,17 +82,11 @@
         border-radius: 8px;
     }
 
-    .emailSection {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 0px;
-        margin-bottom: -8px;
-    }
-
     .emailFlex {
         display: flex;
-        gap: 8px;
+        flex-direction: column;
+        gap: 0px;
+        margin: 10px 0px;
     }
 
     ul {

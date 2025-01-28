@@ -23,13 +23,15 @@
         padding: 10px;
         display: flex;
         flex-direction: row;
-        gap: 2vw;
+        gap: 3vw;
 
-
-
+        .motionWrapper {
+            display: contents; // Retain layout
+            // display: inline-block;
+            width: fit-content; // Shrinks to fit its content
+        }
 
         .tab {
- 
             position: relative;
             font-family: 'Roboto Condensed', sans-serif;
             font-weight: 300;
@@ -37,14 +39,15 @@
             line-height: 100%;
             color: var(--text-color);
             text-decoration: none;
-            min-width: 100px;
+            min-width: 80px;
             padding: 2px 2px; // (up-down left-right)
             box-sizing: border-box;
+
+            display: block;
 
             .tabText {
                 user-select: none;
                 z-index: 2;
-
                 transition: opacity 0.2s ease;
             }
 

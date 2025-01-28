@@ -3,26 +3,41 @@
 .downloadCvButton {
 
     display: flex;
-    gap: 10px;
+    gap: 2px;
+    border-radius: 8px;
+    padding: 1px 2px 0px 10px ;
+    background-image: var(--green-gradient);
+    box-shadow: var(--navbar-shadow);
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 34px;
 
     .downloadBtn {
         display: inline-block;
         width: 32px;
         height: 32px;
-        background-color: var(--about-btn);
-        border-radius: 8px;
-        cursor: pointer;
+        border-radius: 8px ;
+        cursor: pointer;   
     }
     
+    .downloadIcon {
+        color: var(--primary-color); 
+        transition: color 0.3s ease;
+    
+        &:hover {
+            color: darken(#98FF48, 10%); // Darker shade on hover
+        }
+    }
+
     .regularText {
         display: inline-block;
         font-family: 'Roboto Condensed', sans-serif;
-        font-weight: 500;
-        font-size: clamp(1rem, 6vw, 1.5rem);
+        font-weight: 400;
+        font-size: clamp(1rem, 6vw, 1.2rem);
         line-height: 140%;
-        color: var(--white);
-        background-clip: text;
-        display: inline-block;
+        // color: #2E2E2E;
+        color: var(--primary-color);
     }
 
 }

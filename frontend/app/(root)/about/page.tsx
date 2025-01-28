@@ -9,7 +9,6 @@ import { motion } from "framer-motion";
 
 
 function AboutPage() {
-
     // Animation variants
     const containerVariants = {
         initial: {
@@ -54,49 +53,43 @@ function AboutPage() {
             variants={containerVariants}
         >
             <div className={styles.aboutFlex}>
-                <motion.div 
-                className={styles.aboutSection}
-                variants={childVariants}
+                <motion.div
+                    className={styles.aboutSection}
+                    variants={childVariants}
                 >
-                    <h2 className={styles.aboutTitle}>The man</h2>
-                    <p className={styles.paragraph}>I’m Roey and… I design as you’ve probably already guessed. Professionally I grew up in startups (going on 15 years now holy s#%t)
-                        making whatever is needed, but mainly animation and motion design. In the past 2 years the focus has shifted to UI/UX but I love it all,
-                        especially when I can combine it all together, including the business side.
+                    <div className={styles.aboutTitleFlex}>
+                        <h2 className={styles.aboutTitle}>The man</h2>
+                        <DownloadCvButton />
+                    </div>
+                    <p className={styles.paragraph}>I’m Roey and well, I design. My 15 years of experience include mostly working in startups, making whatever is needed.
                     </p>
-                    <p className={styles.paragraph}>Lately I’ve also graduated from a full-stack development course. Don’t know…
-                        just wanted to add an extra little something to my creation range. So I also dabble with that lately.</p>
+                    <p className={styles.paragraph}>My biggest projects were animation and motion design, but in the past 2 years the focus has shifted to UI/UX. I love it all though, especially when I can combine it all together, including the business side.
+                    </p>
+                    <p className={styles.paragraph}>Lately I’ve also learned full-stack development. Just wanted to add an extra little something to my creation range. So I also dabble with that lately.</p>
+                    {/* <DownloadCvButton /> */}
                 </motion.div>
 
-                <motion.div 
-                className={styles.aboutSection}
-             
-                variants={childVariants}
+                <motion.div
+                    className={styles.aboutSection}
+                    variants={childVariants}
                 >
                     <h2 className={styles.aboutTitle}>The name</h2>
                     <ul className={styles.paragraph}>
-                        <li>It’s pronounced Ro-EE (unless you’re American, then it’s probably Raw-EE).</li>
-                        <li>It means “My shepherd” in hebrew. It’s not me, it's the bible.</li>
-                        {/* <li>It’s not special - #5 on the top most common names in Israel of all times</li> */}
+                        <li>It's pronounced Ro-EE (unless you're American, in which case it's probably Raw-EE).
+                        </li>
+                        <li>It means “My shepherd” in Hebrew. It’s not me, it's the bible.</li>
+                        <li>#21 top most common name in Israel of all times. So, not special.</li>
                     </ul>
                 </motion.div>
 
-                <motion.div 
-                className={styles.aboutSection}
-                variants={childVariants}
+                <motion.div
+                    className={styles.aboutSection}
+                    variants={childVariants}
                 >
                     <h2 className={styles.aboutTitle}>The mail</h2>
-                    <div className={styles.emailSection}>
-                        <p className={styles.paragraph}>Contact me at &nbsp;</p>
-                        <div className={styles.emailFlex}>
-                            <CopyEmailButton />
-                        </div>
-                    </div>
-
-                    <div className={styles.emailSection}>
-                        <p className={styles.paragraph}>You can also &nbsp;</p>
-                        <div className={styles.emailFlex}>
-                            <DownloadCvButton />
-                        </div>
+                    <div className={styles.emailFlex}>
+                        <CopyEmailButton />
+                        <p className={styles.paragraph}>Feel free to contact me. I'm adorable.</p>
                     </div>
                 </motion.div>
 
@@ -105,7 +98,5 @@ function AboutPage() {
         </motion.div>
     );
 }
-
-
 
 export default AboutPage;
