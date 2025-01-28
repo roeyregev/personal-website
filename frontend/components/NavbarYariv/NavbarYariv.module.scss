@@ -25,7 +25,11 @@
         flex-direction: row;
         gap: 2vw;
 
+
+
+
         .tab {
+ 
             position: relative;
             font-family: 'Roboto Condensed', sans-serif;
             font-weight: 300;
@@ -37,30 +41,12 @@
             padding: 2px 2px; // (up-down left-right)
             box-sizing: border-box;
 
-            // transition: color 0.2s ease, background-image 0.2s ease; // Add transition for color changes
-            // background-image: transparent; // Add initial state
-
             .tabText {
                 user-select: none;
                 z-index: 2;
 
                 transition: opacity 0.2s ease;
             }
-
-            // Create a pseudo-element for the gradient
-            // &::before {
-            //     content: attr(data-text);
-            //     position: absolute;
-            //     left: 2px; // Match padding
-            //     top: 2px; // Match padding
-            //     color: transparent;
-            //     background-image: var(--green-gradient);
-            //     background-clip: text;
-            //     -webkit-background-clip: text;
-            //     font-weight: 700;
-            //     opacity: 0;
-            //     transition: opacity 0.2s ease;
-            // }
 
             .sparks {
                 position: absolute;
@@ -77,15 +63,6 @@
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            
-            // .tabText {
-            //     opacity: 0; // Hide original text
-              
-            // }
-
-            // &::before {
-            //     opacity: 1;
-            // }
         }
 
         .underline {

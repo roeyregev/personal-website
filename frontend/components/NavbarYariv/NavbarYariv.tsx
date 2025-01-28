@@ -28,7 +28,6 @@ const NavbarYariv = () => {
     const [activeById, setActiveById] = useState<TabId>(getInitialActiveTab());
     const [hasShadow, setHasShadow] = useState(false);
     const [underlineProperties, setUnderlineProperties] = useState<UnderlineProperties | null>(null);
-    // const [clickedTab, setClickedTab] = useState<TabId | null>(null);
 
     const lottieRefs = {
         myWork: useRef<any>(null),
@@ -39,15 +38,6 @@ const NavbarYariv = () => {
         { id: "myWork" as const, name: "My work", href: "/" },
         { id: "about" as const, name: "About", href: "/about" },
     ];
-
-    const popAnimation = {
-        scale: [1, 1.8, 1],
-        transition: {
-            duration: 0.4,
-            times: [0, 0.3, 1],
-            ease: [0.19, 1.0, 0.22, 1.0] // Elastic-like easing
-        }
-    };
 
     const getTabProperties = (tabId: TabId): UnderlineProperties => {
         const element = document.getElementsByClassName(tabId)[0] as HTMLDivElement;
@@ -95,7 +85,6 @@ const NavbarYariv = () => {
     }, []);
 
     const handleTabClick = (tabId: TabId) => {
-        // setClickedTab(tabId);
         setActiveById(tabId);
         closeDrawerNew();
         if (lottieRefs[tabId].current) {
@@ -109,37 +98,25 @@ const NavbarYariv = () => {
             <div
                 className={styles.tabsFlex}
                 ref={ref}>
-                {tabs.map((tab) => (
-                    <Link
-                        data-text={tab.name} // Add this
-                        href={tab.href}
-                        key={tab.id}
-                        className={`${styles.tab + " " + tab.id} ${activeById === tab.id ? styles.activeTab : ''}`}
-                        onClick={() => handleTabClick(tab.id)}
-                    >
-                        <motion.span
-                            className={styles.tabText}
-                            whileTap={{
-                                scale: 0.9,
-                                transition: {
-                                    type: "spring",
-                                    stiffness: 500,
-                                    damping: 15,
-                                    mass: 0.8
-                                }
-                            }}
-                            style={{ display: 'inline-block' }}
+                {tabs.map((tab) => (             
+                        <Link
+                            data-text={tab.name} // Add this
+                            href={tab.href}
+                            key={tab.id}
+                            className={`${styles.tab + " " + tab.id} ${activeById === tab.id ? styles.activeTab : ''}`}
+                            onClick={() => handleTabClick(tab.id)}
                         >
-                            {tab.name}
-                        </motion.span>
-                        <Lottie
-                            className={styles.sparks}
-                            animationData={sparksAnimationData}
-                            loop={false}
-                            autoplay={false}
-                            lottieRef={lottieRefs[tab.id]}
-                        />
-                    </Link>
+                            <motion.span className={styles.tabText}>
+                                {tab.name}
+                            </motion.span>
+                            <Lottie
+                                className={styles.sparks}
+                                animationData={sparksAnimationData}
+                                loop={false}
+                                autoplay={false}
+                                lottieRef={lottieRefs[tab.id]}
+                            />
+                        </Link>
                 ))}
                 {underlineProperties && (
                     <motion.div
@@ -165,3 +142,27 @@ const NavbarYariv = () => {
 };
 
 export default NavbarYariv;
+
+
+
+//Animation settings:
+
+// whileTap={{
+//     scale: 0.9,
+//     transition: {
+//         type: "spring",
+//         stiffness: 500,
+//         damping: 15,
+//         mass: 0.8
+//     }
+// }}
+
+
+    // const popAnimation = {
+    //     scale: [1, 1.8, 1],
+    //     transition: {
+    //         duration: 0.4,
+    //         times: [0, 0.3, 1],
+    //         ease: [0.19, 1.0, 0.22, 1.0] // Elastic-like easing
+    //     }
+    // };
