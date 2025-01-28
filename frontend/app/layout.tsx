@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import NavbarYariv from "@/components/NavbarYariv/NavbarYariv";
+import Background from "@/components/Background/Background";
 import { ThemeProvider } from "./ThemeContext";
 import 'notyf/notyf.min.css';
 import './globals.scss';
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <ThemeProvider>
           <DrawerProvider>
+          <Background/>
             <NavbarYariv/>
             {children }
           </DrawerProvider>

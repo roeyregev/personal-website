@@ -1,0 +1,22 @@
+ .bgMain {
+     position: fixed;
+     top: -620px;
+     display: flex;
+     width: 100%;
+     justify-content: center;
+     align-items: start;
+     mix-blend-mode:luminosity;
+
+    .bitmojiFlex{
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        opacity: 0.04;
+        min-width: 3400px;
+
+        .bitmojiWrapper {
+            transform: scale(0.5);
+        }
+    }
+ }
