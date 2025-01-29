@@ -154,7 +154,7 @@ $breakpoints: (
 @mixin description {
     font-family: 'Roboto Condensed italic', sans-serif;
     font-weight: 200;
-    font-size: clamp(1.6rem, 6vw, 2.4rem);
+    font-size: clamp(0.85rem, 2.5vw, 1.2rem);
     line-height: 100%;
     color: var(--text-color);
     text-align: left;

@@ -5,6 +5,7 @@ import IconArrow from "../Icons/IconArrow";
 import ProjectModel from "@/Models/project-model";
 import { useEffect, useRef, useState } from "react";
 import { animate, AnimatePresence, easeIn, motion } from "framer-motion";
+import { Loader } from "../../components/Loader/Loader";
 
 interface DrawerProps {
     close: () => void;
@@ -18,6 +19,36 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
     const [fontSize, setFontSize] = useState(2.2); // Starting font size in rem
     const contentRef = useRef<HTMLDivElement>(null);
 
+    // Add a state to track loading iframes
+    const [loadingIframes, setLoadingIframes] = useState<Record<string, boolean>>({});
+
+    //find the relevant project by its id
+    const [selectedProject, setSelectedProject] = useState<ProjectModel | null>(projects.find(project => project.projectId === selectedProjectIndex) || null);
+
+    const handleIframeLoad = (videoIndex: number) => {
+        setLoadingIframes(prev => ({
+            ...prev,
+            [videoIndex]: false
+        }));
+    };
+
+    // When selected project changes, reset loading states
+    useEffect(() => {
+        if (selectedProject?.videos) {
+            const newLoadingState: Record<string, boolean> = {};
+            selectedProject.videos.forEach((_, index) => {
+                newLoadingState[index] = true;
+            });
+            setLoadingIframes(newLoadingState);
+        }
+    }, [selectedProject]);
+
+    // Reset scroll position when selected project changes
+    useEffect(() => {
+        if (contentRef.current) {
+            contentRef.current.scrollTop = 0;
+        }
+    }, [selectedProject]);
 
     //Sticky title font size change on scroll
     useEffect(() => {
@@ -44,8 +75,6 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
         };
     }, []);
 
-    //find the relevant project by its id
-    const [selectedProject, setSelectedProject] = useState<ProjectModel | null>(projects.find(project => project.projectId === selectedProjectIndex) || null);
 
     const portalRoot = document.getElementById("portal");
     if (!portalRoot) return null; // Don't render if the portal isn't available
@@ -56,7 +85,6 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                 projects.find((project) => project.projectId === selectedProject.projectId + 1) ||
                 projects.find((project) => project.projectId === 1);
             setSelectedProject(nextProject || null);
-            window.scrollTo(0, 0);
         }
     };
 
@@ -66,7 +94,6 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                 projects.find((project) => project.projectId === selectedProject.projectId - 1) ||
                 projects.find((project) => project.projectId === Math.max(...projects.map(p => p.projectId)));
             setSelectedProject(previousProject || null);
-            window.scrollTo(0, 0);
         }
     };
 
@@ -307,7 +334,7 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                 )}
 
                 {/* videos: */}
-                {selectedProject?.videos && selectedProject?.videos.length > 0 && (
+                {/* {selectedProject?.videos && selectedProject?.videos.length > 0 && (
                     <div className={styles.videosListContainer}>
                         {selectedProject?.videos?.map((item) =>
                             <div className={styles.box} key={selectedProject.projectId + "." + selectedProject.videos?.indexOf(item)}>
@@ -322,7 +349,33 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                                 {item.videoDescription && <p className={styles.videoDescription}>{item.videoDescription}</p>}
                             </div>)}
                     </div>
+                )} */}
+
+                {selectedProject?.videos && selectedProject?.videos.length > 0 && (
+                    <div className={styles.videosListContainer}>
+                        {selectedProject?.videos?.map((item, index) => (
+                            <div
+                                className={styles.box}
+                                key={selectedProject.projectId + "." + selectedProject.videos?.indexOf(item)}
+                            >
+                                <div className={styles.iframeContainer}>
+                                    {loadingIframes[index] && <Loader />}
+                                    <iframe
+                                        className={styles.projectVideo}
+                                        src={item.videoLink}
+                                        title={item.videoDescription}
+                                        allowFullScreen
+                                        onLoad={() => handleIframeLoad(index)}
+                                    />
+                                </div>
+                                {item.videoDescription && (
+                                    <p className={styles.videoDescription}>{item.videoDescription}</p>
+                                )}
+                            </div>
+                        ))}
+                    </div>
                 )}
+
             </div>
         </motion.div>,
         portalRoot
