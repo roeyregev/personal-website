@@ -345,13 +345,12 @@
       "Animations",
       "Branding"
     ],
-    "images": [
-      {
-        "imageName": "Waze_Logos_Animation_01.gif",
-        "imageDescription": "Waze Main Logo"
-      }
-    ],
+
     "videos": [
+      {
+        "videoLink": "https://player.vimeo.com/video/155837597",
+        "videoDescription": "Waze Main Logo"
+      },
       {
         "videoLink": "https://player.vimeo.com/video/221439591",
         "videoDescription": "Waze Broadcasters Program Logo"
