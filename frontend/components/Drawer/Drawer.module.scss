@@ -181,17 +181,17 @@
         width: 100%;
 
         .gifImage {
-            // border: 2px solid #ff0000; // Example styling for GIFs
             animation: fadeIn 0.5s ease-in-out;
-            width: 60%;
+            width: 100%;
         }
         
         .gifBox {
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: rgba(255, 255, 255, 0.02); // Example background for GIFs
-        
+            // background-color: rgba(255, 255, 255, 0.02); 
+            width: clamp(240px, 60%, 600px);
+            box-sizing: border-box;
         }
         
     }
@@ -209,6 +209,7 @@
         width: 96%;
         margin: 0 auto;
         gap: 0px;
+        box-sizing: border-box;
     }
 
     .projectImage {
@@ -220,14 +221,16 @@
         background-color: rgba($color: #ffffff, $alpha: 0.07);
         padding: 14px 10px;
         margin-top: 0;
-        width:fit-content;
+        width:100%;
+        box-sizing: border-box;
     }
 
     .videoDescription {
         @include description;
         background-color: rgba($color: #ffffff, $alpha: 0.07);
         padding: 10px 10px;
-        margin-top: 0
+        margin-top: 0;
+        box-sizing: border-box;
     }
 
     .iframeContainer {
