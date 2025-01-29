@@ -323,13 +323,33 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                 </div>
 
                 {/* images: */}
-                {selectedProject?.images && selectedProject?.images.length > 0 && (
+                {/* {selectedProject?.images && selectedProject?.images.length > 0 && (
                     <div className={styles.imagesContainer}>
                         {selectedProject?.images?.map((item) =>
                             <div className={styles.box} key={selectedProject.projectId + "." + selectedProject.images?.indexOf(item)}>
                                 <img className={styles.projectImage} src={"/images/" + item.imageName} alt={item.imageName} />
                                 <p className={styles.imageDescription}>{item.imageDescription}</p>
                             </div>)}
+                    </div>
+                )} */}
+                {selectedProject?.images && selectedProject?.images.length > 0 && (
+                    <div className={styles.imagesContainer}>
+                        {selectedProject.images.map((item) => {
+                            const isGif = item.imageName.toLowerCase().endsWith(".gif");
+                            return (
+                                <div
+                                    className={`${styles.box} ${isGif ? styles.gifBox : ""}`}
+                                    key={`${selectedProject.projectId}.${selectedProject.images?.indexOf(item)}`}
+                                >
+                                    <img
+                                        className={`${styles.projectImage} ${isGif ? styles.gifImage : ""}`}
+                                        src={`/images/${item.imageName}`}
+                                        alt={item.imageName}
+                                    />
+                                    <p className={styles.imageDescription}>{item.imageDescription}</p>
+                                </div>
+                            );
+                        })}
                     </div>
                 )}
 
