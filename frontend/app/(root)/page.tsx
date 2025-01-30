@@ -3,11 +3,17 @@
 import styles from './page.module.scss';
 import Gallery from "@/components/Gallery/Gallery";
 import Drawer from "@/components/Drawer/Drawer";
-import { useEffect, useState } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import projectsData from "../../ProjectsData/projects.json"
-import Footer from '@/components/Footer/Footer';
-import { AnimatePresence, motion } from 'framer-motion';
+// import Footer from '@/components/Footer/Footer';
+import { AnimatePresence } from 'framer-motion';
 import { useDrawerContext } from '@/app/DrawerContext';
+import { Loader } from '@/components/Loader/Loader';
+
+// Lazy load non-critical components
+const Footer = lazy(() => import('@/components/Footer/Footer'));
+// const Drawer = lazy(() => import("@/components/Drawer/Drawer"));
+
 
 export default function Home() {
 
@@ -25,9 +31,7 @@ export default function Home() {
 
   // Effect to create the portal div if it doesn't exist
   useEffect(() => {
-    // Scroll to top on component mount
     window.scrollTo(0, 0);
-
     // Create the portal div if it doesn't exist
     const portalDiv = document.createElement('div');
     portalDiv.setAttribute('id', 'portal');
@@ -39,73 +43,20 @@ export default function Home() {
     };
   }, []);
 
-  // Animation variants
-  const pageVariants = {
-    initial: {
-      opacity: 0,
-      y: 20,
-      x: 0,
-    },
-    animate: {
-      opacity: 1,
-      y: 0,
-      x: 0,
-      transition: {
-        duration: 0.4,
-        ease: "easeOut",
-        staggerChildren: 0.15,
-        delayChildren: 0
-      }
-    },
-    exit: {
-      opacity: 0,
-      transition: {
-        duration: 0.4
-      }
-    }
-  };
-
-  const contentVariants = {
-    initial: {
-      opacity: 0,
-      y: 20
-    },
-    animate: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-        staggerChildren: 0.1,
-        delayChildren: 0.01
-      }
-    }
-  };
-
 
   return (
-    <motion.div
-      className={styles.mainPage}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      variants={pageVariants}
-    >
-      <motion.div
-        className={styles.heroText}
-        variants={contentVariants}
-      >
-        <motion.h1 className={styles.title} variants={contentVariants}>I’m Roey. <br /> This is my work.</motion.h1>
-        <motion.p className={styles.secondaryTitle} variants={contentVariants}>UI/UX | Motion | Storytelling | (Code)</motion.p>
-      </motion.div>
+    <div
+      className={styles.mainPage}>
+      <div className={styles.heroText}>
+        <h1 className={`${styles.title} ${styles.fadeIn}`}>I’m Roey. <br /> This is my work.</h1>
+        <p className={`${styles.secondaryTitle} ${styles.fadeIn}`} >UI/UX | Motion | Storytelling | (Code)</p>
+      </div>
 
-      <motion.div
-        variants={contentVariants}
-      >
+      <div className={`${styles.galleryWrapper} ${styles.fadeIn}`}>
         {!showDrawerNew && <Gallery callback={openDrawer} projects={projectsData} />}
-      </motion.div>
-
-      {/* AnimatePresence handles the exit animation */}
+      </div>
+{/* 
+      AnimatePresence handles the exit animation */}
       <AnimatePresence mode="wait">
         {showDrawerNew && <Drawer
           close={closeDrawer}
@@ -113,11 +64,15 @@ export default function Home() {
           projects={projectsData} />}
       </AnimatePresence>
 
-      <motion.div
-        variants={contentVariants}
-      >
-        {!showDrawerNew && <Footer />}
-      </motion.div>
-    </motion.div>
+      {/* <div> {!showDrawerNew && <Footer />} </div> */}
+      <div>
+        {!showDrawerNew && (
+          <Suspense fallback={<Loader />}>
+            <Footer />
+          </Suspense>
+        )}
+      </div>
+
+    </div>
   );
 }

@@ -1,10 +1,12 @@
+
+
 import ReactDOM from "react-dom";
 import styles from "./Drawer.module.scss";
 import IconClose from "../Icons/IconClose";
 import IconArrow from "../Icons/IconArrow";
 import ProjectModel from "@/Models/project-model";
 import { useEffect, useRef, useState } from "react";
-import { animate, AnimatePresence, easeIn, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Loader } from "../../components/Loader/Loader";
 
 interface DrawerProps {

@@ -1,4 +1,3 @@
-// DownloadCvButton.tsx
 "use client";
 
 import styles from './DownloadCvButton.module.scss'
