@@ -3,12 +3,14 @@
 import Link from "next/link";
 import styles from "./NavbarYariv.module.scss";
 import { useState, useRef, useEffect } from "react";
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Toggle from "../Toggle/Toggle";
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useDrawerContext } from '@/app/DrawerContext';
 import sparksAnimationData from '../../assets/animations/sparks.json';
 import Lottie from 'lottie-react';
+
+
 
 type TabId = "myWork" | "about";
 interface UnderlineProperties {
@@ -19,6 +21,10 @@ interface UnderlineProperties {
 }
 
 const NavbarYariv = () => {
+
+    const router = useRouter();
+
+
     const { closeDrawerNew } = useDrawerContext();
     const initialPath = usePathname();
     const getInitialActiveTab = (): TabId => initialPath === "/" ? "myWork" : "about";
@@ -91,13 +97,26 @@ const NavbarYariv = () => {
         });
     }, []);
 
-    const handleTabClick = (tabId: TabId) => {
+
+    //ORIGINAL:
+    // const handleTabClick = (tabId: TabId) => {
+    //     setActiveById(tabId);
+    //     closeDrawerNew();
+    //     if (lottieRefs[tabId].current) {
+    //         lottieRefs[tabId].current.playSegments([1, 18], true);
+    //     }
+    // };
+
+    //---------TESTING:-------------------
+    const handleTabClick = (tabId: TabId, href: string) => {
         setActiveById(tabId);
         closeDrawerNew();
         if (lottieRefs[tabId].current) {
             lottieRefs[tabId].current.playSegments([1, 18], true);
         }
+        router.push(href);
     };
+    //--------------------------------------
 
     return (
         <div className={`${styles.NavbarYariv} ${hasShadow ? styles.shadow : ''}`}>
@@ -112,7 +131,18 @@ const NavbarYariv = () => {
                             <Link
                                 href={tab.href}
                                 className={`${styles.tab} ${tab.id} ${activeById === tab.id ? styles.activeTab : ''}`}
-                                onClick={() => handleTabClick(tab.id)}
+                                
+                                //ORIGINAL:
+                                // onClick={() => handleTabClick(tab.id)}
+
+                                //---------TESTING:-------------------
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    handleTabClick(tab.id, tab.href);
+                                }}
+                                //------------------------------------
+                               
+                                prefetch={true}
                             >
                                 <span className={styles.tabText}>{tab.name}</span>
                                 <Lottie
@@ -126,7 +156,6 @@ const NavbarYariv = () => {
                         </motion.div>
                     </div>
                 ))}
-
 
                 {underlineProperties && (
                     <motion.div

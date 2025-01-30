@@ -1,15 +1,12 @@
-
-// import React, { useEffect } from "react";
 import styles from './page.module.scss';
 import CopyEmailButton from "@/components/CopyEmailButton/CopyEmailButton";
 import DownloadCvButton from "@/components/DownloadCvButton/DownloadCvButton";
-import Footer from "@/components/Footer/Footer";
+import { lazy } from 'react';
+
+const Footer = lazy(() => import('@/components/Footer/Footer'));
+
 
 function AboutPage() {
-    // useEffect(() => {
-    //     window.scrollTo(0, 0);
-    // }, []);
-
     return (
         <div className={styles.about}>
             <div className={styles.aboutFlex}>
