@@ -21,6 +21,9 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
     const [fontSize, setFontSize] = useState(2.2); // Starting font size in rem
     const contentRef = useRef<HTMLDivElement>(null);
 
+    //loading state for skeleton purpose:
+    const [imageLoadingState, setImageLoadingState] = useState<Record<string, boolean>>({});
+
     // Add a state to track loading iframes
     const [loadingIframes, setLoadingIframes] = useState<Record<string, boolean>>({});
 
@@ -44,6 +47,20 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
             setLoadingIframes(newLoadingState);
         }
     }, [selectedProject]);
+
+    //skeleton:
+    // When a new project is selected, reset image loading states
+    useEffect(() => {
+        if (selectedProject?.images) {
+            const newLoadingState: Record<string, boolean> = {};
+            selectedProject.images.forEach((_, index) => {
+                newLoadingState[index] = true;
+            });
+            setImageLoadingState(newLoadingState);
+        }
+    }, [selectedProject]);
+
+
 
     // Reset scroll position when selected project changes
     useEffect(() => {
@@ -325,16 +342,8 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                 </div>
 
                 {/* images: */}
+
                 {/* {selectedProject?.images && selectedProject?.images.length > 0 && (
-                    <div className={styles.imagesContainer}>
-                        {selectedProject?.images?.map((item) =>
-                            <div className={styles.box} key={selectedProject.projectId + "." + selectedProject.images?.indexOf(item)}>
-                                <img className={styles.projectImage} src={"/images/" + item.imageName} alt={item.imageName} />
-                                <p className={styles.imageDescription}>{item.imageDescription}</p>
-                            </div>)}
-                    </div>
-                )} */}
-                {selectedProject?.images && selectedProject?.images.length > 0 && (
                     <div className={styles.imagesContainer}>
                         {selectedProject.images.map((item) => {
                             const isGif = item.imageName.toLowerCase().endsWith(".gif");
@@ -353,25 +362,34 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                             );
                         })}
                     </div>
+                )} */}
+
+                {selectedProject?.images && selectedProject?.images.length > 0 && (
+                    <div className={styles.imagesContainer}>
+                        {selectedProject.images.map((item, index) => {
+                            const isGif = item.imageName.toLowerCase().endsWith(".gif");
+                            return (
+                                <div
+                                    className={`${styles.box} ${isGif ? styles.gifBox : ""}`}
+                                    key={`${selectedProject.projectId}.${index}`}
+                                >
+                                    {imageLoadingState[index] && <div className={styles.skeleton}></div>} {/* Skeleton loader */}
+
+                                    <img
+                                        className={`${styles.projectImage} ${isGif ? styles.gifImage : ""}`}
+                                        src={`/images/${item.imageName}`}
+                                        alt={item.imageName}
+                                        onLoad={() => setImageLoadingState((prev) => ({ ...prev, [index]: false }))} // Hide skeleton on load
+                                        style={{ display: imageLoadingState[index] ? "none" : "block" }} // Hide image while loading
+                                    />
+                                    <p className={styles.imageDescription}>{item.imageDescription}</p>
+                                </div>
+                            );
+                        })}
+                    </div>
                 )}
 
                 {/* videos: */}
-                {/* {selectedProject?.videos && selectedProject?.videos.length > 0 && (
-                    <div className={styles.videosListContainer}>
-                        {selectedProject?.videos?.map((item) =>
-                            <div className={styles.box} key={selectedProject.projectId + "." + selectedProject.videos?.indexOf(item)}>
-                                <div className={styles.iframeContainer}>
-                                    <iframe
-                                        className={styles.projectVideo}
-                                        src={item.videoLink}
-                                        title={item.videoDescription}
-                                        allowFullScreen
-                                    ></iframe>
-                                </div>
-                                {item.videoDescription && <p className={styles.videoDescription}>{item.videoDescription}</p>}
-                            </div>)}
-                    </div>
-                )} */}
 
                 {selectedProject?.videos && selectedProject?.videos.length > 0 && (
                     <div className={styles.videosListContainer}>
@@ -405,3 +423,31 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
 }
 
 export default Drawer;
+
+
+{/* {selectedProject?.images && selectedProject?.images.length > 0 && (
+                    <div className={styles.imagesContainer}>
+                        {selectedProject?.images?.map((item) =>
+                            <div className={styles.box} key={selectedProject.projectId + "." + selectedProject.images?.indexOf(item)}>
+                                <img className={styles.projectImage} src={"/images/" + item.imageName} alt={item.imageName} />
+                                <p className={styles.imageDescription}>{item.imageDescription}</p>
+                            </div>)}
+                    </div>
+                )} */}
+
+{/* {selectedProject?.videos && selectedProject?.videos.length > 0 && (
+                    <div className={styles.videosListContainer}>
+                        {selectedProject?.videos?.map((item) =>
+                            <div className={styles.box} key={selectedProject.projectId + "." + selectedProject.videos?.indexOf(item)}>
+                                <div className={styles.iframeContainer}>
+                                    <iframe
+                                        className={styles.projectVideo}
+                                        src={item.videoLink}
+                                        title={item.videoDescription}
+                                        allowFullScreen
+                                    ></iframe>
+                                </div>
+                                {item.videoDescription && <p className={styles.videoDescription}>{item.videoDescription}</p>}
+                            </div>)}
+                    </div>
+                )} */}
