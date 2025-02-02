@@ -1,5 +1,3 @@
-
-
 import ReactDOM from "react-dom";
 import styles from "./Drawer.module.scss";
 import IconClose from "../Icons/IconClose";
@@ -59,8 +57,6 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
             setImageLoadingState(newLoadingState);
         }
     }, [selectedProject]);
-
-
 
     // Reset scroll position when selected project changes
     useEffect(() => {
@@ -270,7 +266,6 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
         >
             {/* Drawer navigation panel */}
             <div className={styles.drawerTop}>
-                <div className={styles.dragLine}></div>
                 <div className={styles.navIcons}>
                     <div className={styles.blankIcon}><p className={styles.blank}>blank</p></div>
                     <div className={styles.changePageFlex}>
@@ -342,28 +337,6 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                 </div>
 
                 {/* images: */}
-
-                {/* {selectedProject?.images && selectedProject?.images.length > 0 && (
-                    <div className={styles.imagesContainer}>
-                        {selectedProject.images.map((item) => {
-                            const isGif = item.imageName.toLowerCase().endsWith(".gif");
-                            return (
-                                <div
-                                    className={`${styles.box} ${isGif ? styles.gifBox : ""}`}
-                                    key={`${selectedProject.projectId}.${selectedProject.images?.indexOf(item)}`}
-                                >
-                                    <img
-                                        className={`${styles.projectImage} ${isGif ? styles.gifImage : ""}`}
-                                        src={`/images/${item.imageName}`}
-                                        alt={item.imageName}
-                                    />
-                                    <p className={styles.imageDescription}>{item.imageDescription}</p>
-                                </div>
-                            );
-                        })}
-                    </div>
-                )} */}
-
                 {selectedProject?.images && selectedProject?.images.length > 0 && (
                     <div className={styles.imagesContainer}>
                         {selectedProject.images.map((item, index) => {
@@ -382,7 +355,9 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                                         onLoad={() => setImageLoadingState((prev) => ({ ...prev, [index]: false }))} // Hide skeleton on load
                                         style={{ display: imageLoadingState[index] ? "none" : "block" }} // Hide image while loading
                                     />
-                                    <p className={styles.imageDescription}>{item.imageDescription}</p>
+                                    {item.imageDescription && (
+                                        <p className={styles.imageDescription}>{item.imageDescription}</p>
+                                    )}
                                 </div>
                             );
                         })}
@@ -390,7 +365,6 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                 )}
 
                 {/* videos: */}
-
                 {selectedProject?.videos && selectedProject?.videos.length > 0 && (
                     <div className={styles.videosListContainer}>
                         {selectedProject?.videos?.map((item, index) => (
@@ -449,5 +423,26 @@ export default Drawer;
                                 </div>
                                 {item.videoDescription && <p className={styles.videoDescription}>{item.videoDescription}</p>}
                             </div>)}
+                    </div>
+                )} */}
+
+{/* {selectedProject?.images && selectedProject?.images.length > 0 && (
+                    <div className={styles.imagesContainer}>
+                        {selectedProject.images.map((item) => {
+                            const isGif = item.imageName.toLowerCase().endsWith(".gif");
+                            return (
+                                <div
+                                    className={`${styles.box} ${isGif ? styles.gifBox : ""}`}
+                                    key={`${selectedProject.projectId}.${selectedProject.images?.indexOf(item)}`}
+                                >
+                                    <img
+                                        className={`${styles.projectImage} ${isGif ? styles.gifImage : ""}`}
+                                        src={`/images/${item.imageName}`}
+                                        alt={item.imageName}
+                                    />
+                                    <p className={styles.imageDescription}>{item.imageDescription}</p>
+                                </div>
+                            );
+                        })}
                     </div>
                 )} */}

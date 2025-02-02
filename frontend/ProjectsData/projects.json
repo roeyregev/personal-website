@@ -64,7 +64,10 @@
     "projectId": 3,
     "thumbnail": "thumbnail_gifs.gif",
     "title": "Animating StuffThatWorks",
-    "text": ["Animating STW illustrations adds another layer of personality to the brand and enriches the user experience."],
+    "text": [
+      "A collection of various animations and UX/UI motion examples.",
+      "Animating the STW platform brought it to life. This added personality to the brand, improved user clarity and orientation, and enriched the overall experience."
+    ],
     "tags": [
       "Animation",
       "UX/UI",
@@ -76,16 +79,28 @@
         "imageDescription": "Welcome to your new community"
       },
       {
+        "imageName": "stw_ux_motion_02.gif",
+        "imageDescription": "Rating content bar animation"
+      },
+      {
         "imageName": "stw_gifs_02.gif",
-        "imageDescription": "Various moods"
+        "imageDescription": "How do you feel today?"
       },
       {
         "imageName": "stw_gifs_03.gif",
         "imageDescription": "Fly like the wind!"
       },
       {
+        "imageName": "stw_ux_motion_01.gif",
+        "imageDescription": "Folding the daily update panel upon scrolling"
+      },
+      {
         "imageName": "stw_gifs_04.gif",
-        "imageDescription": "STW reactions (opening & idle)"
+        "imageDescription": "STW emoji-like reactions (opening & idle)"
+      },
+      {
+        "imageName": "stw_ux_motion_03.gif",
+        "imageDescription": "Daily update transition (mockup)"
       }
     ]
   },
@@ -104,7 +119,7 @@
     "videos": [
       {
         "videoLink": "https://player.vimeo.com/video/213830148",
-        "videoDescription": "Few words about this video"
+        "videoDescription": "The time is NOW!!!"
       }
     ]
   },
@@ -113,8 +128,8 @@
     "thumbnail": "thumbnail_this-site.gif",
     "title": "This site",
     "text": [
-      "Well, you're already in it. So, you know... nothing more to show here. Seemed logical to practice some coding with building my own site, so here it is",
-      "This site was built with NextJS and TypeScript. "
+      "This personal portfolio website is part of my portfolio (so meta, I know). ",
+      "It was built with NextJS/TypeScript, SCSS, and some self-made Lottie animations."
     ],
     "tags": [
       "Coding",
@@ -172,7 +187,6 @@
       }
     ]
   },
-
   {
     "projectId": 7,
     "thumbnail": "thumbnail_carpool-intro.png",
@@ -194,32 +208,6 @@
   },
   {
     "projectId": 8,
-    "thumbnail": "thumbnail_ux_motion.gif",
-    "title": "Motion & UX",
-    "text": [
-      "Few examples (some weren't implemented yet) of adding motion to STW for improved user experience and orientation around the product. A concept for a feature that shows other condition-community members that are similar to you."
-    ],
-    "tags": [
-      "UX/UI",
-      "Animations"
-    ],
-    "images": [
-      {
-        "imageName": "stw_ux_motion_01.gif",
-        "imageDescription": "Folding the daily update panel upon scrolling"
-      },
-      {
-        "imageName": "stw_ux_motion_02.gif",
-        "imageDescription": "Rating content bar animation"
-      },
-      {
-        "imageName": "stw_ux_motion_03.gif",
-        "imageDescription": "Daily update transition"
-      }
-    ]
-  },
-  {
-    "projectId": 9,
     "thumbnail": "thumbnail_unusual-event.png",
     "title": "Waze Unusual Traffic Alerts",
     "text": [
@@ -237,7 +225,7 @@
     ]
   },
   {
-    "projectId": 10,
+    "projectId": 9,
     "thumbnail": "thumbnail_pain-map.png",
     "title": "STW Pain Map",
     "text": [
@@ -265,7 +253,7 @@
     ]
   },
   {
-    "projectId": 11,
+    "projectId": 10,
     "thumbnail": "thumbnail_waze-playstore.png",
     "title": "Waze Google Playstore Clip",
     "text": [
@@ -283,7 +271,7 @@
     ]
   },
   {
-    "projectId": 12,
+    "projectId": 11,
     "thumbnail": "thumbnail_waze-intro.png",
     "title": "Waze V3.0 Intro",
     "text": [
@@ -301,7 +289,7 @@
     ]
   },
   {
-    "projectId": 13,
+    "projectId": 12,
     "thumbnail": "thumbnail_waze_ads.png",
     "title": "Waze Ads",
     "text": [
@@ -319,10 +307,12 @@
     ]
   },
   {
-    "projectId": 14,
+    "projectId": 13,
     "thumbnail": "thumbnail_voice-rec.png",
     "title": "Waze Voice Recording",
-    "text": ["It’s basically an ad for Waze's “Record your own navigation instructions” feature (from 2017 I believe). A personal favorite of mine, I think I like the simplicity and the fit of the concept to the feature itself (but maybe it’s just me)."],
+    "text": [
+      "It’s basically an ad for Waze's “Record your own navigation instructions” feature (from 2017 I believe). A personal favorite of mine, I think I like the simplicity and the fit of the concept to the feature itself (but maybe it’s just me)."
+    ],
     "tags": [
       "Animations",
       "UX/UI"
@@ -335,17 +325,16 @@
     ]
   },
   {
-    "projectId": 15,
+    "projectId": 14,
     "thumbnail": "thumbnail_waze-logos.png",
     "title": "Waze Logos Animation",
     "text": [
-      "Every logo needs a nice entrance"
+      "Every logo needs a nice entrance, so I gave life to the Waze logo (designed by Elad Tayar)"
     ],
     "tags": [
       "Animations",
       "Branding"
     ],
-
     "videos": [
       {
         "videoLink": "https://player.vimeo.com/video/155837597",
@@ -358,7 +347,7 @@
     ]
   },
   {
-    "projectId": 16,
+    "projectId": 15,
     "thumbnail": "thumbnail_solar-system.png",
     "title": "Personal | Yair's Solar System",
     "text": [
@@ -389,7 +378,7 @@
     ]
   },
   {
-    "projectId": 17,
+    "projectId": 16,
     "thumbnail": "thumbnail_mom.png",
     "title": "Personal | Mom",
     "text": [
