@@ -9,9 +9,6 @@ const Footer = () => {
                 <IconRights />
             </div>
             <div className={styles.footerText}>All rights reserved to me! | 2025</div>
-            {/* <div className={styles.footerText}>|</div>
-            <div className={styles.footerText}>2025</div> */}
-
         </div>
     )
 }

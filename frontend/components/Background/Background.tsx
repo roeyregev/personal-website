@@ -1,7 +1,6 @@
 import style from "./Background.module.scss"
 import MyBitmoji from "../Icons/myBitmoji";
 
-
 const Background = () => {
 
     return (

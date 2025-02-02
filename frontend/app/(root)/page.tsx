@@ -8,8 +8,6 @@ import { AnimatePresence } from 'framer-motion';
 import { useDrawerContext } from '@/app/DrawerContext';
 import { Loader } from '@/components/Loader/Loader';
 import dynamic from 'next/dynamic';
-// import Drawer from "@/components/Drawer/Drawer";
-// import Footer from '@/components/Footer/Footer';
 
 // Lazy load non-critical components
 const Footer = dynamic(() => import('@/components/Footer/Footer'), {

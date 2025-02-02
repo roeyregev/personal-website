@@ -1,9 +1,6 @@
-
-import { motion } from "framer-motion";
 import styles from "./Loader.module.scss";
 import Lottie from 'lottie-react';
 import loader from "../../assets/animations/loader.json"
-
 
 export function Loader() {
     return (

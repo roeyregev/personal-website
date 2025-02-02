@@ -17,5 +17,4 @@ class ProjectModel {
     public tags?: string[];
 }
 
-
 export default ProjectModel
