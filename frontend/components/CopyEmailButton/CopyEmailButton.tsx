@@ -15,7 +15,7 @@ const CopyEmailButton = () => {
             })
             .catch((err) => {
                 console.error("Failed to copy email: ", err);
-                notificationService.error(err)
+                notificationService.error(err);
             });
     };
 

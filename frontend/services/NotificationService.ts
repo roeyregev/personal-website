@@ -1,10 +1,10 @@
 import { Notyf } from "notyf";
 
+
 class NotificationService {
     private notification: Notyf | null = null;
 
     constructor() {
-        // Only initialize if we're in the browser environment
         if (typeof window !== 'undefined') {
             this.notification = new Notyf({
                 duration: 60000,
@@ -13,13 +13,13 @@ class NotificationService {
                 types: [
                     {
                         type: 'success',
-                        // background: '#88C8BC',
+                        background: '#88C8BC',
                         icon: false,
                         className: 'custom-notification',
                     },
                     {
                         type: 'error',
-                        // background: '#FD676A',
+                       background: '#FD676A',
                         icon: false,
                         className: 'custom-notification',
                     },

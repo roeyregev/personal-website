@@ -1,5 +1,5 @@
-@import "./_variables.scss"; 
-@import './notyf';
+@import "./_variables.scss";
+@import 'notyf/notyf.min.css';
 
 html,
 body,
@@ -12,8 +12,46 @@ body,
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    // overflow: auto;
     scrollbar-width: none;
     scrollbar-color: #3e3e3e #3e3e3e;
     transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+
+
+// Your custom Notyf styles
+.notyf {
+
+    padding-top: 20px !important;
+
+    // max-width: 650px;
+
+}
+
+.notyf__toast.custom-notification {
+    padding: 0px 20px !important;
+    font-family: 'Roboto Condensed', sans-serif !important;
+    font-weight: 300;
+    font-size: 16px !important;
+    border-radius: 8px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // max-width: 600px;
+    // width: 80%;
+
+    .notyf__wrapper {
+        text-align: center;
+      
+    }
+
+    // .notyf__ripple{
+    //     max-width: 360px;
+    //     margin: 10px auto;
+    // }
+}
+
+.notyf__message {
+    color: #ffffff !important;
+    font-size: 1.3rem;
 }
