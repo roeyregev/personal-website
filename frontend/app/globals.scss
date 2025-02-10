@@ -18,14 +18,9 @@ body,
 }
 
 
-
 // Your custom Notyf styles
 .notyf {
-
     padding-top: 20px !important;
-
-    // max-width: 650px;
-
 }
 
 .notyf__toast.custom-notification {
@@ -37,18 +32,10 @@ body,
     display: flex;
     justify-content: center;
     align-items: center;
-    // max-width: 600px;
-    // width: 80%;
 
     .notyf__wrapper {
         text-align: center;
-      
     }
-
-    // .notyf__ripple{
-    //     max-width: 360px;
-    //     margin: 10px auto;
-    // }
 }
 
 .notyf__message {

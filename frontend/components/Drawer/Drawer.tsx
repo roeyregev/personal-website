@@ -329,12 +329,30 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                         <div className={styles.mainText} key={selectedProject.projectId + "." + selectedProject.text?.indexOf(par)}>
                             <p className={styles.paragraph}>{par}</p>
                         </div>)}
+
+                    {/* links */}
+                    {selectedProject?.links && selectedProject.links.length > 0 && (
+                        <div className={styles.linksContainer}>
+                            {selectedProject.links.map((link, index) => (
+                                <div
+                                    className={styles.link}
+                                    key={`${selectedProject.projectId}.${index}`}
+                                >
+                                    <a href={link}>go to site</a>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+
                     <div className={styles.threeDots}>
                         <div className={styles.dot}></div>
                         <div className={styles.bigDot}></div>
                         <div className={styles.dot}></div>
                     </div>
                 </div>
+
+
+
 
                 {/* images: */}
                 {selectedProject?.images && selectedProject?.images.length > 0 && (

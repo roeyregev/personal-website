@@ -15,6 +15,7 @@ class ProjectModel {
     public images?: Image[];
     public videos?: Video[];
     public tags?: string[];
+    public links?: string[];
 }
 
 export default ProjectModel

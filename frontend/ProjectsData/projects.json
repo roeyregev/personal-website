@@ -8,6 +8,9 @@
       "As an Admin one can edit/add/delete vacations and view a simple chart that shows likes per vacation data Of course, its fully responsive.",
       "BTW, both airplane animation and like button animation are mine and were implemented as a Lottie code"
     ],
+    "links": [
+      "https://like-a-flight-292c9f7fae81.herokuapp.com/home"
+    ],
     "tags": [
       "UX/UI",
       "Coding",
