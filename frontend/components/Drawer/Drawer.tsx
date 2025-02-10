@@ -338,7 +338,8 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                                     className={styles.link}
                                     key={`${selectedProject.projectId}.${index}`}
                                 >
-                                    <a href={link}>go to site</a>
+                                   <a href={link} target="_blank" rel="noopener noreferrer">Go to site</a>
+
                                 </div>
                             ))}
                         </div>
