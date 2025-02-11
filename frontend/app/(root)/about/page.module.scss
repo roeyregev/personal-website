@@ -1,5 +1,5 @@
-@import "../../variables";
-@import "../../globals.scss";
+@use "../../variables" as *;
+@use "../../globals.scss";
 
 .fadeIn {
     opacity: 0;

@@ -1,5 +1,5 @@
-@import "../../app/variables";
-@import "../globals.scss";
+@use "../../app/variables" as *;
+@use "../globals.scss";
 
 
 .mainPage {
