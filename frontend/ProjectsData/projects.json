@@ -29,12 +29,12 @@
       {
         "imageName": "Like-A-Flight_04.gif",
         "imageDescription": "Hero animation - originally implemented using Lottie",
-         "ratio":"wide"
+        "ratio": "wide"
       },
       {
         "imageName": "Like-A-Flight_05.gif",
         "imageDescription": "Like | Unlike button - originally implemented using Lottie",
-         "ratio":"wide"
+        "ratio": "wide"
       },
       {
         "imageName": "Like-A-Flight_03.png",
@@ -344,14 +344,10 @@
       {
         "imageName": "Waze_Logos_Animation_01.gif",
         "imageDescription": "Waze Main Logo",
-        "ratio":"wide"
+        "ratio": "wide"
       }
     ],
     "videos": [
-      {
-        "videoLink": "https://player.vimeo.com/video/155837597",
-        "videoDescription": "Waze Main Logo"
-      },
       {
         "videoLink": "https://player.vimeo.com/video/221439591",
         "videoDescription": "Waze Broadcasters Program Logo"
