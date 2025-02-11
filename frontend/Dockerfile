@@ -1,28 +1,35 @@
+# 🌟 Build Stage
 FROM node:18-alpine AS builder
 
 WORKDIR /app
 
-# Copy only frontend directory
-COPY frontend/package*.json ./
-RUN npm install --frozen-lockfile
+# Copy package files first for better caching
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev
 
-# Copy everything inside frontend
-COPY frontend ./
+# Copy everything else
+COPY . ./
 
+# Build Next.js
 RUN npm run build
 
+# 🌟 Production Stage
 FROM node:18-alpine
 
 WORKDIR /app
 
-COPY --from=builder /app/package*.json ./
+# Copy only production files
+COPY --from=builder /app/package.json ./
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/node_modules ./node_modules
 
+# Set environment
 ENV NODE_ENV=production
 
-CMD ["npm", "run", "start"]
+# Use correct Next.js start command
+CMD ["node", ".next/standalone/server.js"]
+
 
 
 
@@ -71,19 +78,19 @@ CMD ["npm", "run", "start"]
 # ---------- OLD & WORKING but with slow loading -----------
 
 # Inherit from node over linux alpine:
-    # FROM node:18-alpine3.19
+# FROM node:18-alpine3.19
 
-    # # Create app folder: 
-    # WORKDIR /app
-    
-    # # Copy package.json + package-lock.json:
-    # COPY package*.json /app
-    
-    # # Install node_modules: 
-    # RUN npm i
-    
-    # # Copy entire frontend:
-    # COPY . /app
-    
-    # # Execute command for the container: 
-    # ENTRYPOINT npm run dev
+# # Create app folder: 
+# WORKDIR /app
+
+# # Copy package.json + package-lock.json:
+# COPY package*.json /app
+
+# # Install node_modules: 
+# RUN npm i
+
+# # Copy entire frontend:
+# COPY . /app
+
+# # Execute command for the container: 
+# ENTRYPOINT npm run dev
