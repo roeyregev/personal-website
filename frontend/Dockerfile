@@ -7,7 +7,7 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci --omit=dev
 
-# Copy everything else
+# Copy everything inside frontend/
 COPY . ./
 
 # Build Next.js
@@ -18,17 +18,18 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-# Copy only production files
+# Copy only necessary production files
 COPY --from=builder /app/package.json ./
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/node_modules ./node_modules
 
-# Set environment
+# Set production environment
 ENV NODE_ENV=production
 
-# Use correct Next.js start command
+# Use correct Next.js standalone mode
 CMD ["node", ".next/standalone/server.js"]
+
 
 
 
