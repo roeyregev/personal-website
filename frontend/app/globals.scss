@@ -14,6 +14,11 @@ body,
     box-sizing: border-box;
     scrollbar-width: thin;
     transition: background-color 0.2s ease, color 0.2s ease;
+
+    body.drawer-open {
+        overflow-y: scroll;
+        /* Keep scrollbar visible */
+    }
 }
 
 
@@ -49,17 +54,17 @@ body,
 
 /* Global scrollbar styles */
 ::-webkit-scrollbar {
-    width: 4px; 
+    width: 4px;
 }
-  
-  /* Track (background of the scrollbar) */
-  ::-webkit-scrollbar-track {
-    background: none; 
-    border-radius: 4px; 
-  }
-  
-  /* Handle (movable part of the scrollbar) */
-  ::-webkit-scrollbar-thumb {
+
+/* Track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+    background: none;
+    border-radius: 4px;
+}
+
+/* Handle (movable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
     background: var(--scrollbar);
     border-radius: 10px;
-  }  
+}

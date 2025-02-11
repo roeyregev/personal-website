@@ -34,6 +34,7 @@ export default function Home() {
     setShowDrawerNew(false);
   };
 
+  
   // Preload the Drawer component when the page loads -- NEW****
   useEffect(() => {
     const preloadDrawer = () => {
@@ -41,6 +42,7 @@ export default function Home() {
     };
     preloadDrawer();
   }, []);
+
 
   // Effect to create the portal div if it doesn't exist
   useEffect(() => {
@@ -56,18 +58,25 @@ export default function Home() {
     };
   }, []);
 
-  useEffect(() => {
-    if (showDrawerNew) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
 
+  useEffect(() => {
+    const mainPageDiv = document.querySelector(`.${styles.mainPage}`);
+  
+    if (showDrawerNew) {
+      document.body.classList.add("drawer-open");
+      if (mainPageDiv) mainPageDiv.classList.add("drawer-open");
+    } else {
+      document.body.classList.remove("drawer-open");
+      if (mainPageDiv) mainPageDiv.classList.remove("drawer-open");
+    }
+  
     return () => {
-      document.body.style.overflow = "";
+      document.body.classList.remove("drawer-open");
+      if (mainPageDiv) mainPageDiv.classList.remove("drawer-open");
     };
   }, [showDrawerNew]);
-
+  
+  
   return (
     <div
       className={styles.mainPage}>

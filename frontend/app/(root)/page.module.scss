@@ -5,12 +5,9 @@
 .mainPage {
     width: 100%;
     position: relative;
-    // scrollbar-width: thin;
-    //  scrollbar-color: var( --scrollbar) var( --scrollbar);
+}
 
-  }
-
-  .fadeIn {
+.fadeIn {
     opacity: 0;
     transform: translateY(10px);
     animation: fadeInUp 0.6s ease forwards;
@@ -23,14 +20,14 @@
     }
 }
 
-  .heroText {
+.heroText {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-bottom: 1.2rem;
     margin-top: 5rem;
- 
+
 }
 
 .title {
@@ -42,11 +39,10 @@
     margin-top: 0.3rem;
     color: var(--text-color);
     animation-delay: 0.1s;
-} 
+}
 
-.galleryWrapper{
-    animation-delay: 0.2s; 
-    min-height: 100vh;
+.galleryWrapper {
+    animation-delay: 0.2s;
 }
 
 

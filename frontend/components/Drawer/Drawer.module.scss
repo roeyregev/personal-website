@@ -17,8 +17,6 @@
     border-radius: 30px 30px 0 0;
     overflow-y: auto;
     box-sizing: border-box;
-    // scrollbar-width: thin;
-    // scrollbar-color: var( --scrollbar) var( --scrollbar);
 
     .drawerTop {
         border-radius: 30px 30px 0 0;
@@ -119,17 +117,14 @@
     display: flex;
     flex-direction: column;
     gap: 14px;
-    max-width: 960px;
+    // max-width: 960px;
     margin: 80px 40px;
     padding-bottom: 120px;
     align-items: center;
     overflow-y: auto;
     width: 100%;
     box-sizing: border-box;
-    // scrollbar-width: thin;
-    // scrollbar-color: var(--scrollbar) var(--scrollbar);
     max-height: calc(100vh - 200px);
-
 
     .tagsContainer {
         display: flex;
@@ -239,7 +234,8 @@
             box-sizing: border-box;
 
             &.wide {
-                width: 100%;
+                width: 96%;
+                margin: 20px auto;
             }
         }
 
@@ -318,18 +314,25 @@
         left: 50%;
         transform: translateX(-50%);
         box-sizing: border-box;
-        padding: 0 40px;
+        padding: 0 20px;
         left: 50% !important;
         transform: translateX(-50%) !important;
 
         .drawerTop {
             border-radius: 4px 4px 0 0;
             box-sizing: border-box;
+            padding: 20px;
         }
 
         .projectContentContainer {
-            max-width: 1000px;
-            width: 90%;
+            // max-width: 1400px;
+            width: 100%;
+            // margin-top: 20px;
+        }
+
+        .projectContentContainer {
+            margin: 100px 40px;
+            padding: 0px 40px;
         }
     }
 }
