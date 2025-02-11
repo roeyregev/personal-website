@@ -338,7 +338,7 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                                     className={styles.link}
                                     key={`${selectedProject.projectId}.${index}`}
                                 >
-                                   <a href={link} target="_blank" rel="noopener noreferrer">Go to site</a>
+                                    <a href={link} target="_blank" rel="noopener noreferrer">Go to site</a>
 
                                 </div>
                             ))}
@@ -357,9 +357,10 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                     <div className={styles.imagesContainer}>
                         {selectedProject.images.map((item, index) => {
                             const isGif = item.imageName.toLowerCase().endsWith(".gif");
+                            const isWide = item.ratio === "wide"; // Check if the image has "ratio": "wide"
                             return (
                                 <div
-                                    className={`${styles.box} ${isGif ? styles.gifBox : ""}`}
+                                    className={`${styles.box} ${isGif ? styles.gifBox : ""} ${isWide ? styles.wide : ""}`}
                                     key={`${selectedProject.projectId}.${index}`}
                                 >
                                     {imageLoadingState[index] && <div className={styles.skeleton}></div>} {/* Skeleton loader */}

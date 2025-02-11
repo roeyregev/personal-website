@@ -1,6 +1,7 @@
 interface Image {
     imageName: string;
     imageDescription: string;
+    ratio?: string
   }
   
   interface Video {

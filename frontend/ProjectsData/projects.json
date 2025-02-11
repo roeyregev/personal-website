@@ -4,7 +4,7 @@
     "thumbnail": "thumbnail_like-a-flight.gif",
     "title": "Like-A-Flight",
     "text": [
-      "This site was created as the final project for a full-stack development course, so my design and my code. Basically, this website shows a list of available vacations. The user can login and mark the flights that he likes (hey, I didn't come up with the brief).",
+      "This site was created as the final project for a full-stack development course — so, my design and my code. It displays a list of vacations, allowing users to log in and mark their favorite flights. (Wasn't my idea 🤷‍♂️. Just showcasing the design and dev work.)",
       "As an Admin one can edit/add/delete vacations and view a simple chart that shows likes per vacation data Of course, its fully responsive.",
       "BTW, both airplane animation and like button animation are mine and were implemented as a Lottie code"
     ],
