@@ -10,13 +10,14 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    max-width: 1400px;
     z-index: 10;
     box-shadow: var(--main-shadow);
     border-radius: 30px 30px 0 0;
     overflow-y: auto;
     box-sizing: border-box;
     scrollbar-width: thin;
-    scrollbar-color: #3e3e3e #3e3e3e;
+    scrollbar-color: var( --scrollbar) var( --scrollbar);
 
     .drawerTop {
         border-radius: 30px 30px 0 0;
@@ -51,6 +52,7 @@
         margin: 10px 0px;
         justify-content: space-between;
         width: 90%;
+        max-width: 960px;
         box-sizing: border-box;
         cursor: pointer;
         align-items: center;
@@ -124,7 +126,7 @@
     width: 100%;
     box-sizing: border-box;
     scrollbar-width: thin;
-    scrollbar-color: #3e3e3e #3e3e3e;
+    scrollbar-color: var(--scrollbar) var(--scrollbar);
     max-height: calc(100vh - 200px);
 
 
@@ -150,9 +152,9 @@
         background-clip: text;
         color: transparent;
         text-decoration: none; // Remove default underline
-    
+
         position: relative;
-    
+
         &::after {
             content: "";
             position: absolute;
@@ -170,7 +172,7 @@
             bottom: -2px;
         }
     }
-    
+
 
     .description {
         @include paragraph;
@@ -179,7 +181,8 @@
         justify-content: center;
         align-items: left;
         width: 100%;
-        padding: 0px 16px;
+        max-width: 650px;
+        padding: 0px 30px;
         box-sizing: border-box;
         gap: 1.2rem;
 
@@ -310,14 +313,12 @@
         transform: translateX(-50%);
         box-sizing: border-box;
         padding: 0 40px;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
 
         .drawerTop {
             border-radius: 4px 4px 0 0;
             box-sizing: border-box;
-        }
-
-        .dragLine {
-            opacity: 0;
         }
 
         .projectContentContainer {

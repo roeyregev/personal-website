@@ -19,10 +19,6 @@
     ],
     "images": [
       {
-        "imageName": "Like-A-Flight_04.gif",
-        "imageDescription": "Hero animation - originally implemented using Lottie"
-      },
-      {
         "imageName": "Like-A-Flight_01.png",
         "imageDescription": "Homepage"
       },
@@ -31,8 +27,14 @@
         "imageDescription": "Flights page"
       },
       {
+        "imageName": "Like-A-Flight_04.gif",
+        "imageDescription": "Hero animation - originally implemented using Lottie",
+         "ratio":"wide"
+      },
+      {
         "imageName": "Like-A-Flight_05.gif",
-        "imageDescription": "Like | Unlike button - originally implemented using Lottie"
+        "imageDescription": "Like | Unlike button - originally implemented using Lottie",
+         "ratio":"wide"
       },
       {
         "imageName": "Like-A-Flight_03.png",
@@ -132,7 +134,7 @@
     "title": "This site",
     "text": [
       "This personal portfolio website is part of my portfolio (so meta, I know). ",
-      "It was built with NextJS/TypeScript, SCSS, and some self-made Lottie animations."
+      "It was built with NextJS/TypeScript, SCSS, and some self-made Lottie animations (the light/dark toggle for example)."
     ],
     "tags": [
       "Coding",
@@ -337,6 +339,13 @@
     "tags": [
       "Animations",
       "Branding"
+    ],
+    "images": [
+      {
+        "imageName": "Waze_Logos_Animation_01.gif",
+        "imageDescription": "Waze Main Logo",
+        "ratio":"wide"
+      }
     ],
     "videos": [
       {

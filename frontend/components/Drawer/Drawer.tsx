@@ -352,9 +352,6 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                     </div>
                 </div>
 
-
-
-
                 {/* images: */}
                 {selectedProject?.images && selectedProject?.images.length > 0 && (
                     <div className={styles.imagesContainer}>

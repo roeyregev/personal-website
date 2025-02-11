@@ -69,6 +69,8 @@
     --green-gradient: linear-gradient(-70deg, #98FF48, #7EFFFF);
     --main-shadow: 0px -8px 24px 0px rgba(0, 0, 0, 0.44);
     --navbar-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    --scrollbar: #3e3e3e;
+
 }
 
 :root[data-theme="light"] {
@@ -85,6 +87,7 @@
     --green-gradient: linear-gradient(-70deg, #62d30b, #3fe2e2);
     --main-shadow: 0px -8px 24px 0px rgba(0, 0, 0, 0.07);
     --navbar-shadow: 0px 4px 4px rgba(49, 159, 159, 0.1);
+    --scrollbar: #e2e0e0;
 }
 
 // Keep your breakpoints
