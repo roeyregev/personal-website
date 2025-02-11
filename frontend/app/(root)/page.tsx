@@ -1,3 +1,4 @@
+//back to working version
 "use client"
 import styles from './page.module.scss';
 import Gallery from "@/components/Gallery/Gallery";
