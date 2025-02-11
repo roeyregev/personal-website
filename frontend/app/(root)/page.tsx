@@ -1,5 +1,4 @@
 "use client"
-//test
 import styles from './page.module.scss';
 import Gallery from "@/components/Gallery/Gallery";
 import { Suspense, lazy, useEffect, useState } from "react";
