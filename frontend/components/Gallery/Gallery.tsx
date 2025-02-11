@@ -15,8 +15,18 @@ function Gallery(props: GalleryProps): JSX.Element {
     const handleProjectClick = (projectIndex: number | null) => {
         console.log(selectedProjectIndex);
         setSelectedProjectIndex(projectIndex);
-        projectIndex && props.callback(projectIndex); // Open the drawer after setting the selected index       
+    
+        if (projectIndex !== null) {
+            props.callback(projectIndex);
+        }
     };
+
+    
+    // const handleProjectClick = (projectIndex: number | null) => {
+    //     console.log(selectedProjectIndex);
+    //     setSelectedProjectIndex(projectIndex);
+    //     projectIndex && props.callback(projectIndex);
+    // };
 
     return (
         <div className={styles.Gallery}>

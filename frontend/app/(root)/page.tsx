@@ -36,12 +36,12 @@ export default function Home() {
 
   
   // Preload the Drawer component when the page loads -- NEW****
-  useEffect(() => {
-    const preloadDrawer = () => {
-      const drawerPromise = import("@/components/Drawer/Drawer");
-    };
-    preloadDrawer();
-  }, []);
+  // useEffect(() => {
+  //   const preloadDrawer = () => {
+  //     const _drawerPromise = import("@/components/Drawer/Drawer");
+  //   };
+  //   preloadDrawer();
+  // }, []);
 
 
   // Effect to create the portal div if it doesn't exist

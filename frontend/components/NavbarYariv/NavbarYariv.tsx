@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import styles from "./NavbarYariv.module.scss";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, RefObject } from "react";
 import { motion } from "framer-motion";
 import Toggle from "../Toggle/Toggle";
 import { usePathname, useRouter } from 'next/navigation';
@@ -35,10 +35,21 @@ const NavbarYariv = () => {
     //     about: useRef<any>(null)
     // };
 
-    const lottieRefs: Record<TabId, React.RefObject<LottieRefCurrentProps>> = {
-        myWork: useRef<LottieRefCurrentProps>(null),
-        about: useRef<LottieRefCurrentProps>(null)
-    };
+    // const lottieRefs: Record<TabId, React.RefObject<LottieRefCurrentProps>> = {
+    //     myWork: useRef<LottieRefCurrentProps>(null),
+    //     about: useRef<LottieRefCurrentProps>(null)
+    // };
+
+    // const lottieRefs = useRef<Record<TabId, React.RefObject<LottieRefCurrentProps>>>({
+    //     myWork: { current: null },
+    //     about: { current: null },
+    // });
+
+    const lottieRefs = useRef<Record<TabId, RefObject<LottieRefCurrentProps>>>({
+        myWork: { current: null },
+        about: { current: null },
+    });
+
 
     const tabs = [
         { id: "myWork" as const, name: "My work", href: "/" },
@@ -92,10 +103,16 @@ const NavbarYariv = () => {
     }, []);
 
     useEffect(() => {
-        Object.values(lottieRefs).forEach(ref => {
+        Object.values(lottieRefs.current).forEach(ref => {
             ref.current?.goToAndStop(18, true);
         });
-    }, []); // No dependencies
+    }, []);
+
+    // useEffect(() => {
+    //     Object.values(lottieRefs).forEach(ref => {
+    //         ref.current?.goToAndStop(18, true);
+    //     });
+    // }, []); 
 
 
     // useEffect(() => {
@@ -107,14 +124,29 @@ const NavbarYariv = () => {
     // }, []);
 
 
+    // const handleTabClick = (tabId: TabId, href: string) => {
+    //     setActiveById(tabId);
+    //     closeDrawerNew();
+    //     if (lottieRefs[tabId].current) {
+    //         lottieRefs[tabId].current.playSegments([1, 18], true);
+    //     }
+    //     router.push(href);
+    // };
+
     const handleTabClick = (tabId: TabId, href: string) => {
         setActiveById(tabId);
         closeDrawerNew();
-        if (lottieRefs[tabId].current) {
-            lottieRefs[tabId].current.playSegments([1, 18], true);
+
+        // Access lottieRefs.current before indexing
+        const lottieRef = lottieRefs.current[tabId];
+
+        if (lottieRef?.current) {
+            lottieRef.current.playSegments([1, 18], true);
         }
+
         router.push(href);
     };
+
 
     return (
         <div className={`${styles.NavbarYariv} ${hasShadow ? styles.shadow : ''}`}>
@@ -141,7 +173,7 @@ const NavbarYariv = () => {
                                     animationData={sparksAnimationData}
                                     loop={false}
                                     autoplay={false}
-                                    lottieRef={lottieRefs[tab.id]}
+                                    lottieRef={lottieRefs.current[tab.id]} // <-- Accessing correctly
                                 />
                             </Link>
                         </motion.div>
