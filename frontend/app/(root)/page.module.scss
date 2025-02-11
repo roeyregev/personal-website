@@ -1,5 +1,4 @@
 @use "../../app/variables" as *;
-@use "../globals.scss";
 
 
 .mainPage {
@@ -27,7 +26,6 @@
     justify-content: center;
     margin-bottom: 1.2rem;
     margin-top: 5rem;
-
 }
 
 .title {

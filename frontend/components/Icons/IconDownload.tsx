@@ -1,4 +1,3 @@
-
 import { SVGProps } from 'react';
 
 interface IconDownloadProps extends SVGProps<SVGSVGElement> {

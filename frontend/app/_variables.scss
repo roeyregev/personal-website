@@ -54,42 +54,6 @@
     font-style: italic;
 }
 
-// Theme variables
-:root[data-theme="dark"] {
-    --primary-color: #2E2E2E;
-    --primary-dark: #292929;
-    --primary-transparent: rgba(46, 46, 46, 0.95);
-    --tag-color: #262626;
-    --text-color: #D5D5D5;
-    --always-white: #ffffff;
-    --white: #ffffff;
-    --btn-bg: #383838;
-    --about-btn:#575757;
-    --pink-gradient: linear-gradient(-70deg, #FFCC48, #FC7EFF);
-    --green-gradient: linear-gradient(-70deg, #98FF48, #7EFFFF);
-    --main-shadow: 0px -8px 24px 0px rgba(0, 0, 0, 0.44);
-    --navbar-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-    --scrollbar: #3e3e3e;
-
-}
-
-:root[data-theme="light"] {
-    --primary-color: #f6f6f6;
-    --primary-dark: #f6f6f6;
-    --primary-transparent: rgba(255, 255, 255, 0.95);
-    --tag-color: #f0f0f0;
-    --text-color: #2E2E2E;
-    --always-white: #ffffff;
-    --white: #2E2E2E;
-    --btn-bg: #e3e3e3;
-    --about-btn:#e1e1e1;
-    --pink-gradient: linear-gradient(-70deg, #ffc42e, #fc5cff);
-    --green-gradient: linear-gradient(-70deg, #62d30b, #3fe2e2);
-    --main-shadow: 0px -8px 24px 0px rgba(0, 0, 0, 0.07);
-    --navbar-shadow: 0px 4px 4px rgba(49, 159, 159, 0.1);
-    --scrollbar: #e2e0e0;
-}
-
 // Keep your breakpoints
 $breakpoints: (
     small: 480px,

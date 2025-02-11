@@ -2,7 +2,6 @@ import styles from './Footer.module.scss';
 import IconRights from '../Icons/IconRights'
 
 const Footer = () => {
-
     return (
         <div className={styles.footer}>
             <div className={styles.iconRight}>

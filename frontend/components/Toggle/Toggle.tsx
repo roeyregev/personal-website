@@ -1,14 +1,16 @@
 
-import animationData from '../../assets/animations/toggle.json'; // Adjust path as needed
+import animationData from '../../assets/animations/toggle.json'; 
 import styles from "./Toggle.module.scss"
-import { useEffect, useRef, useState } from 'react';
-import Lottie from 'lottie-react';
+import { useEffect, useRef } from 'react';
+// import Lottie from 'lottie-react';
+import Lottie, { LottieRefCurrentProps } from 'lottie-react'; // Import type
 import { useTheme } from '@/app/ThemeContext';
 
 
 function Toggle() {
     const { isDark, toggleTheme } = useTheme();
-    const lottieRef = useRef<any>(null);
+    // const lottieRef = useRef<any>(null);
+    const lottieRef = useRef<LottieRefCurrentProps | null>(null); // Type reference properly
 
     const handleToggle = () => {
         if (lottieRef.current) {
@@ -23,10 +25,18 @@ function Toggle() {
 
     // Set initial animation state
     useEffect(() => {
-        if (lottieRef.current) {
-            lottieRef.current.goToAndStop(isDark ? 28 : 1, true);
+        const ref = lottieRef.current;
+        if (ref) {
+            ref.goToAndStop(isDark ? 28 : 1, true);
         }
-    }, []);
+    }, []); // No dependencies
+    
+   
+    // useEffect(() => {
+    //     if (lottieRef.current) {
+    //         lottieRef.current.goToAndStop(isDark ? 28 : 1, true);
+    //     }
+    // }, []);
 
     return (
         <div className={styles.toggle}>

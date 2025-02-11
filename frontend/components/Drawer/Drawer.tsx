@@ -6,6 +6,7 @@ import ProjectModel from "@/Models/project-model";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Loader } from "../../components/Loader/Loader";
+import Image from 'next/image';
 
 interface DrawerProps {
     close: () => void;
@@ -135,6 +136,7 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
 
     const handleClose = () => {
         setIsClosing(true);
+        console.log(isClosing);
         setTimeout(close, 1);
     };
 
@@ -146,7 +148,6 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
         animate: {
             rotate: 0,
             scale: 1,
-
             transition: {
                 duration: 0.4,
                 ease: "easeOut"
@@ -155,7 +156,6 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
         exit: {
             rotate: 45,
             scale: 0,
-
             transition: {
                 duration: 0.3,
                 ease: "easeIn"
@@ -164,7 +164,6 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
         hover: {
             scale: 0.9,
             rotate: 90,
-
             transition: {
                 duration: 0.3,
                 ease: "easeInOut"
@@ -175,7 +174,6 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
             scale: 1.1,
             rotate: 180,
             transition: {
-                // times: [0,0.3,0.5,1],
                 duration: 0.1,
                 ease: "easeInOut"
             }
@@ -365,13 +363,26 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                                 >
                                     {imageLoadingState[index] && <div className={styles.skeleton}></div>} {/* Skeleton loader */}
 
-                                    <img
+                                    {/* <img
                                         className={`${styles.projectImage} ${isGif ? styles.gifImage : ""}`}
                                         src={`/images/${item.imageName}`}
                                         alt={item.imageName}
                                         onLoad={() => setImageLoadingState((prev) => ({ ...prev, [index]: false }))} // Hide skeleton on load
                                         style={{ display: imageLoadingState[index] ? "none" : "block" }} // Hide image while loading
+                                    /> */}
+
+                                    <Image
+                                        className={`${styles.projectImage} ${isGif ? styles.gifImage : ""}`}
+                                        src={`/images/${item.imageName}`}
+                                        alt={item.imageName}
+                                        width={isWide ? 1000 : 600}
+                                        height={isWide ? 1000 : 600}
+                                        unoptimized // Disables Next.js compression
+                                        onLoadingComplete={() => setImageLoadingState((prev) => ({ ...prev, [index]: false }))}
+                                        priority={index === 0}
                                     />
+
+
                                     {item.imageDescription && (
                                         <p className={styles.imageDescription}>{item.imageDescription}</p>
                                     )}

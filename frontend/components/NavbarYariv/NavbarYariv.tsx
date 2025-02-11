@@ -9,6 +9,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useDrawerContext } from '@/app/DrawerContext';
 import sparksAnimationData from '../../assets/animations/sparks.json';
 import Lottie from 'lottie-react';
+import { LottieRefCurrentProps } from 'lottie-react';
 
 type TabId = "myWork" | "about";
 interface UnderlineProperties {
@@ -29,9 +30,14 @@ const NavbarYariv = () => {
     const [hasShadow, setHasShadow] = useState(false);
     const [underlineProperties, setUnderlineProperties] = useState<UnderlineProperties | null>(null);
 
-    const lottieRefs = {
-        myWork: useRef<any>(null),
-        about: useRef<any>(null)
+    // const lottieRefs = {
+    //     myWork: useRef<any>(null),
+    //     about: useRef<any>(null)
+    // };
+
+    const lottieRefs: Record<TabId, React.RefObject<LottieRefCurrentProps>> = {
+        myWork: useRef<LottieRefCurrentProps>(null),
+        about: useRef<LottieRefCurrentProps>(null)
     };
 
     const tabs = [
@@ -87,11 +93,19 @@ const NavbarYariv = () => {
 
     useEffect(() => {
         Object.values(lottieRefs).forEach(ref => {
-            if (ref.current) {
-                ref.current.goToAndStop(18, true);
-            }
+            ref.current?.goToAndStop(18, true);
         });
-    }, []);
+    }, []); // No dependencies
+
+
+    // useEffect(() => {
+    //     Object.values(lottieRefs).forEach(ref => {
+    //         if (ref.current) {
+    //             ref.current.goToAndStop(18, true);
+    //         }
+    //     });
+    // }, []);
+
 
     const handleTabClick = (tabId: TabId, href: string) => {
         setActiveById(tabId);

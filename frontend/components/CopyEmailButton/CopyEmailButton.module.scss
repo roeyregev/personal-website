@@ -1,5 +1,4 @@
 @use "../../app/variables";
-@use "../../app/globals.scss";
 
 
 .copyEmailComponent {
@@ -7,7 +6,6 @@
     display: flex;
     gap: 14px;
     align-items: center;
-
 
     .copyBtn {
         display: inline-block;

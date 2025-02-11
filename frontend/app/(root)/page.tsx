@@ -2,7 +2,7 @@
 "use client"
 import styles from './page.module.scss';
 import Gallery from "@/components/Gallery/Gallery";
-import { Suspense, lazy, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import projectsData from "../../ProjectsData/projects.json"
 import { AnimatePresence } from 'framer-motion';
 import { useDrawerContext } from '@/app/DrawerContext';
@@ -81,7 +81,7 @@ export default function Home() {
     <div
       className={styles.mainPage}>
       <div className={styles.heroText}>
-        <h1 className={`${styles.title} ${styles.fadeIn}`}>I’m Roey. <br /> This is my work.</h1>
+        <h1 className={`${styles.title} ${styles.fadeIn}`}>I&apos;m Roey. <br /> This is my work.</h1>
         <p className={`${styles.secondaryTitle} ${styles.fadeIn}`} >UI/UX | Motion | Storytelling | (Code)</p>
       </div>
 

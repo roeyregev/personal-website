@@ -1,6 +1,5 @@
 import { Notyf } from "notyf";
 
-
 class NotificationService {
     private notification: Notyf | null = null;
 
@@ -37,13 +36,27 @@ class NotificationService {
         this.notification?.error(message);
     }
 
-    private extractErrorMessage(err: any): string {
+    private extractErrorMessage(err: unknown): string {
         if (typeof err === "string") return err;
-        if (typeof err.response?.data === "string") return err.response?.data; // axios
-        if (Array.isArray(err.response?.data)) return err.response?.data[0]; // axios
-        if (typeof err.message === "string") return err.message;
+    
+        if (err && typeof err === "object") {
+            const errorObj = err as { response?: { data?: string | string[] }; message?: string };
+    
+            if (typeof errorObj.response?.data === "string") return errorObj.response.data;
+            if (Array.isArray(errorObj.response?.data)) return errorObj.response.data[0];
+            if (typeof errorObj.message === "string") return errorObj.message;
+        }
+    
         return "Unknown error";
     }
+    
+    // private extractErrorMessage(err: any): string {
+    //     if (typeof err === "string") return err;
+    //     if (typeof err.response?.data === "string") return err.response?.data; // axios
+    //     if (Array.isArray(err.response?.data)) return err.response?.data[0]; // axios
+    //     if (typeof err.message === "string") return err.message;
+    //     return "Unknown error";
+    // }
 }
 
 const notificationService = new NotificationService();

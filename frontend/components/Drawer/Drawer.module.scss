@@ -1,5 +1,5 @@
 @use "../../app/variables" as *;
-@use "sass:map";  
+@use "sass:map";
 
 .Drawer {
     position: fixed;
@@ -90,7 +90,9 @@
     }
 }
 
+
 //skeleton: --------------------------
+
 .skeleton {
     width: 100%;
     height: 200px;
@@ -117,7 +119,6 @@
     display: flex;
     flex-direction: column;
     gap: 14px;
-    // max-width: 960px;
     margin: 80px 40px;
     padding-bottom: 120px;
     align-items: center;
@@ -142,33 +143,31 @@
     }
 
     .link a {
-        // @include paragraph;
         font-weight: 500;
         background-image: var(--green-gradient);
         background-clip: text;
         color: transparent;
-        text-decoration: none; // Remove default underline
-
+        text-decoration: none;
         position: relative;
 
+        // custom link underline
         &::after {
             content: "";
             position: absolute;
             left: 0;
-            bottom: -1px; // Adjust the position of the underline
+            bottom: -1px;
             width: 100%;
-            height: 2px; // Thickness of the underline
-            background-image: var(--green-gradient); // Use the same gradient
+            height: 2px;
+            background-image: var(--green-gradient);
         }
 
         &:hover::after {
             box-shadow: 0px 0px 8px rgba(153, 255, 194, 0.8);
-            opacity: 1.2; // Slightly enhance brightness effect
+            opacity: 1.2;
             height: 3px;
             bottom: -2px;
         }
     }
-
 
     .description {
         @include paragraph;
@@ -220,7 +219,6 @@
         margin: 20px auto;
         width: 100%;
 
-       
         .gifImage {
             animation: fadeIn 0.5s ease-in-out;
             width: 100%;
@@ -258,7 +256,12 @@
     }
 
     .projectImage {
-        width: 100%;
+        // width: 100%;
+
+        position: relative; // Important for `fill`
+        width: 100%; // Make it responsive
+        height: auto; // Maintain aspect ratio
+        // object-fit: cover; // Prevents distortion
     }
 
     .imageDescription {
@@ -325,9 +328,7 @@
         }
 
         .projectContentContainer {
-            // max-width: 1400px;
             width: 100%;
-            // margin-top: 20px;
         }
 
         .projectContentContainer {
