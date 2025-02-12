@@ -60,7 +60,7 @@
     "images": [],
     "videos": [
       {
-        "videoLink": "https://player.vimeo.com/video/340225487",
+        "videoLink": "https://player.vimeo.com/video/340225487?h=HASH&dnt=1",
         "videoDescription": ""
       }
     ]
@@ -123,7 +123,7 @@
     "images": [],
     "videos": [
       {
-        "videoLink": "https://player.vimeo.com/video/213830148",
+        "videoLink": "https://player.vimeo.com/video/213830148?h=HASH&dnt=1",
         "videoDescription": "The time is NOW!!!"
       }
     ]
@@ -206,7 +206,7 @@
     "images": [],
     "videos": [
       {
-        "videoLink": "https://player.vimeo.com/video/163981561",
+        "videoLink": "https://player.vimeo.com/video/163981561?h=HASH&dnt=1",
         "videoDescription": ""
       }
     ]
@@ -224,7 +224,7 @@
     ],
     "videos": [
       {
-        "videoLink": "https://player.vimeo.com/video/154406869",
+        "videoLink": "https://player.vimeo.com/video/154406869?h=HASH&dnt=1",
         "videoDescription": ""
       }
     ]
@@ -270,7 +270,7 @@
     ],
     "videos": [
       {
-        "videoLink": "https://player.vimeo.com/video/249715823?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "videoLink": "https://player.vimeo.com/video/249715823?h=HASH&dnt=1",
         "videoDescription": ""
       }
     ]
@@ -288,7 +288,7 @@
     ],
     "videos": [
       {
-        "videoLink": "https://player.vimeo.com/video/141886180?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "videoLink": "https://player.vimeo.com/video/141886180?h=HASH&dnt=1",
         "videoDescription": ""
       }
     ]
@@ -306,7 +306,7 @@
     ],
     "videos": [
       {
-        "videoLink": "https://player.vimeo.com/video/142882127?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "videoLink": "https://player.vimeo.com/video/142882127?h=HASH&dnt=1",
         "videoDescription": ""
       }
     ]
@@ -324,7 +324,7 @@
     ],
     "videos": [
       {
-        "videoLink": "https://player.vimeo.com/video/249721437",
+        "videoLink": "https://player.vimeo.com/video/249721437?h=HASH&dnt=1",
         "videoDescription": ""
       }
     ]
@@ -349,7 +349,7 @@
     ],
     "videos": [
       {
-        "videoLink": "https://player.vimeo.com/video/221439591",
+        "videoLink": "https://player.vimeo.com/video/221439591?h=HASH&dnt=1",
         "videoDescription": "Waze Broadcasters Program Logo"
       }
     ]

@@ -38,6 +38,7 @@
         top: -1px;
         background-color: var(--primary-dark);
         box-sizing: border-box;
+        z-index: 19;
 
         .projectTitle {
             @include project-title-style;
@@ -256,12 +257,9 @@
     }
 
     .projectImage {
-        // width: 100%;
-
-        position: relative; // Important for `fill`
-        width: 100%; // Make it responsive
-        height: auto; // Maintain aspect ratio
-        // object-fit: cover; // Prevents distortion
+        position: relative; 
+        width: 100%; 
+        height: auto;
     }
 
     .imageDescription {
