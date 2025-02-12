@@ -49,14 +49,6 @@ class NotificationService {
     
         return "Unknown error";
     }
-    
-    // private extractErrorMessage(err: any): string {
-    //     if (typeof err === "string") return err;
-    //     if (typeof err.response?.data === "string") return err.response?.data; // axios
-    //     if (Array.isArray(err.response?.data)) return err.response?.data[0]; // axios
-    //     if (typeof err.message === "string") return err.message;
-    //     return "Unknown error";
-    // }
 }
 
 const notificationService = new NotificationService();

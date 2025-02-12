@@ -1,4 +1,3 @@
-//back to working version
 "use client"
 import styles from './page.module.scss';
 import Gallery from "@/components/Gallery/Gallery";
@@ -34,16 +33,6 @@ export default function Home() {
     setShowDrawerNew(false);
   };
 
-  
-  // Preload the Drawer component when the page loads -- NEW****
-  // useEffect(() => {
-  //   const preloadDrawer = () => {
-  //     const _drawerPromise = import("@/components/Drawer/Drawer");
-  //   };
-  //   preloadDrawer();
-  // }, []);
-
-
   // Effect to create the portal div if it doesn't exist
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -57,7 +46,6 @@ export default function Home() {
       document.body.removeChild(portalDiv);
     };
   }, []);
-
 
   useEffect(() => {
     const mainPageDiv = document.querySelector(`.${styles.mainPage}`);
