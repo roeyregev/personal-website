@@ -3,14 +3,14 @@ FROM node:18-alpine AS builder
 
 WORKDIR /app
 
-# Copy package.json and package-lock.json first (better caching)
-COPY frontend/package*.json ./
+# Copy package.json and package-lock.json (for better caching)
+COPY package*.json ./
 
 # Install dependencies
 RUN npm install --frozen-lockfile
 
-# Copy the entire frontend directory into the container
-COPY frontend ./
+# Copy all project files (since the context is already "frontend/")
+COPY . ./
 
 # Build Next.js app
 RUN npm run build
@@ -31,6 +31,7 @@ ENV NODE_ENV=production
 
 # Start Next.js server
 CMD ["npm", "run", "start"]
+
 
 
 
