@@ -3,19 +3,35 @@ FROM node:18-alpine AS builder
 
 WORKDIR /app
 
-# Copy package.json and lockfile first (for better caching)
-COPY package*.json /app
+# Copy package.json and package-lock.json first (better caching)
+COPY frontend/package*.json ./
 
 # Install dependencies
-RUN npm install 
+RUN npm install --frozen-lockfile
 
-# Copy everything inside frontend (including app/ directory)
-COPY . /app
+# Copy the entire frontend directory into the container
+COPY frontend ./
 
 # Build Next.js app
 RUN npm run build
 
-ENTRYPOINT npm run start
+# 🌟 Production Stage
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copy only required files from build
+COPY --from=builder /app/package.json ./
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/node_modules ./node_modules
+
+# Set production environment
+ENV NODE_ENV=production
+
+# Start Next.js server
+CMD ["npm", "run", "start"]
+
 
 
 
