@@ -3,16 +3,16 @@ FROM node:18-alpine AS builder
 
 WORKDIR /app
 
-# Copy package.json and package-lock.json for better caching
-COPY frontend/package*.json ./
+# Copy package.json and lockfile first (for better caching)
+COPY package*.json ./
 
 # Install dependencies
 RUN npm install --frozen-lockfile
 
-# Copy the rest of the app
-COPY frontend ./
+# Copy everything inside frontend (since Railway is already in frontend/)
+COPY . ./
 
-# Build the Next.js app
+# Build Next.js app
 RUN npm run build
 
 # 🌟 Production Stage
@@ -20,16 +20,15 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-# Copy necessary files from the builder stage
 COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/node_modules ./node_modules
 
-# Set environment to production (just to optimize Next.js)
+# Set environment
 ENV NODE_ENV=production
 
-# Start the Next.js server
+# Start the app
 CMD ["npm", "run", "start"]
 
 
