@@ -9,7 +9,7 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install --frozen-lockfile
 
-# Copy everything inside frontend (since Railway is already in frontend/)
+# Copy the rest of the app
 COPY . ./
 
 # Build Next.js app
@@ -20,6 +20,7 @@ FROM node:18-alpine
 
 WORKDIR /app
 
+# Copy built assets and dependencies from builder
 COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
@@ -30,54 +31,6 @@ ENV NODE_ENV=production
 
 # Start the app
 CMD ["npm", "run", "start"]
-
-
-
-
-
-
-
-
-# ---------- Attempt #01 -----------
-
-# 1️⃣ Build stage
-# FROM node:18-alpine AS builder
-
-# # Set working directory
-# WORKDIR /app
-
-# # Copy package.json and package-lock.json
-# COPY package*.json ./
-
-# # Install dependencies
-# RUN npm install --frozen-lockfile
-
-# # Copy all files
-# COPY . .
-
-# # Build the Next.js app
-# RUN npm run build
-
-# # 2️⃣ Run stage (Slimmer Image)
-# FROM node:18-alpine
-
-# WORKDIR /app
-
-# # Copy only necessary files from builder stage
-# COPY --from=builder /app/package*.json ./
-# COPY --from=builder /app/.next ./.next
-# COPY --from=builder /app/public ./public
-# COPY --from=builder /app/node_modules ./node_modules
-
-# # Set environment variable for production
-# ENV NODE_ENV=production
-
-# # Expose Next.js default port
-# EXPOSE 3000
-
-# # Start the app
-# CMD ["npm", "run", "start"]
-
 
 
 # ---------- OLD & WORKING but with slow loading -----------
