@@ -1,5 +1,4 @@
 # 🌟 Build Stage
-# 🌟 Build Stage
 FROM node:18-alpine AS builder
 
 WORKDIR /app
@@ -16,16 +15,6 @@ COPY . /app
 # Build Next.js app
 RUN npm run build
 
-# 🌟 Production Stage
-FROM node:18-alpine
-
-WORKDIR /app
-
-
-# Set production environment
-# ENV NODE_ENV=production
-
-# CMD ["npm", "run", "start"]
 ENTRYPOINT npm run start
 
 
