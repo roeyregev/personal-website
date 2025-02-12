@@ -9,8 +9,11 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install --frozen-lockfile
 
-# Copy all project files (since the context is already "frontend/")
+# Copy all project files (but move them to the correct structure)
 COPY . ./
+
+# Move Next.js app files to the correct location
+RUN if [ -d "frontend" ]; then mv frontend/* . && rm -rf frontend; fi
 
 # Build Next.js app
 RUN npm run build
@@ -31,6 +34,7 @@ ENV NODE_ENV=production
 
 # Start Next.js server
 CMD ["npm", "run", "start"]
+
 
 
 
