@@ -1,16 +1,19 @@
 # 🌟 Build Stage
+# 🌟 Build Stage
 FROM node:18-alpine AS builder
 
 WORKDIR /app
 
-# Copy package files first for better caching
-COPY package.json package-lock.json ./
-RUN npm ci --omit=dev
+# Copy package.json and lockfile first (for better caching)
+COPY frontend/package.json frontend/package-lock.json ./
 
-# Copy everything inside frontend/
-COPY . ./
+# Install dependencies
+RUN npm install --frozen-lockfile
 
-# Build Next.js
+# Copy everything inside frontend (including app/ directory)
+COPY frontend ./
+
+# Build Next.js app
 RUN npm run build
 
 # 🌟 Production Stage
@@ -18,7 +21,7 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-# Copy only necessary production files
+# Copy only required files from build
 COPY --from=builder /app/package.json ./
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
@@ -27,8 +30,7 @@ COPY --from=builder /app/node_modules ./node_modules
 # Set production environment
 ENV NODE_ENV=production
 
-# Use correct Next.js standalone mode
-CMD ["node", ".next/standalone/server.js"]
+CMD ["npm", "run", "start"]
 
 
 
