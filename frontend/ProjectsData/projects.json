@@ -51,7 +51,7 @@
     "thumbnail": "thumbnail_stw-intro.png",
     "title": "StuffThatWorks intro",
     "text": [
-      "StuffThatWorks' goal is finding treatments' effectiveness for chronic conditions via crowdsourcing, and that’s what I tried to explain (original illustrations by the talented Maya Shleifer)."
+      "StuffThatWorks' goal is finding treatments' effectiveness for chronic conditions via crowdsourcing, and that’s what I tried to explain (original illustrations: Maya Shleifer)."
     ],
     "tags": [
       "Animation",
@@ -71,7 +71,8 @@
     "title": "Animating StuffThatWorks",
     "text": [
       "A collection of various animations and UX/UI motion examples.",
-      "Animating the STW platform brought it to life. This added personality to the brand, improved user clarity and orientation, and enriched the overall experience."
+      "Animating the STW platform brought it to life. This added personality to the brand, improved user clarity and orientation, and enriched the overall experience.",
+      "(original illustrations: Maya Shleifer)"
     ],
     "tags": [
       "Animation",
@@ -88,10 +89,6 @@
         "imageDescription": "Rating content bar animation"
       },
       {
-        "imageName": "stw_gifs_02.gif",
-        "imageDescription": "How do you feel today?"
-      },
-      {
         "imageName": "stw_gifs_03.gif",
         "imageDescription": "Fly like the wind!"
       },
@@ -102,6 +99,10 @@
       {
         "imageName": "stw_gifs_04.gif",
         "imageDescription": "STW emoji-like reactions (opening & idle)"
+      },
+      {
+        "imageName": "stw_ux_motion_04.gif",
+        "imageDescription": "Loading..."
       },
       {
         "imageName": "stw_ux_motion_03.gif",
@@ -179,6 +180,14 @@
         "imageDescription": "Overlap use case between 2 conditions "
       },
       {
+        "imageName": "map_08.gif",
+        "imageDescription": "Searching for people on the map (concept)"
+      },
+      {
+        "imageName": "map_09.gif",
+        "imageDescription": "Conveying people's activities on the map (concept)"
+      },
+      {
         "imageName": "map_03.png",
         "imageDescription": "Polygons design principals - borders, layers & overlaps"
       },
@@ -190,6 +199,7 @@
         "imageName": "map_07.png",
         "imageDescription": "Coloring & labels"
       }
+      
     ]
   },
   {
@@ -197,7 +207,8 @@
     "thumbnail": "thumbnail_carpool-intro.png",
     "title": "Waze Carpool",
     "text": [
-      "An intro for Waze’s Carpool app (R.I.P)"
+      "An intro for Waze’s Carpool app (R.I.P)",
+      "(co-animator: Eric Lerner)"
     ],
     "tags": [
       "Animations",
@@ -316,7 +327,8 @@
     "thumbnail": "thumbnail_voice-rec.png",
     "title": "Waze Voice Recording",
     "text": [
-      "It’s basically an ad for Waze's “Record your own navigation instructions” feature (from 2017 I believe). A personal favorite of mine, I think I like the simplicity and the fit of the concept to the feature itself (but maybe it’s just me)."
+      "It’s basically an ad for Waze's “Record your own navigation instructions” feature (from 2017 I believe). A personal favorite of mine, I think I like the simplicity and the fit of the concept to the feature itself (but maybe it’s just me).",
+      "(co-creator: Eric Lerner)"
     ],
     "tags": [
       "Animations",
@@ -351,55 +363,6 @@
       {
         "videoLink": "https://player.vimeo.com/video/221439591?h=HASH&dnt=1",
         "videoDescription": "Waze Broadcasters Program Logo"
-      }
-    ]
-  },
-  {
-    "projectId": 15,
-    "thumbnail": "thumbnail_solar-system.png",
-    "title": "Personal | Yair's Solar System",
-    "text": [
-      "A solar system poster with some data about distances and sizes that Was made as a gift to my nephew"
-    ],
-    "tags": [
-      "Infographics",
-      "Illustration",
-      "Print"
-    ],
-    "images": [
-      {
-        "imageName": "solar_01.png",
-        "imageDescription": "Full poster"
-      },
-      {
-        "imageName": "solar_02.png",
-        "imageDescription": "Details"
-      },
-      {
-        "imageName": "solar_03.png",
-        "imageDescription": "Details"
-      },
-      {
-        "imageName": "solar_04.png",
-        "imageDescription": "Details"
-      }
-    ]
-  },
-  {
-    "projectId": 16,
-    "thumbnail": "thumbnail_mom.png",
-    "title": "Personal | Mom",
-    "text": [
-      ""
-    ],
-    "tags": [
-      "Illustration",
-      "Print"
-    ],
-    "images": [
-      {
-        "imageName": "mom.png",
-        "imageDescription": "My interpretation for a personal portrait that my mom painted a long time ago "
       }
     ]
   }

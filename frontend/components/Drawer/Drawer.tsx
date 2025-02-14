@@ -204,7 +204,7 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
         },
         tap: {
             scale: 1.05,
-            x: 20,
+            x: 10,
             transition: {
                 type: "spring",
                 stiffness: 400,
@@ -239,7 +239,7 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
         },
         tap: {
             scale: 1.05,
-            x: -20,
+            x: -10,
             rotate: 180,
             transition: {
                 type: "spring",
@@ -362,15 +362,6 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                                     key={`${selectedProject.projectId}.${index}`}
                                 >
                                     {imageLoadingState[index] && <div className={styles.skeleton}></div>} {/* Skeleton loader */}
-
-                                    {/* <img
-                                        className={`${styles.projectImage} ${isGif ? styles.gifImage : ""}`}
-                                        src={`/images/${item.imageName}`}
-                                        alt={item.imageName}
-                                        onLoad={() => setImageLoadingState((prev) => ({ ...prev, [index]: false }))} // Hide skeleton on load
-                                        style={{ display: imageLoadingState[index] ? "none" : "block" }} // Hide image while loading
-                                    /> */}
-
                                     <Image
                                         className={`${styles.projectImage} ${isGif ? styles.gifImage : ""}`}
                                         src={`/images/${item.imageName}`}
@@ -381,7 +372,6 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                                         onLoadingComplete={() => setImageLoadingState((prev) => ({ ...prev, [index]: false }))}
                                         priority={index === 0}
                                     />
-
 
                                     {item.imageDescription && (
                                         <p className={styles.imageDescription}>{item.imageDescription}</p>
@@ -418,6 +408,20 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
                     </div>
                 )}
 
+                {/* links */}
+                {selectedProject?.links && selectedProject.links.length > 0 && (
+                    <div className={styles.linksContainer}>
+                        {selectedProject.links.map((link, index) => (
+                            <div
+                                className={styles.linkBottom}
+                                key={`${selectedProject.projectId}.${index}`}
+                            >
+                                <a href={link} target="_blank" rel="noopener noreferrer">Go to site</a>
+
+                            </div>
+                        ))}
+                    </div>
+                )}
             </div>
         </motion.div>,
         portalRoot

@@ -8,3 +8,6 @@ database/
 # MacOS files
 .DS_Store
 frontend/.DS_Store
+
+# ignore data backup
+frontend/ProjectsData/projects-backup.json

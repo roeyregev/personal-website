@@ -143,7 +143,9 @@
         @include tag;
     }
 
-    .link a {
+    .link a,
+    .linkBottom a {
+        @include paragraph;
         font-weight: 500;
         background-image: var(--green-gradient);
         background-clip: text;
