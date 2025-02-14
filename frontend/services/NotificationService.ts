@@ -6,7 +6,7 @@ class NotificationService {
     constructor() {
         if (typeof window !== 'undefined') {
             this.notification = new Notyf({
-                duration: 60000,
+                duration: 2000,
                 position: { x: 'center', y: 'top' },
                 ripple: true,
                 types: [
