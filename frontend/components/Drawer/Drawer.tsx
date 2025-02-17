@@ -116,29 +116,48 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
     // Framer Motion Variants for Animation
     const drawerVariants = {
         hidden: {
-            y: "20%", // Start off-screen at the bottom
+            y: "15%", // Start off-screen at the bottom
+            x: "-50%",
             opacity: 0, // Fully transparent
             left: 0
         },
         visible: {
             y: 0,       // Slide to its final position
+            x: "-50%",
             opacity: 1, // Fully visible
             transition: { duration: 0.25, ease: "easeOut" }, // Smooth animation
             left: 0
         },
         exit: {
-            y: "20%", // Slide back down
+            y: "15%", // Slide back down
+            x: "-50%",
             opacity: 0, // Fade out
             transition: { duration: 0.2, ease: "easeOut" }, // Faster exit
             left: 0
         },
     };
 
+
+    //Close drawer when pressing Esc
     const handleClose = () => {
         setIsClosing(true);
         console.log(isClosing);
         setTimeout(close, 1);
     };
+
+    useEffect(() => {
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === "Escape") {
+                close();
+            }
+        };
+    
+        document.addEventListener("keydown", handleKeyDown);
+        
+        return () => {
+            document.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [close]);
 
     const closeIconVariants = {
         initial: {
