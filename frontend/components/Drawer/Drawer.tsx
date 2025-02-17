@@ -93,7 +93,7 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
 
 
     const portalRoot = document.getElementById("portal");
-    if (!portalRoot) return null; // Don't render if the portal isn't available
+    
 
     const nextProject = () => {
         if (selectedProject?.projectId) {
@@ -158,6 +158,8 @@ function Drawer({ close, selectedProjectIndex, projects }: DrawerProps): JSX.Ele
             document.removeEventListener("keydown", handleKeyDown);
         };
     }, [close]);
+
+    if (!portalRoot) return null; // Don't render if the portal isn't available
 
     const closeIconVariants = {
         initial: {
