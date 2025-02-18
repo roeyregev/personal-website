@@ -7,6 +7,8 @@ import { AnimatePresence } from 'framer-motion';
 import { useDrawerContext } from '@/app/DrawerContext';
 import { Loader } from '@/components/Loader/Loader';
 import dynamic from 'next/dynamic';
+import Drawer from "@/components/Drawer/Drawer";
+
 
 // Lazy load non-critical components
 const Footer = dynamic(() => import('@/components/Footer/Footer'), {
@@ -14,12 +16,16 @@ const Footer = dynamic(() => import('@/components/Footer/Footer'), {
 });
 
 // Preload the Drawer component
-const Drawer = dynamic(() => import("@/components/Drawer/Drawer"), {
-  ssr: false,
-  loading: () => null
-});
+// const Drawer = dynamic(() => import("@/components/Drawer/Drawer"), {
+//   ssr: false,
+//   loading: () => null
+// });
 
 export default function Home() {
+
+  // useEffect(() => {
+  //   import("@/components/Drawer/Drawer");
+  // }, []);
 
   const { showDrawerNew, setShowDrawerNew } = useDrawerContext();
   const [selectedProjectIndex, setSelectedProjectIndex] = useState<number | null>(null);
@@ -49,7 +55,7 @@ export default function Home() {
 
   useEffect(() => {
     const mainPageDiv = document.querySelector(`.${styles.mainPage}`);
-  
+
     if (showDrawerNew) {
       document.body.classList.add("drawer-open");
       if (mainPageDiv) mainPageDiv.classList.add("drawer-open");
@@ -57,14 +63,14 @@ export default function Home() {
       document.body.classList.remove("drawer-open");
       if (mainPageDiv) mainPageDiv.classList.remove("drawer-open");
     }
-  
+
     return () => {
       document.body.classList.remove("drawer-open");
       if (mainPageDiv) mainPageDiv.classList.remove("drawer-open");
     };
   }, [showDrawerNew]);
-  
-  
+
+
   return (
     <div
       className={styles.mainPage}>
